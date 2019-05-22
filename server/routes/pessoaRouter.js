@@ -4,7 +4,12 @@ let router = express.Router();
 let Pessoa = require('../models/Pessoa');
 
 
-
+router.post('/:id',(req,res)=>{
+    Pessoa.findOneAndUpdate({_id:req.params.id},req.body,{new:true},(err,doc)=>{
+        if (err) return res.status(500).send(err);
+        return res.status(200).send(doc);
+    })
+})
 
 
 router.put('/', (req,res)=>{
@@ -34,6 +39,7 @@ router.put('/', (req,res)=>{
 
 router.get('/',(req,res)=> {
     Pessoa.find()
+        .populate('tipoPessoa')
         .then((data)=>{
             res.status = 200;
             res.send(data);

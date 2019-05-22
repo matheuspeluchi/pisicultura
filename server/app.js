@@ -28,10 +28,12 @@ app.use(bodyParser.json());
   
 //Rotas_Inicio
 
-let loginRouter = require('./routes/login');
-let pessoaRouter = require('./routes/pessoa');
+let loginRouter = require('./routes/loginRouter');
+let pessoaRouter = require('./routes/pessoaRouter');
+let tiposRouter = require('./routes/tipoRouter');
 app.use('/login', loginRouter);
-app.use('/pessoa',pessoaRouter);
+app.use('/pessoa', pessoaRouter);
+app.use('/tipos', tiposRouter);
 
 //Rotas_Fim
 
