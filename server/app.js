@@ -9,14 +9,16 @@ mongoose.connect('mongodb://localhost:27017/desenvolvimento',(err, client) => {
     app.listen(3000,function(){
         console.log('Servidor inicado na porta 3000')
     })
-  });
+});
 
+app.use(bodyParser.json())
 
 //Rotas_Inicio
 
-let login = require('./routes/login');
-
-app.use('/login', login);
+let loginRouter = require('./routes/login');
+let pessoaRouter = require('./routes/pessoa');
+app.use('/login', loginRouter);
+app.use('/pessoa',pessoaRouter);
 
 //Rotas_Fim
 
@@ -24,7 +26,7 @@ app.use('/login', login);
 
 
 
-app.use(bodyParser.urlencoded({extended:true}))
+
 
 app.get('/',function(req,res){
     return   res.render('index.ejs')

@@ -4,10 +4,7 @@ let pessoaSchema = new mongoose.Schema({
     nome: String,
     password: String,
     login: String,
-    email:{
-        type: String,
-        unique: true
-    }
+    email: String
 });
 
 module.exports = mongoose.model('Pessoa',pessoaSchema);
