@@ -40,6 +40,7 @@ router.put('/', (req,res)=>{
 router.get('/',(req,res)=> {
     Pessoa.find()
         .populate('tipoPessoa')
+        .populate('grupo')
         .then((data)=>{
             res.status = 200;
             res.send(data);

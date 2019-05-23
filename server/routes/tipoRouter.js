@@ -1,6 +1,6 @@
 let express = require('express');
 let router = express.Router();
-let Tipo = require('../models/tipos');
+let Tipo = require('../models/Ttipos');
 
 router.put('/',(req,res)=>{
     let tipo = new Tipo(req.body);
