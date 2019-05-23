@@ -3,7 +3,10 @@ const bodyParser = require('body-parser')
 const app = express()
 const mongoose = require('mongoose')
 const morgan = require('morgan')
-
+const cors = require('cors');
+const corsOptions = {
+    exposedHeaders: ['x-access-token']
+};
 const config = {
     useNewUrlParser: true
 }
@@ -24,6 +27,7 @@ if (app.get('env') == 'production') {
 }
 
 app.use(bodyParser.json());
+app.use(cors(corsOptions));
 
   
 //Rotas_Inicio

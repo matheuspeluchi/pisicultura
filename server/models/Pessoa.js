@@ -11,8 +11,8 @@ let pessoaSchema = new mongoose.Schema({
     celular:{type: String,maxlength: 15},
     tipoPessoa:{type: mongoose.Types.ObjectId, ref:'Tipos'},
     grupo:{type:mongoose.Types.ObjectId, ref:'Grupo'},
-    password:{type: String, required: true,},
-    login: {type: String, required: true},
+    password:{type: String, },
+    login: {type: String},
     email: String,
     dataCadastro: Date,
     ultimaAtualizacao: {type: Date, default: new Date()
