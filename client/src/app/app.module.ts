@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 // Minhas importações
 import { MainMenuComponent } from './main-menu/main-menu.component';
 import { PessoasModule } from './pessoas/pessoas.module';
+import { ErrorsModule } from './errors/errors.module';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { PessoasModule } from './pessoas/pessoas.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    PessoasModule
+    PessoasModule,
+    ErrorsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
