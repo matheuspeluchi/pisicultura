@@ -4,21 +4,19 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-// Meus Componentes
+// Minhas importações
 import { MainMenuComponent } from './main-menu/main-menu.component';
-import { UsuariosComponent } from './usuarios/usuarios.component';
-import { HttpClientModule } from '@angular/common/http';
+import { PessoasModule } from './pessoas/pessoas.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MainMenuComponent,
-    UsuariosComponent,
+    MainMenuComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    PessoasModule
   ],
   providers: [],
   bootstrap: [AppComponent]
