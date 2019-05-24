@@ -18,6 +18,14 @@ mongoose.connect('mongodb://localhost:27017/desenvolvimento',config,(err, client
     })
 });
 
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "http://localhost:4200");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    res.header("Access-Control-Allow-Methods", "POST, GET, PUT, DELETE, OPTIONS");
+    res.header("Allow","GET, POST, PUT, DELETE, OPTIONS")
+    next();
+  });
+
 //Logger
 
 if (app.get('env') == 'production') {
@@ -27,7 +35,8 @@ if (app.get('env') == 'production') {
 }
 
 app.use(bodyParser.json());
-app.use(cors(corsOptions));
+
+
 
   
 //Rotas_Inicio
