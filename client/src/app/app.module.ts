@@ -6,18 +6,21 @@ import { AppComponent } from './app.component';
 
 // Minhas importações
 import { MainMenuComponent } from './main-menu/main-menu.component';
-import { PessoasModule } from './pessoas/pessoas.module';
+import { PessoaModule } from './pessoas/pessoas.module';
 import { ErrorsModule } from './errors/errors.module';
+import { GrupoModule } from './grupos/grupo.module';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    MainMenuComponent
+    MainMenuComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    PessoasModule,
+    PessoaModule,
+    GrupoModule,
     ErrorsModule
   ],
   providers: [],

@@ -8,7 +8,13 @@ router.get('/',(req,res)=>{
     Grupo.find()
         .then(data=>res.status(200).send(data))
         .catch(err=>res.status(500).send(err))
-})
+});
+
+router.get('/:id',(req,res)=>{
+    Grupo.findById(req.params.id)
+        .then(data => res.status(200).json(data))
+        .catch(err => res.status(500).send(err))
+});
 
 router.put('/',(req,res)=>{
 
@@ -42,7 +48,7 @@ router.post('/:id', (req,res)=>{
         .catch(err=>res.status(500).send(err))
 })
 
-router.delete('/:id',(req,res,next)=>{
+router.delete('/:id',(req,res)=>{
     Grupo.findOneAndDelete({_id:req.params.id})
         .then(data=>res.status(200).send(data))
         .catch(err=>res.status(500).send(err))

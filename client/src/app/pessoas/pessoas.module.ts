@@ -15,4 +15,4 @@ import { PessoaViewComponent } from './pessoa-view/pessoa-view.component';
   ]
 })
 
-export class PessoasModule {}
+export class PessoaModule {}

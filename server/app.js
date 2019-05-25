@@ -48,7 +48,7 @@ let gruposRouter = require ('./routes/gruposRouter');
 app.use('/login', loginRouter);
 app.use('/pessoa', pessoaRouter);
 app.use('/tipos', tiposRouter);
-app.use('/grupos', gruposRouter);
+app.use('/grupo', gruposRouter);
 
 //Rotas_Fim
 
