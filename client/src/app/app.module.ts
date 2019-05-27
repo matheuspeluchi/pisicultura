@@ -21,7 +21,7 @@ import { GrupoModule } from './grupos/grupo.module';
     AppRoutingModule,
     PessoaModule,
     GrupoModule,
-    ErrorsModule
+    ErrorsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

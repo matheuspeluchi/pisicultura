@@ -4,15 +4,19 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { GrupoListComponent } from './grupo-list/grupo-list.component';
 import { GrupoViewComponent } from './grupo-view/grupo-view.component';
+import { AgGridComponent } from './../ag-grid/ag-grid.component';
+import { AgGridModule } from 'ag-grid-angular';
 
 @NgModule({
   declarations: [
     GrupoListComponent,
-    GrupoViewComponent
+    GrupoViewComponent,
+    AgGridComponent
   ],
   imports: [
     CommonModule,
-    HttpClientModule
+    HttpClientModule,
+    AgGridModule.withComponents([])
   ]
 })
 
