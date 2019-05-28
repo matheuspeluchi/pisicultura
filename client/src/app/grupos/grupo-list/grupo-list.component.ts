@@ -1,7 +1,6 @@
-import { AgGridComponent } from './../../ag-grid/ag-grid.component';
-import { GrupoService } from './../grupo.service';
-import { Component, OnInit, OnChanges } from '@angular/core';
-import { Grupo } from '../grupo';
+import { GrupoService } from '../grupo/grupo.service';
+import { Component, OnInit } from '@angular/core';
+import { Grupo } from '../grupo/grupo';
 
 @Component({
   selector: 'app-grupo-list',
@@ -13,19 +12,15 @@ export class GrupoListComponent implements OnInit {
   grupos: Grupo[] = [];
   grid: object = null;
   columnDefs = [
-    {headerName: 'Nome', field: 'nome', sortable: true},
-    {headerName: 'Descrição', field: 'descricao', sortable: true},
+    {headerName: 'Nome', field: 'nome', sortable: true, resizable: true},
+    {headerName: 'Descrição', field: 'descricao', sortable: true, resizable: true },
   ];
 
-  rowData: Grupo[] = this.grupos;
+  constructor( private grupoService: GrupoService ) { }
 
-  constructor(
-    private grupoService: GrupoService
-    ) { }
-
-  ngOnInit(){
+  ngOnInit() {
     this.grupoService.getGrupos().subscribe(data => {
-      this.rowData = data;
+      this.grupos = data;
     });
   }
 }

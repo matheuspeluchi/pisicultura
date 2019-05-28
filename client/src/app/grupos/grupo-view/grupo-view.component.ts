@@ -1,7 +1,7 @@
-import { GrupoService } from './../grupo.service';
+import { GrupoService } from '../grupo/grupo.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Grupo } from '../grupo';
+import { Grupo } from '../grupo/grupo';
 
 @Component({
   selector: 'app-grupo-view',

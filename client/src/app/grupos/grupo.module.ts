@@ -1,22 +1,15 @@
+import { ListaModule } from './../lista/lista.module';
+import { GrupoViewModule } from './grupo-view/grupo-view.module';
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
-
-import { GrupoListComponent } from './grupo-list/grupo-list.component';
-import { GrupoViewComponent } from './grupo-view/grupo-view.component';
-import { AgGridComponent } from './../ag-grid/ag-grid.component';
-import { AgGridModule } from 'ag-grid-angular';
+import { GrupoListModule } from './grupo-list/grupo-list.module';
+import { ListaComponent } from '../lista/lista.component';
 
 @NgModule({
-  declarations: [
-    GrupoListComponent,
-    GrupoViewComponent,
-    AgGridComponent
-  ],
+  declarations: [ ],
   imports: [
-    CommonModule,
-    HttpClientModule,
-    AgGridModule.withComponents([])
+    GrupoListModule,
+    GrupoViewModule,
+    ListaModule
   ]
 })
 
