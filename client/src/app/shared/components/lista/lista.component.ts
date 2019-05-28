@@ -37,7 +37,7 @@ export class ListaComponent implements OnInit {
 
   autoSizeAll() {
     let allColumnIds = [];
-    this.gridColumnApi.getAllColumns().forEach(column => allColumnIds.push(column.colId));
+    this.gridColumnApi.getAllColumns().forEach(column => allColumnIds.push(column));
     this.gridColumnApi.autoSizeColumns(allColumnIds);
   }
 }
