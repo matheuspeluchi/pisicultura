@@ -1,0 +1,43 @@
+<header class="fixed-top">
+  <nav class="navbar navbar-expand-sm bg-primary navbar-dark" >
+    <a class="navbar-brand" href="#">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Emoji_u1f41f.svg/1024px-Emoji_u1f41f.svg.png" width="30" height="30" alt="">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+            <a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
+          </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Cadastro
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">Unidades</a>
+            <a class="dropdown-item" href="#">Produtos</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Usuarios</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Unidades</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Configuracoes</a>
+        </li>
+      </ul>
+    </div>
+    <div *ngIf="(user$ | async) as user; else login">
+        <i class="fa fa-user-circle"></i>
+        <a class="ml-2">{{user.nome}}</a>
+        <a class="mr-1" (click)="logout()">(Logout)</a>
+    </div>
+  </nav>
+
+  <ng-template #login>
+    <span class="navbar-text">Efetue Login</span>
+  </ng-template>
+</header>

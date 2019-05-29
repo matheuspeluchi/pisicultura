@@ -1,9 +1,12 @@
+require("dotenv-safe").load();
+
 const express = require('express')
 const bodyParser = require('body-parser')
 const app = express()
 const mongoose = require('mongoose')
 const morgan = require('morgan')
 const cors = require('cors');
+const jwt = require('jsonwebtoken');
 const corsOptions = {
     exposedHeaders: ['x-access-token']
 };
@@ -12,7 +15,7 @@ const config = {
 }
 mongoose.connect('mongodb://localhost:27017/desenvolvimento',config,(err, client) => {
     if (err) return console.log(err);
-
+    
     app.listen(3000,function(){
         console.log('Servidor inicado na porta 3000')
     })
@@ -20,7 +23,8 @@ mongoose.connect('mongodb://localhost:27017/desenvolvimento',config,(err, client
 
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "http://localhost:4200");
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
+    res.header("Access-Control-Expose-Headers","Authorization");
     res.header("Access-Control-Allow-Methods", "POST, GET, PUT, DELETE, OPTIONS");
     res.header("Allow","GET, POST, PUT, DELETE, OPTIONS")
     next();

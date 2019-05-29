@@ -6,8 +6,10 @@ import { GrupoListComponent } from './grupos/grupo-list/grupo-list.component';
 import { GrupoListResolver } from './grupos/grupo-list/grupo-list.resolver';
 import { GrupoViewComponent } from './grupos/grupo-view/grupo-view.component';
 import { PessoaViewComponent } from './pessoas/pessoa-view/pessoa-view.component';
+import { SinginComponent } from './home/singin/singin.component';
 
 const routes: Routes = [
+  {path: '', component: SinginComponent},
   {path: 'pessoa/:id', component: PessoaViewComponent},
   {path: 'grupo/:id', component: GrupoViewComponent},
   {
