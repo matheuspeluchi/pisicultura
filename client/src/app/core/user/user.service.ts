@@ -10,6 +10,9 @@ import * as jwt_decode from 'jwt-decode';
 export class UserService {
 
   private userSubject = new BehaviorSubject<User>(null);
+  private userId: string;
+  private userGroup: string;
+
   constructor(private tokenService: TokenService) {
     // tslint:disable-next-line: no-unused-expression
     this.tokenService.hasToken() && this.decodeAndNotify();
@@ -31,6 +34,44 @@ export class UserService {
   private decodeAndNotify() {
     const token = this.tokenService.getToken();
     const user = jwt_decode(token) as User;
+    this.userId = user.id;
+    this.userGroup = user.grupo;
     this.userSubject.next(user);
+  }
+
+  islogged() {
+    return this.tokenService.hasToken();
+  }
+
+  getUserLogin() {
+    return this.userId;
+  }
+
+  getUserGroup() {
+    return this.userGroup;
+  }
+
+  isDeveloper() {
+    if (this.getUserGroup() === 'developer') {
+     return true;
+    } else {
+      return false;
+    }
+  }
+
+  isAdmin() {
+    if (this.getUserGroup() === 'admin') {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  isComercial() {
+    if (this.getUserGroup() === 'comercial') {
+      return true;
+    } else {
+      return false;
+    }
   }
 }

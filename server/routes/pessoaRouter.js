@@ -11,6 +11,15 @@ router.post('/:id',(req,res)=>{
     })
 })
 
+router.get('/:id',(req,res)=>{
+    Pessoa.findById(req.params.id)
+        .populate('tipoPessoa')
+        .populate('grupo')
+        .then( data => res.status(200).send(data))
+        .catch( err => res.status(500).send(err));
+       
+})
+
 
 router.put('/', (req,res)=>{
 

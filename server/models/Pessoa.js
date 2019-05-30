@@ -12,8 +12,7 @@ let pessoaSchema = new mongoose.Schema({
     tipoPessoa:{type: mongoose.Types.ObjectId, ref:'Tipos'},
     grupo:{type:mongoose.Types.ObjectId, ref:'Grupo'},
     password:{type: String, },
-    login: {type: String},
-    email: String,
+    email: {type: String, unique: true},
     dataCadastro: Date,
     ultimaAtualizacao: {type: Date, default: new Date()
     }

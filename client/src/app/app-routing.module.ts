@@ -1,3 +1,5 @@
+import { PessoaFormComponent } from './pessoas/pessoa-form/pessoa-form/pessoa-form.component';
+import { AuthGuardService } from './core/auth/auth-guard.service';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
@@ -9,9 +11,23 @@ import { PessoaViewComponent } from './pessoas/pessoa-view/pessoa-view.component
 import { SinginComponent } from './home/singin/singin.component';
 
 const routes: Routes = [
-  {path: '', component: SinginComponent},
-  {path: 'pessoa/:id', component: PessoaViewComponent},
-  {path: 'grupo/:id', component: GrupoViewComponent},
+  {
+    path: '',
+    component: NotFoundComponent,
+    canActivate: [AuthGuardService]
+  },
+  {
+    path: 'login',
+    component: SinginComponent
+  },
+  {
+    path: 'pessoa/:id',
+    component: PessoaFormComponent
+  },
+  {
+    path: 'grupo/:id',
+    component: GrupoViewComponent
+  },
   {
     path: 'grupos',
     component: GrupoListComponent,
@@ -20,7 +36,10 @@ const routes: Routes = [
     }
   }
     ,
-  {path: '**', component: NotFoundComponent}
+  {
+    path: '**',
+    component: NotFoundComponent
+  }
 ];
 
 @NgModule({

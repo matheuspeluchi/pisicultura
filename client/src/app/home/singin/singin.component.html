@@ -1,21 +1,33 @@
-<h4 class="text-center">Login</h4>
 
-<form class="form mt-4" [formGroup]="loginForm" (submit)="login(loginForm)">
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <!-- Tabs Titles -->
 
-    <div class="form-group">
-        <input class="form-control" placeholder="Login" autofocus formControlName="login" #loginInput>
+    <!-- Icon -->
+    <div class="fadeIn first">
+      <img src="../../../assets/images/client-icon-blue.png" style="width: 64px; height: 64px;" id="icon" alt="User Icon" />
+    </div>
+
+    <br>
+
+    <form [formGroup]="loginForm" (submit)="login(loginForm)">
+
+        <input class="form-control fadeIn second" placeholder="E-mail"  autofocus formControlName="login" #loginInput>
         <app-msg-form texto="O campo login é obrigatório!" *ngIf="loginForm.get('login').errors?.required"></app-msg-form>
-    </div>
 
-    <div class="form-group">
-        <input type="password" class="form-control" placeholder="Senha" formControlName="password">
+
+        <input type="password" class="form-control fadeIn third" placeholder="Senha" formControlName="password">
         <app-msg-form texto="O campo senha é obrigatório!" *ngIf="loginForm.get('password').errors?.required"></app-msg-form>
+
+
+        <button [disabled]="loginForm.invalid" type="submit" class="btn btn-primary btn-block">
+            Entrar
+        </button>
+
+    </form>
+    <div id="formFooter">
+        <a class="underlineHover" href="#">Forgot Password?</a>
     </div>
 
-    <button [disabled]="loginForm.invalid" type="submit" class="btn btn-primary btn-block">
-        Entrar
-    </button>
-
-</form>
-
-<p>Não é usuario?<a>Registre-se</a></p>
+  </div>
+</div>

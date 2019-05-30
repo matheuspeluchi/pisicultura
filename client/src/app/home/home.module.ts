@@ -1,7 +1,7 @@
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 
 import { SinginComponent } from './singin/singin.component';
@@ -13,7 +13,8 @@ import { MsgFormModule } from './../shared/components/msg-form/msg-form.module';
     CommonModule,
     ReactiveFormsModule,
     MsgFormModule,
-    RouterModule
+    RouterModule,
+    FormsModule
   ]
 })
 export class HomeModule { }

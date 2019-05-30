@@ -9,7 +9,9 @@ router.post('/', (req,res)=>{
     console.log(req.body);
     let login = req.body.login;
     let senha = req.body.senha
-    Pessoa.find ({"login": login, "password":senha}) 
+    Pessoa.find ({"email": login, "password":senha}) 
+        .populate('tipoPessoa')
+        .populate('grupo')
         .then ((data) => { 
             if (data.length != 1){
                 res.status(401).send('Erro ao localizar usuario com as credenciais informadas!');
@@ -18,12 +20,14 @@ router.post('/', (req,res)=>{
                 let payload = {
                     id: data._id,
                     nome: data.nome,
+                    grupo: data.grupo.nome
                    // empresa: data.empresaId
                 }
                 
                 let token = jwt.gerarJWT(payload);
                 res.status = 200;
-                res.setHeader('Authorization',token).send(data);
+                res.setHeader('Authorization',token)
+                res.json({auth: true,id:data._id});
             }            
         }) 
         .catch ((err) => { 

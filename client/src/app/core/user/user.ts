@@ -1,5 +1,6 @@
 export interface User {
   id: string;
   nome: string;
-  empresa: string;
+  empresaId: string;
+  grupo: string;
 }
