@@ -1,9 +1,11 @@
-<ag-grid-angular
-    style="width: 100%; height: 350px;"
-    class="ag-theme-blue"
-    [rowData]="lista"
-    [columnDefs]="headers"
-    (gridReady)="onGridReady($event)"
-    animatedrows
-    >
-</ag-grid-angular>
+<div class="m-3">
+    <ag-grid-angular
+        style="width: 100%; height: 350px;"
+        class="ag-theme-blue"
+        [rowData]="lista"
+        [columnDefs]="headers"
+        (gridReady)="onGridReady($event)"
+        animatedrows
+        >
+    </ag-grid-angular>
+</div>

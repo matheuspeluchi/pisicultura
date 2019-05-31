@@ -11,6 +11,7 @@ import { PessoaModule } from './pessoas/pessoas.module';
 import { ErrorsModule } from './errors/errors.module';
 import { GrupoModule } from './grupos/grupo.module';
 import { SinginModule } from './shared/components/singin/singin.module';
+import { AreaRestritaModule } from './area-restrita/area-restrita.module';
 
 
 
@@ -27,7 +28,8 @@ import { SinginModule } from './shared/components/singin/singin.module';
     GrupoModule,
     ErrorsModule,
     HomeModule,
-    SinginModule
+    SinginModule,
+    AreaRestritaModule
   ],
   providers: [],
   bootstrap: [AppComponent]

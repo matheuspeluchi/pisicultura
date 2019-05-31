@@ -1,6 +1,6 @@
-import { GrupoService } from '../grupo/grupo.service';
+import { GrupoService } from '../grupo.service';
 import { Component, OnInit } from '@angular/core';
-import { Grupo } from '../grupo/grupo';
+import { Grupo } from '../grupo';
 
 @Component({
   selector: 'app-grupo-list',

@@ -10,6 +10,9 @@ import { GrupoViewComponent } from './grupos/grupo-view/grupo-view.component';im
 import { SinginComponent } from './shared/components/singin/singin.component';
 import { HomeComponent } from './home/home/home.component';
 import { HomeGuardService } from './home/home-guard.service';
+import { AreaRestritaComponent } from './area-restrita/area-restrita/area-restrita.component';
+import { resolve } from 'q';
+import { EmpresaListResolver } from './area-restrita/empresa/empresa-list/empresa-list.resolver';
 
 
 const routes: Routes = [
@@ -36,6 +39,13 @@ const routes: Routes = [
         component: GrupoListComponent,
         resolve: {
           lista: GrupoListResolver
+        }
+      },
+      {
+        path: 'areaRestrita',
+        component: AreaRestritaComponent,
+        resolve: {
+          lista: EmpresaListResolver
         }
       },
       {

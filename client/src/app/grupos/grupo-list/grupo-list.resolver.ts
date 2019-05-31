@@ -2,8 +2,8 @@ import { Resolve, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/r
 import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
 
-import { GrupoService } from '../grupo/grupo.service';
-import { Grupo } from '../grupo/grupo';
+import { GrupoService } from '../grupo.service';
+import { Grupo } from '../grupo';
 
 @Injectable({providedIn: 'root' })
 export class GrupoListResolver implements Resolve<Observable<Grupo[]>>{
