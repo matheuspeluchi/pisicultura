@@ -1,7 +1,7 @@
 import { Observable } from 'rxjs';
 import { Component, OnInit, RootRenderer } from '@angular/core';
-import { UserService } from '../user/user.service';
-import { User } from '../user/user';
+import { UserService } from '../../core/user/user.service';
+import { User } from '../../core/user/user';
 import { Router } from '@angular/router';
 
 @Component({
@@ -27,7 +27,7 @@ export class MainMenuComponent implements OnInit {
 
   logout() {
     this.userService.logout();
-    this.router.navigate(['']);
+    this.router.navigate(['login']);
   }
 
 

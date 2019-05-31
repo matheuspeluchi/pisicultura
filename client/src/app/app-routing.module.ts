@@ -6,40 +6,44 @@ import { Routes, RouterModule } from '@angular/router';
 import { NotFoundComponent } from './errors/not-found/not-found.component';
 import { GrupoListComponent } from './grupos/grupo-list/grupo-list.component';
 import { GrupoListResolver } from './grupos/grupo-list/grupo-list.resolver';
-import { GrupoViewComponent } from './grupos/grupo-view/grupo-view.component';
-import { PessoaViewComponent } from './pessoas/pessoa-view/pessoa-view.component';
-import { SinginComponent } from './home/singin/singin.component';
+import { GrupoViewComponent } from './grupos/grupo-view/grupo-view.component';import { PessoaViewComponent } from './pessoas/pessoa-view/pessoa-view.component';
+import { SinginComponent } from './shared/components/singin/singin.component';
+import { HomeComponent } from './home/home/home.component';
+import { HomeGuardService } from './home/home-guard.service';
+
 
 const routes: Routes = [
   {
-    path: '',
-    component: NotFoundComponent,
-    canActivate: [AuthGuardService]
-  },
-  {
     path: 'login',
-    component: SinginComponent
+    component: SinginComponent,
+    canActivate: [AuthGuardService],
   },
   {
-    path: 'pessoa/:id',
-    component: PessoaFormComponent
+    path: '',
+    component: HomeComponent,
+    canActivate:[HomeGuardService],
+    children: [
+      {
+        path: 'pessoa/:id',
+        component: PessoaFormComponent
+      },
+      {
+        path: 'grupo/:id',
+        component: GrupoViewComponent
+      },
+      {
+        path: 'grupos',
+        component: GrupoListComponent,
+        resolve: {
+          lista: GrupoListResolver
+        }
+      },
+      {
+        path: '**',
+        component: NotFoundComponent
+      }
+    ]
   },
-  {
-    path: 'grupo/:id',
-    component: GrupoViewComponent
-  },
-  {
-    path: 'grupos',
-    component: GrupoListComponent,
-    resolve: {
-      lista: GrupoListResolver
-    }
-  }
-    ,
-  {
-    path: '**',
-    component: NotFoundComponent
-  }
 ];
 
 @NgModule({

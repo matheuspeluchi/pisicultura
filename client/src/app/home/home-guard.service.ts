@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import { CanActivate } from '@angular/router/src/utils/preactivation';
 import { ActivatedRouteSnapshot, RouterStateSnapshot, Router } from '@angular/router';
-
-import { UserService } from '../user/user.service';
+import { Observable } from 'rxjs';
+import { UserService } from '../core/user/user.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class  AuthGuardService implements CanActivate {
+export class HomeGuardService implements CanActivate {
   path: ActivatedRouteSnapshot[];
   route: ActivatedRouteSnapshot;
 
@@ -17,11 +17,11 @@ export class  AuthGuardService implements CanActivate {
     ) { }
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
-    if (this.userService.islogged()) {
-      this.router.navigate(['']);
-      return false;
-
+    if (this.userService.islogged()) {      
+      return true;
     }
-    return true;
+    this.router.navigate(['login']);
+    return false;
   }
+  
 }

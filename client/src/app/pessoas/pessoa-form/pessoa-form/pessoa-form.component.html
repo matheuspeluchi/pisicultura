@@ -1,4 +1,4 @@
-<form [formGroup]="pessoaForm">
+<form [formGroup]="pessoaForm" (submit)="salvar()">
     <div class="form-group row">
       <label for="nome" class="col-sm-1 col-form-label">Nome</label>
       <div class="col-sm-4">

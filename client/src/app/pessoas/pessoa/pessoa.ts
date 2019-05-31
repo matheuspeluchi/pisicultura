@@ -1,15 +1,11 @@
 export interface Pessoa {
+  _id: String
   nome: string;
   endereco: string;
   bairro: string;
   enderecoNum: number;
   cep: string;
   celular: string;
-  tipoPessoa: {
-    id: string,
-    descricao: string,
-    relationSchema: string
-  };
   grupo:{
     id: string;
     nome: string;

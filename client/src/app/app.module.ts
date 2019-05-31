@@ -10,6 +10,8 @@ import { AppComponent } from './app.component';
 import { PessoaModule } from './pessoas/pessoas.module';
 import { ErrorsModule } from './errors/errors.module';
 import { GrupoModule } from './grupos/grupo.module';
+import { SinginModule } from './shared/components/singin/singin.module';
+
 
 
 
@@ -18,13 +20,14 @@ import { GrupoModule } from './grupos/grupo.module';
     AppComponent,
   ],
   imports: [
+    CoreModule,
     BrowserModule,
     AppRoutingModule,
     PessoaModule,
     GrupoModule,
     ErrorsModule,
     HomeModule,
-    CoreModule
+    SinginModule
   ],
   providers: [],
   bootstrap: [AppComponent]

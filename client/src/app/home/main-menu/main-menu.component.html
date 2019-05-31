@@ -1,5 +1,5 @@
 <header class="fixed-top">
-  <nav class="navbar navbar-expand-sm bg-primary navbar-dark py-0" >
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark py-0" >
     <a class="navbar-brand" href="#">
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Emoji_u1f41f.svg/1024px-Emoji_u1f41f.svg.png" width="30" height="30" alt="">
     </a>
@@ -9,7 +9,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-            <a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
+            <a class="nav-link" [routerLink]="['']">Inicio <span class="sr-only">(current)</span></a>
           </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -17,7 +17,7 @@
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="#">Unidades</a>
-            <a class="dropdown-item" href="#">Produtos</a>
+            <a class="dropdown-item" href="#">Gr</a>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="#">Usuarios</a>
           </div>
@@ -25,15 +25,22 @@
         <li class="nav-item">
           <a class="nav-link" href="#">Unidades</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Configuracoes</a>
-        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Configurações
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" [routerLink]="['grupos']">Grupos de Usuarios</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Usuarios</a>
+            </div>
+          </li>
       </ul>
     </div>
-    <div *ngIf="(user$ | async) as user; else login">
+    <div *ngIf="(user$ | async) as user; else login" class="navbar-text">
         <i class="fa fa-user-circle"></i>
         <a class="ml-2">{{user.nome}}</a>
-        <a class="mr-1" (click)="logout()">(Logout)</a>
+        <a class="mr-1" (click)="logout()"> (Logout)</a>
     </div>
   </nav>
 

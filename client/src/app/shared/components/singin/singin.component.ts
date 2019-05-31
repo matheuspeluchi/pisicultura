@@ -2,7 +2,7 @@ import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
-import { AuthService } from '../../core/auth/auth.service';
+import { AuthService } from '../../../core/auth/auth.service';
 import { PlatformDetectorService } from 'src/app/core/platform-detector/platform-detector.service';
 
 @Component({
@@ -35,7 +35,8 @@ export class SinginComponent implements OnInit {
     this.authService.authenticate(login, senha)
       .subscribe(
         () => {
-            this.router.navigate(['grupos']);
+            console.log('Usuario logado!')
+            this.router.navigate(['']);
           },
         err => {
           this.loginForm.reset();

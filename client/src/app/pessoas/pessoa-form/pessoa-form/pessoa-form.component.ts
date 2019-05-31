@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Pessoa } from '../../pessoa/pessoa';
+import { PessoaService } from '../../pessoa/pessoa.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-pessoa-form',
@@ -10,7 +13,11 @@ export class PessoaFormComponent implements OnInit {
 
   pessoaForm: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(
+    private formBuilder: FormBuilder,
+    private pessoaService: PessoaService,
+    private router: Router
+    ) { }
 
   ngOnInit() {
     this.pessoaForm = this.formBuilder.group({
@@ -22,6 +29,15 @@ export class PessoaFormComponent implements OnInit {
       bairro: ['', Validators.required],
       celular: ['', Validators.required],
     })
+  }
+
+  salvar(){
+    let pessoa:Pessoa = this.pessoaForm.getRawValue() as Pessoa;
+    this.pessoaService.save(pessoa)
+      .subscribe(
+        ()=> this.router.navigate(['grupo']),
+        err => console.log(err)
+        )
   }
 
 }

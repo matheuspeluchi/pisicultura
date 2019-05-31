@@ -36,6 +36,7 @@ router.put('/', (req,res)=>{
     let pessoaNew = new Pessoa(req.body); // this is modal object.
     pessoaNew.save()
        .then((data)=> {
+            console.log(`Cadastro da pessoa ${data.nome} realizado com sucesso!` )
             res.status = 200;
             res.send(data);
         })
