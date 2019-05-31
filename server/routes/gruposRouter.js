@@ -1,7 +1,7 @@
-let express = require('express');
-let router = express.Router();
+const express = require('express');
+const router = express.Router();
 
-let Grupo = require('../models/Grupo');
+const Grupo = require('../models/Grupo');
 
 
 router.get('/',(req,res)=>{

@@ -1,6 +1,4 @@
-let mongoose =require('mongoose');
-let tipos = require('./Ttipos');
-
+const mongoose = require('mongoose');
 
 let pessoaSchema = new mongoose.Schema({
     nome: {type: String, uppercase: true},
@@ -9,8 +7,7 @@ let pessoaSchema = new mongoose.Schema({
     enderecoNum: Number ,
     cep: {type: String, maxlength: 10},
     celular:{type: String,maxlength: 15},
-    tipoPessoa:{type: mongoose.Types.ObjectId, ref:'Tipos'},
-    grupo:{type:mongoose.Types.ObjectId, ref:'Grupo'},
+    grupo:{type: mongoose.Schema.Types.ObjectId, ref:'Grupo'},
     password:{type: String, },
     email: {type: String, unique: true},
     dataCadastro: Date,

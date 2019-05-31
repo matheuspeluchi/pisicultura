@@ -1,6 +1,6 @@
-let express = require('express');
-let router = express.Router();
-let Tipo = require('../models/Ttipos');
+const express = require('express');
+const router = express.Router();
+const Tipo = require('../models/Tipo');
 
 router.put('/',(req,res)=>{
     let tipo = new Tipo(req.body);
@@ -15,6 +15,5 @@ router.get('/',(req,res)=>{
         .then(data=> res.status(200).send(data))
         .catch(err=>res.status(500).send(err))
 })
-
 
 module.exports = router;

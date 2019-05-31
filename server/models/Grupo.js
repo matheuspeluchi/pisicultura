@@ -1,4 +1,4 @@
-let mongoose = require('mongoose');
+const mongoose = require('mongoose');
 
 let grupoSchema = new mongoose.Schema({
     nome:{type:String,required:true},

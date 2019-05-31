@@ -1,17 +1,13 @@
-let express = require('express');
-let router = express.Router();
-let Pessoa = require('../models/Pessoa');
-let jwt = require('../core/auth/auth');
-
+const express = require('express');
+const Pessoa = require('../models/Pessoa');
+const jwt = require('../core/auth/auth');
+const router = express.Router();
 
 
 router.post('/', (req,res)=>{
-    console.log(req.body);
     let login = req.body.login;
     let senha = req.body.senha
-    Pessoa.find ({"email": login, "password":senha}) 
-        .populate('tipoPessoa')
-        .populate('grupo')
+    Pessoa.find ({"email": login, "password":senha})
         .then ((data) => { 
             if (data.length != 1){
                 res.status(401).send('Erro ao localizar usuario com as credenciais informadas!');

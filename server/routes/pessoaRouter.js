@@ -1,7 +1,6 @@
-let express = require('express');
-let router = express.Router();
-
-let Pessoa = require('../models/Pessoa');
+const express = require('express');
+const router = express.Router();
+const Pessoa = require('../models/Pessoa');
 
 
 router.post('/:id',(req,res)=>{
