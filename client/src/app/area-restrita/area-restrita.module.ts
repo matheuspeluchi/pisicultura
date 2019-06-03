@@ -1,21 +1,21 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AreaRestritaComponent } from './area-restrita/area-restrita.component';
-import { EmpresaComponent } from './empresa/empresa.component';
 
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { EmpresaListComponent } from './empresa/empresa-list/empresa-list.component';
-import { EmpresaListModule } from './empresa/empresa-list/empresa-list.module';
+import { EmpresaModule } from './empresas/empresa.module';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
-  declarations: [AreaRestritaComponent, EmpresaComponent],
+  declarations: [AreaRestritaComponent],
   imports: [
     CommonModule,
     HttpClientModule,
     ReactiveFormsModule,
-    EmpresaListModule
-  ],
+    EmpresaModule,
+    RouterModule  
+    ],
   exports:[]
 })
 export class AreaRestritaModule { }

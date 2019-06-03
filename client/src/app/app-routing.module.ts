@@ -12,7 +12,9 @@ import { HomeComponent } from './home/home/home.component';
 import { HomeGuardService } from './home/home-guard.service';
 import { AreaRestritaComponent } from './area-restrita/area-restrita/area-restrita.component';
 import { resolve } from 'q';
-import { EmpresaListResolver } from './area-restrita/empresa/empresa-list/empresa-list.resolver';
+import { EmpresaListResolver } from './area-restrita/empresas/empresa-list/empresa-list.resolver';
+import { EmpresaListComponent } from './area-restrita/empresas/empresa-list/empresa-list.component';
+import { EmpresaComponent } from './area-restrita/empresas/empresa/empresa.component';
 
 
 const routes: Routes = [
@@ -42,11 +44,14 @@ const routes: Routes = [
         }
       },
       {
-        path: 'areaRestrita',
+        path: 'arearestrita',
         component: AreaRestritaComponent,
-        resolve: {
-          lista: EmpresaListResolver
-        }
+        children:[
+          {
+            path:'empresa',
+            component: EmpresaComponent
+          },
+        ]
       },
       {
         path: '**',

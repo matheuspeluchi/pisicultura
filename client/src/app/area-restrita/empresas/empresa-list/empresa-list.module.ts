@@ -8,6 +8,9 @@ import { ListaModule } from 'src/app/shared/components/lista/lista.module';
   imports: [
     CommonModule,
     ListaModule
+  ],
+  exports:[
+    EmpresaListComponent
   ]
 })
 export class EmpresaListModule { }
