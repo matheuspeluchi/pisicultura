@@ -8,6 +8,7 @@ import { SinginComponent } from './shared/components/singin/singin.component';
 import { HomeComponent } from './home/home/home.component';
 import { HomeGuardService } from './home/home-guard.service';
 import { AuthGuardService } from './core/auth/auth-guard.service';
+import { EmpresaListResolver } from './area-restrita/empresas/empresa-list/empresa-list.resolver';
 
 
 
@@ -24,7 +25,8 @@ const routes: Routes = [
     children:[
       {
         path: 'arearestrita',
-        loadChildren: './area-restrita/area-restrita.module#AreaRestritaModule'
+        loadChildren: './area-restrita/area-restrita.module#AreaRestritaModule',
+      
       }
     ]
   },

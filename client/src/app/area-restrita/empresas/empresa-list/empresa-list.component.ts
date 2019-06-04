@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+
 import { Empresa } from '../empresa';
 import { EmpresaService } from '../empresa.service';
 
@@ -21,15 +22,15 @@ export class EmpresaListComponent implements OnInit {
     {headerName: 'Cidade', field: 'cidade.nome', sortable: true, resizable: true},
     {headerName: 'Telefone', field: 'telefone', sortable: true, resizable: true}
   ]
-
-
-  constructor(private empresaService: EmpresaService) { }
-
+  
+  
+  constructor( private empresaService: EmpresaService ) { }
+  
   ngOnInit() {
     this.empresaService.getEmpresas().subscribe(data => {
       this.empresas = data
     });
-      console.log(this.empresas)
+    console.log(this.empresas)
   }
-
+  
 }
