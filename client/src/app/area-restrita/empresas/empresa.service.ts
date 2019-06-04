@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Empresa } from './empresa';
 
 
-const API_URL = 'http://localhost:3000/empresa'
+const URL = 'http://localhost:3000/empresa'
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +14,7 @@ export class EmpresaService {
     this.http = http;
   }
 
-  getList(){
-    return this.http.get<Empresa[]>(API_URL);
+  getEmpresas(){
+    return this.http.get<Empresa[]>(URL);
   }
 }

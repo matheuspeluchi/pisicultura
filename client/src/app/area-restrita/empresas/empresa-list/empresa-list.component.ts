@@ -9,6 +9,7 @@ import { EmpresaService } from '../empresa.service';
 })
 export class EmpresaListComponent implements OnInit {
 
+  empresas: Empresa[] = [];
   columnDefs: [
     {headerName: 'Razão Social', field: 'rsocial', sortable: true, resizable: true},
     {headerName: 'Fantasia', field: 'fantasia', sortable: true, resizable: true},
@@ -21,13 +22,14 @@ export class EmpresaListComponent implements OnInit {
     {headerName: 'Telefone', field: 'telefone', sortable: true, resizable: true}
   ]
 
-  empresas: Empresa[];
 
-  constructor(private empresaService:EmpresaService) { }
+  constructor(private empresaService: EmpresaService) { }
 
   ngOnInit() {
-    this.empresaService.getList()
-      .subscribe(data=> this.empresas = data);
+    this.empresaService.getEmpresas().subscribe(data => {
+      this.empresas = data
+    });
+      console.log(this.empresas)
   }
 
 }

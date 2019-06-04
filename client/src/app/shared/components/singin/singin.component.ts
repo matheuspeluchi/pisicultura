@@ -39,7 +39,7 @@ export class SinginComponent implements OnInit {
             this.router.navigate(['']);
           },
         err => {
-          this.loginForm.reset();
+         // this.loginForm.reset();
           // tslint:disable-next-line:no-unused-expression
           this.platformDetectionService.isPlataformBrowser() && this.loginInput.nativeElement.focus();
           console.log(err.error);

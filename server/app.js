@@ -55,7 +55,7 @@ const empresaRouter = require ('./routes/empresaRouter');
 app.use('/login', loginRouter);
 app.use('/pessoa', pessoaRouter);
 app.use('/tipos', tiposRouter);
-app.use('/grupo', gruposRouter);
+app.use('/grupos', gruposRouter);
 app.use('/cidade', cidadeRouter);
 app.use('/empresa', empresaRouter);
 

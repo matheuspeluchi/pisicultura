@@ -9,9 +9,7 @@ import { AppComponent } from './app.component';
 // Minhas importações
 import { PessoaModule } from './pessoas/pessoas.module';
 import { ErrorsModule } from './errors/errors.module';
-import { GrupoModule } from './grupos/grupo.module';
 import { SinginModule } from './shared/components/singin/singin.module';
-import { AreaRestritaModule } from './area-restrita/area-restrita.module';
 
 
 
@@ -23,13 +21,11 @@ import { AreaRestritaModule } from './area-restrita/area-restrita.module';
   imports: [
     CoreModule,
     BrowserModule,
-    AppRoutingModule,
     PessoaModule,
-    GrupoModule,
     ErrorsModule,
     HomeModule,
     SinginModule,
-    AreaRestritaModule
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

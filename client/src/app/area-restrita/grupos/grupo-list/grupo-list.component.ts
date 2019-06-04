@@ -10,7 +10,6 @@ import { Grupo } from '../grupo';
 export class GrupoListComponent implements OnInit {
 
   grupos: Grupo[] = [];
-  grid: object = null;
   columnDefs = [
     {headerName: 'Nome', field: 'nome', sortable: true, resizable: true},
     {headerName: 'Descrição', field: 'descricao', sortable: true, resizable: true },

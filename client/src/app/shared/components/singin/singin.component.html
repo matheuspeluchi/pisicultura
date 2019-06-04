@@ -10,7 +10,7 @@
 
     <br>
 
-    <form [formGroup]="loginForm" (submit)="login(loginForm)">
+    <form [formGroup]="loginForm" (submit)="login()">
 
         <input class="form-control fadeIn second" placeholder="E-mail"  autofocus formControlName="login" #loginInput>
         <app-msg-form texto="O campo login é obrigatório!" *ngIf="loginForm.get('login').errors?.required"></app-msg-form>

@@ -1,12 +1,14 @@
-import { GrupoViewComponent } from './grupo-view.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { GrupoListComponent } from '../grupo-list/grupo-list.component';
+import { FormsModule } from '@angular/forms';
+
+import { GrupoViewComponent } from './grupo-view.component';
 
 @NgModule({
   declarations: [GrupoViewComponent],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule
   ]
 })
 export class GrupoViewModule { }

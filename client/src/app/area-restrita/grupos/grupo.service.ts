@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 
 import { Grupo } from './grupo';
 
-const url = 'http://localhost:3000';
+const url = 'http://localhost:3000/grupos';
 
 @Injectable({
   providedIn: 'root'
@@ -15,16 +15,16 @@ export class GrupoService {
    }
 
    getGrupos() {
-     return this.http.get<Grupo[]>(url + '/grupo');
+     return this.http.get<Grupo[]>(url);
    }
 
    getGrupo(id: string) {
-     return this.http.get<Grupo>(url + '/grupo/' + id);
+     return this.http.get<Grupo>(url + id);
    }
 
    save(grupo: Grupo) {
-     const novo: boolean = grupo.id = null;
-     return (novo ? this.http.put : this.http.post)<Grupo>(url + '/grupo/' + grupo.id, grupo );
+     const novo: boolean = grupo.id == null;
+     return (novo ? this.http.put : this.http.post)<Grupo>(url + grupo.id, grupo );
    }
 
 

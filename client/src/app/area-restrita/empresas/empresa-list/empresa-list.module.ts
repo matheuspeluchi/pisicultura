@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+
 import { EmpresaListComponent } from './empresa-list.component';
 import { ListaModule } from 'src/app/shared/components/lista/lista.module';
 
@@ -8,9 +9,6 @@ import { ListaModule } from 'src/app/shared/components/lista/lista.module';
   imports: [
     CommonModule,
     ListaModule
-  ],
-  exports:[
-    EmpresaListComponent
   ]
 })
 export class EmpresaListModule { }
