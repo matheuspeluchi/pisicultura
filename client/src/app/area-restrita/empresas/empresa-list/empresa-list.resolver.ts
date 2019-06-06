@@ -1,4 +1,4 @@
-import { Resolve } from '@angular/router';
+import { Resolve, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
 
@@ -10,7 +10,7 @@ export class EmpresaListResolver implements Resolve<Observable<Empresa[]>>{
 
   constructor(private empresaService: EmpresaService){}
 
-  resolve() {
+  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Empresa[]> {
     return this.empresaService.getEmpresas();
   }
 }

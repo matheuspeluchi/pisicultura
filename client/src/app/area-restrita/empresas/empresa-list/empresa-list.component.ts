@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 
 import { Empresa } from '../empresa';
 import { EmpresaService } from '../empresa.service';
+import { Observable } from 'rxjs';
+import { timeout } from 'q';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-empresa-list',
@@ -10,7 +13,7 @@ import { EmpresaService } from '../empresa.service';
 })
 export class EmpresaListComponent implements OnInit {
 
-  empresas: Empresa[] = [];
+  empresas: Empresa[];
   columnDefs: [
     {headerName: 'Razão Social', field: 'rsocial', sortable: true, resizable: true},
     {headerName: 'Fantasia', field: 'fantasia', sortable: true, resizable: true},
@@ -24,12 +27,10 @@ export class EmpresaListComponent implements OnInit {
   ]
   
   
-  constructor( private empresaService: EmpresaService ) { }
+  constructor( private activatedRoute: ActivatedRoute ) { }
   
   ngOnInit() {
-    this.empresaService.getEmpresas().subscribe(data => {
-      this.empresas = data
-    });
+    this.empresas = this.activatedRoute.snapshot.data['empresas']
     console.log(this.empresas)
   }
   

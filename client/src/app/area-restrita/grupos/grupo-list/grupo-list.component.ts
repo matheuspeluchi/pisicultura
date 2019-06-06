@@ -1,6 +1,7 @@
 import { GrupoService } from '../grupo.service';
 import { Component, OnInit } from '@angular/core';
 import { Grupo } from '../grupo';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-grupo-list',
@@ -15,11 +16,13 @@ export class GrupoListComponent implements OnInit {
     {headerName: 'Descrição', field: 'descricao', sortable: true, resizable: true },
   ];
 
-  constructor( private grupoService: GrupoService ) { }
+  constructor(
+     private grupoService: GrupoService,
+     private activatedRoute: ActivatedRoute
+     ) { }
 
   ngOnInit() {
-    this.grupoService.getGrupos().subscribe(data => {
-      this.grupos = data;
-    });
-  }
+    this.grupos = this.activatedRoute.snapshot.data['grupos'];
+    };
+  
 }
