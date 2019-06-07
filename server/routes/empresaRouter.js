@@ -5,6 +5,7 @@ const router = express.Router();
 
 router.get('/',(req,res)=>{
     Empresa.find()
+        .populate('cidade')
         .then(data=> res.status(200).send(data))
         .catch(err => res.status(500).send(err));
 })

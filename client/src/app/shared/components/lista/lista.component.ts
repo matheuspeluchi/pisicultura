@@ -19,15 +19,12 @@ export class ListaComponent implements OnInit {
 
   constructor(private activatedRoute: ActivatedRoute) { }
 
-  ngOnInit() {
-
-    this.lista = this.activatedRoute.snapshot.data.lista;
-
-  }
+  ngOnInit() { }
 
   onGridReady(params: any) {
     this.gridApi = params.api;
     this.gridColumnApi = params.columnApi;
+    this.sizeToFit();
     this.autoSizeAll();
   }
 

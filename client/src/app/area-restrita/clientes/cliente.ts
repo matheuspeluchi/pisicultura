@@ -1,4 +1,4 @@
-export interface Empresa {
+export interface Cliente {
     _id: {type: string, alias:'id'},
     razaoSocial: string,
     fantasia: string,

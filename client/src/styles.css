@@ -1,8 +1,8 @@
 body div {
   font-size: 13px !important;
 }
-input {
-  height: 25px !important;
+input, select {
+  height: 30px !important;
   font-size: 12px !important;
 }
 

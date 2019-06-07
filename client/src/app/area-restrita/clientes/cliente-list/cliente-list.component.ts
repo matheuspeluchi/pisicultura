@@ -1,20 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Empresa } from '../empresa';
-import { EmpresaService } from '../empresa.service';
-import { Observable } from 'rxjs';
-import { timeout } from 'q';
+import { Cliente } from '../cliente';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-empresa-list',
-  templateUrl: './empresa-list.component.html',
-  styleUrls: ['./empresa-list.component.css']
+  selector: 'app-cliente-list',
+  templateUrl: './cliente-list.component.html',
+  styleUrls: ['./cliente-list.component.css']
 })
-export class EmpresaListComponent implements OnInit {
+export class ClienteListComponent implements OnInit {
 
-  empresas: Empresa[];
-  columnDefs: [
+  clientes: Cliente[];
+  columnDefs = [
     {headerName: 'Razão Social', field: 'rsocial', sortable: true, resizable: true},
     {headerName: 'Fantasia', field: 'fantasia', sortable: true, resizable: true},
     {headerName: 'CNPJ', field: 'cnpj', sortable: true, resizable: true},
@@ -24,14 +21,14 @@ export class EmpresaListComponent implements OnInit {
     {headerName: 'Bairro', field: 'bairro', sortable: true, resizable: true},
     {headerName: 'Cidade', field: 'cidade.nome', sortable: true, resizable: true},
     {headerName: 'Telefone', field: 'telefone', sortable: true, resizable: true}
-  ]
-  
+  ];
+
   
   constructor( private activatedRoute: ActivatedRoute ) { }
   
   ngOnInit() {
-    this.empresas = this.activatedRoute.snapshot.data['empresas']
-    console.log(this.empresas)
+    this.clientes = this.activatedRoute.snapshot.data['empresas']
+    
   }
   
 }

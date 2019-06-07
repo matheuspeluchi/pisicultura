@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { PessoaModule } from './pessoas/pessoas.module';
 import { ErrorsModule } from './errors/errors.module';
 import { SinginModule } from './shared/components/singin/singin.module';
+import { CidadeModule } from './shared/components/cidades/cidade/cidade.module';
 
 
 
@@ -17,6 +18,7 @@ import { SinginModule } from './shared/components/singin/singin.module';
 @NgModule({
   declarations: [
     AppComponent,
+
   ],
   imports: [
     CoreModule,
@@ -24,6 +26,7 @@ import { SinginModule } from './shared/components/singin/singin.module';
     PessoaModule,
     ErrorsModule,
     HomeModule,
+    CidadeModule,
     SinginModule,
     AppRoutingModule,
   ],

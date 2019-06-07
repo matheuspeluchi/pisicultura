@@ -6,8 +6,9 @@ import { GrupoListComponent } from './grupos/grupo-list/grupo-list.component';
 import { IndexComponent } from './index/index.component';
 import { GrupoListResolver } from './grupos/grupo-list/grupo-list.resolver';
 import { GrupoViewComponent } from './grupos/grupo-view/grupo-view.component';
-import { EmpresaListResolver } from './empresas/empresa-list/empresa-list.resolver';
-import { EmpresaListComponent } from './empresas/empresa-list/empresa-list.component';
+import { ClienteListResolver } from './clientes/cliente-list/cliente-list.resolver';
+import { ClienteListComponent } from './clientes/cliente-list/cliente-list.component';
+import { ClienteComponent } from './clientes/cliente/cliente.component';
 
 const routes: Routes = [
     {
@@ -20,10 +21,14 @@ const routes: Routes = [
             },
             {
                 path:'empresa',
-                component: EmpresaListComponent,
+                component: ClienteListComponent,
                 resolve: {
-                    empresas: EmpresaListResolver
+                    empresas: ClienteListResolver
                 }
+            },
+            {
+                path:'empresa/novo',
+                component:ClienteComponent
             },
             {
                 path: 'grupo/:id',
