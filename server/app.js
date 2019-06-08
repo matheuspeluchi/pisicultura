@@ -44,22 +44,9 @@ app.use(bodyParser.json());
 
 
   
-//Rotas_Inicio
+//Rotas 
 
-const loginRouter = require ('./routes/loginRouter');
-const pessoaRouter = require ('./routes/pessoaRouter');
-const tiposRouter = require ('./routes/tipoRouter');
-const gruposRouter = require ('./routes/gruposRouter');
-const cidadeRouter = require ('./routes/cidadeRouter');
-const empresaRouter = require ('./routes/empresaRouter');
-app.use('/login', loginRouter);
-app.use('/pessoa', pessoaRouter);
-app.use('/tipos', tiposRouter);
-app.use('/grupos', gruposRouter);
-app.use('/cidade', cidadeRouter);
-app.use('/empresa', empresaRouter);
-
-//Rotas_Fim
+app.use('/', require('./routes'))
 
 
   

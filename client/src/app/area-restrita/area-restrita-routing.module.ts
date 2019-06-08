@@ -20,14 +20,14 @@ const routes: Routes = [
                 component: IndexComponent,
             },
             {
-                path:'empresa',
+                path:'cliente',
                 component: ClienteListComponent,
                 resolve: {
-                    empresas: ClienteListResolver
+                    clientes: ClienteListResolver
                 }
             },
             {
-                path:'empresa/novo',
+                path:'cliente/novo',
                 component:ClienteComponent
             },
             {

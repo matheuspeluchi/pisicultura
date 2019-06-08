@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Empresa } from '../clientes/cliente';
-import { EmpresaService } from '../clientes/cliente.service';
 
 @Component({
   selector: 'app-area-restrita',

@@ -14,7 +14,7 @@ export class ClienteService {
     this.http = http;
   }
 
-  getEmpresas(){
+  getClientes(){
     return this.http.get<Cliente[]>(URL);
   }
 }

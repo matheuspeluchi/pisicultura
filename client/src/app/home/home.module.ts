@@ -7,12 +7,14 @@ import { MsgFormModule } from './../shared/components/msg-form/msg-form.module';
 import { HomeComponent } from './home/home.component';
 import { MainMenuComponent } from './main-menu/main-menu.component';
 import { FooterComponent } from './footer/footer.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
 
 @NgModule({
   declarations: [ 
     HomeComponent,
     MainMenuComponent,
-    FooterComponent
+    FooterComponent,
+    SidebarComponent
   ],
   imports: [
     CommonModule,
@@ -25,7 +27,8 @@ import { FooterComponent } from './footer/footer.component';
   exports: [
     HomeComponent,
     MainMenuComponent,
-    FooterComponent
+    FooterComponent,
+    SidebarComponent
   ]
 })
 export class HomeModule { }

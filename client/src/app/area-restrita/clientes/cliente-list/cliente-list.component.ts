@@ -27,7 +27,7 @@ export class ClienteListComponent implements OnInit {
   constructor( private activatedRoute: ActivatedRoute ) { }
   
   ngOnInit() {
-    this.clientes = this.activatedRoute.snapshot.data['empresas']
+    this.clientes = this.activatedRoute.snapshot.data['clientes']
     
   }
   

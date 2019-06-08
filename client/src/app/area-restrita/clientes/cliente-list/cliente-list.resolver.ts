@@ -11,6 +11,6 @@ export class ClienteListResolver implements Resolve<Observable<Cliente[]>>{
   constructor(private clienteService: ClienteService){}
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Cliente[]> {
-    return this.clienteService.getEmpresas();
+    return this.clienteService.getClientes();
   }
 }
