@@ -13,7 +13,7 @@ import { PlatformDetectorService } from 'src/app/core/platform-detector/platform
 export class SinginComponent implements OnInit {
 
   loginForm: FormGroup;
-  @ViewChild('loginInput') loginInput: ElementRef<HTMLInputElement>;
+  @ViewChild('loginInput', { static: true }) loginInput: ElementRef<HTMLInputElement>;
 
   constructor(
     private formBuilder: FormBuilder,

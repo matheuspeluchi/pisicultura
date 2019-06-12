@@ -24,7 +24,7 @@ const routes: Routes = [
     children:[
       {
         path: 'arearestrita',
-        loadChildren: './area-restrita/area-restrita.module#AreaRestritaModule',
+        loadChildren: () => import('./area-restrita/area-restrita.module').then(m => m.AreaRestritaModule),
       
       }
     ]
