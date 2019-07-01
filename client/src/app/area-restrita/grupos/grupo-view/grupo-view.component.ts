@@ -18,9 +18,11 @@ export class GrupoViewComponent implements OnInit {
     ) { }
 
   ngOnInit() {
-    const id = this.activatedRoute.snapshot.params.id;
-    this.grupoService.getGrupo(id)
-      .subscribe(data => this.grupo = data);
+    this.activatedRoute.params.subscribe(params => {
+      let id = params.id;
+      this.grupoService.getGrupo(id)
+        .subscribe(data => this.grupo = data);
+    });
   }
 
 
