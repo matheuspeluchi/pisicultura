@@ -16,4 +16,4 @@ router.use('/grupos', gruposRouter);
 router.use('/cidade', cidadeRouter);
 router.use('/empresa', empresaRouter);
 
-module.exports = router;z
+module.exports = router;

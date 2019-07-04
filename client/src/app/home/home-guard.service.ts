@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
-import { CanActivate } from '@angular/router/src/utils/preactivation';
-import { ActivatedRouteSnapshot, RouterStateSnapshot, Router } from '@angular/router';
+import { ActivatedRouteSnapshot, RouterStateSnapshot, Router, CanActivate } from '@angular/router';
 import { UserService } from '../core/user/user.service';
 
 @Injectable({
@@ -16,11 +15,10 @@ export class HomeGuardService implements CanActivate {
     ) { }
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
-    if (this.userService.islogged()) {      
+    if (this.userService.islogged()) {
       return true;
     }
     this.router.navigate(['login']);
     return false;
   }
-  
 }
