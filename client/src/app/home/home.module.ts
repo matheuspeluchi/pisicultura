@@ -9,7 +9,6 @@ import { MainMenuComponent } from './main-menu/main-menu.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { MenuComponent } from './menu/menu.component';
-import { SettingsComponent } from './settings/settings.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +17,6 @@ import { SettingsComponent } from './settings/settings.component';
     FooterComponent,
     HeaderComponent,
     MenuComponent,
-    SettingsComponent
   ],
   imports: [
     CommonModule,

@@ -1,4 +1,5 @@
 
+
 <div class="wrapper fadeInDown">
   <div id="formContent">
     <!-- Tabs Titles -->
@@ -11,14 +12,14 @@
     <br>
 
     <form [formGroup]="loginForm" (submit)="login()">
-
-        <input class="form-control fadeIn second" placeholder="E-mail"  autofocus formControlName="login" #loginInput>
-        <app-msg-form texto="O campo login é obrigatório!" *ngIf="loginForm.get('login').errors?.required"></app-msg-form>
-
-
-        <input type="password" class="form-control fadeIn third" placeholder="Senha" formControlName="password">
-        <app-msg-form texto="O campo senha é obrigatório!" *ngIf="loginForm.get('password').errors?.required"></app-msg-form>
-
+        <div class="p-2">
+          <input class="form-control fadeIn second" placeholder="E-mail"  autofocus formControlName="login" #loginInput>
+          <app-msg-form texto="O campo login é obrigatório!" *ngIf="loginForm.get('login').errors?.required"></app-msg-form>
+        </div>
+        <div class="p-2">
+          <input type="password" class="form-control fadeIn third" placeholder="Senha" formControlName="password">
+          <app-msg-form texto="O campo senha é obrigatório!" *ngIf="loginForm.get('password').errors?.required"></app-msg-form>
+        </div>
 
         <button [disabled]="loginForm.invalid" type="submit" class="btn btn-primary btn-block">
             Entrar

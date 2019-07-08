@@ -1,80 +1,95 @@
-<aside class="main-sidebar">
-  <!-- sidebar: style can be found in sidebar.less -->
-  <section class="sidebar">
-    <!-- Sidebar user panel -->
-    <div class="user-panel">
-      <div class="pull-left image">
-        <img src="assets/user2-160x160.png" class="img-circle" alt="User Image">
-      </div>
-      <div class="pull-left info">
-        <p *ngIf="(user$ | async) as user">{{user.nome}}</p>
-        <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
-      </div>
+<nav id="sidebar" class="bg-dark">
+    <div class="sidebar-header m-1 p-1">
+        <h3>PisicAdmin</h3>
     </div>
-    <!-- search form -->
-    <form action="#" method="get" class="sidebar-form">
-      <div class="input-group">
-        <input type="text" name="q" class="form-control" placeholder="Search...">
-        <span class="input-group-btn">
-              <button type="submit" name="search" id="search-btn" class="btn btn-flat">
-                <i class="fa fa-search"></i>
-              </button>
-            </span>
-      </div>
-    </form>
-    <!-- /.search form -->
-    <!-- sidebar menu: : style can be found in sidebar.less -->
-    <ul class="sidebar-menu" data-widget="tree">
-      <li class="header">Menu Principal</li>
-      <li class="active treeview menu-open">
-          <a href="#">
-            <i class="fa fa-dashboard"></i> <span>Dashboard</span>
-          </a>
-      </li>
-      <li class="active treeview menu-open">
-        <a href="#">
-          <i class="fa fa-files-o"></i> <span>Cadastros</span>
-          <span class="pull-right-container">
-            <i class="fa fa-angle-left pull-right"></i>
-          </span>
-        </a>
-        <ul class="treeview-menu">
-          <li><a href="index.html"><i class="fa fa-circle-o"></i>Unidades</a></li>
-          <li class="active"><a href="index2.html"><i class="fa fa-circle-o"></i>Tarefas</a></li>
-          <li class="active"><a href="index2.html"><i class="fa fa-circle-o"></i>Produtos</a></li>
-        </ul>
-      </li>
-      <li class="treeview">
-        <a href="#">
-          <i class="fa fa-th  "></i>
-          <span>Tarefas</span>
-          <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-          </span>
-        </a>
-        <ul class="treeview-menu">
-          <li><a href="#"><i class="fa fa-circle-o"></i> Top Navigation</a></li>
-          <li><a href="#"><i class="fa fa-circle-o"></i> Boxed</a></li>
-          <li><a href="#"><i class="fa fa-circle-o"></i> Fixed</a></li>
-          <li><a href="#"><i class="fa fa-circle-o"></i> Collapsed Sidebar</a></li>
-        </ul>
-      </li>
-      <li class="treeview">
-        <a href="#">
-          <i class="fa fa-pie-chart"></i> <span>Relatórios</span>
-          <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-          </span>
-        </a>
-        <ul class="treeview-menu">
-          <li><a href="#"><i class="fa fa-circle-o"></i> Relatório de Vendas</a></li>
-          <li><a href="#"><i class="fa fa-circle-o"></i> Relatório de Produção</a></li>
-          <li><a href="#"><i class="fa fa-circle-o"></i> Relatório de Estoque</a></li>
-          <li><a href="#"><i class="fa fa-circle-o"></i> Relatório de Manutenção</a></li>            
-        </ul>
-      </li>
-     
+    <hr class="my-0">
+    <small class="text-center my-0">Menu Principal</small>
+    <hr class="my-0">
+    <ul class="list-unstyled components my-0">      
+        
+        <li class="active">
+            <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                <i class="fa fa-book mr-2"></i>
+                Cadastros
+            </a>
+            <ul class="collapse list-unstyled" id="homeSubmenu">
+                <li>
+                    <a href="#" class="before">
+                        <i class="fa fa-genderless" aria-hidden="true"></i>
+                        Unidades
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fa fa-genderless" aria-hidden="true"></i>
+                        Produtos
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fa fa-genderless" aria-hidden="true"></i>
+                        Espécies
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <hr class="my-0">
+        <li>
+            <a href="#ulAnalise" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                <i class="fas fa-bong mr-2"></i>
+                Análises
+            </a>
+            <ul class="collapse list-unstyled" id="ulAnalise">
+                <li>
+                    <a href="#" class="before">
+                        <i class="fa fa-genderless" aria-hidden="true"></i>
+                        Água
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fa fa-genderless" aria-hidden="true"></i>
+                        Amônia
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fa fa-genderless" aria-hidden="true"></i>
+                        Oxienio
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <hr class="my-0">
+        <li>
+            <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pages</a>
+            <ul class="collapse list-unstyled">
+                <li>
+                    <a href="#">
+                        <i class="fa fa-genderless" aria-hidden="true"></i>
+                        Page 1</a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fa fa-genderless" aria-hidden="true"></i>
+                        Page 2                        
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fa fa-genderless" aria-hidden="true"></i>
+                        Page 3</a>
+                </li>
+            </ul>
+        </li>
+        <hr class="my-0">
+        <li>
+            <a href="#">Portfolio</a>
+        </li>
+        <hr class="my-0">
+        <li>
+            <a href="#">Contact</a>
+        </li>
+        <hr class="my-0">
     </ul>
-  </section>
-  <!-- /.sidebar -->
-</aside>
+</nav>
