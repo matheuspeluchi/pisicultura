@@ -1,4 +1,18 @@
 nav {
     height: 40px;
     z-index: 0;
+    color: white !important;
+}
+
+.username a{
+    color: white;
+}
+
+.navbar-brand {
+    color: white;
+    width: 250px;
+    background-color: #0278c2;
+    height: 40px;
+    font-size: 22px
+    
 }

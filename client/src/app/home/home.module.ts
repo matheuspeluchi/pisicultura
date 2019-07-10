@@ -9,6 +9,7 @@ import { MainMenuComponent } from './main-menu/main-menu.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { MenuComponent } from './menu/menu.component';
+import { ContentHeaderComponent } from './content-header/content-header.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { MenuComponent } from './menu/menu.component';
     FooterComponent,
     HeaderComponent,
     MenuComponent,
+    ContentHeaderComponent,
   ],
   imports: [
     CommonModule,

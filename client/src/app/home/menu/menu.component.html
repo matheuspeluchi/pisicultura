@@ -1,11 +1,25 @@
 <nav id="sidebar" class="bg-dark">
     <div class="sidebar-header m-1 p-1">
-        <h3>PisicAdmin</h3>
+        <div *ngIf="(user$ | async) as user; else login">
+            <div class="row">
+                <div class="col-sm-4">
+                    <i class="fa fa-3x fa-user-circle m-0 p-0"></i>    
+                </div>
+                <div class="col-sm-8">
+                    <div class="row">
+                        <a  href="#" class="my-0 mr-2">{{user.nome}}</a>
+                    </div>
+                    <div class="row">
+                        Online
+                    </div>                
+                </div>
+            </div>
+        </div>
     </div>
-    <hr class="m-0">
-    <small class="text-center my-0">Menu Principal</small>
+
     <hr class="my-0">
-    <ul class="list-unstyled components m-1 p-0">      
+
+    <ul class="list-unstyled components m-0 p-1">      
         
         <li class="active">
             <a href="#cadastros" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
@@ -62,11 +76,11 @@
         </li>
         <hr class="my-0">
         <li>
-            <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+            <a href="#ulRelatorios" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                 <i class="fa fa-file-excel-o mr-1" aria-hidden="true"></i>
                 Relatórios
             </a>
-            <ul class="collapse list-unstyled">
+            <ul class="collapse list-unstyled" id="ulRelatorios">
                 <li>
                     <a href="#">
                         <i class="fa fa-genderless" aria-hidden="true"></i>

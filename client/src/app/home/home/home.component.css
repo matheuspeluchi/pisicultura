@@ -3,6 +3,11 @@
     height: 100%;
 }
 
+#content {
+    padding-top: 90px;
+    padding-left: 250px;
+    width: 100%;
+}
 
 
 #sidebar.active {

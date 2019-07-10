@@ -1,5 +1,24 @@
 <header class="fixed-top">
-    <nav class="navbar navbar-light bg-primary">
-        <span class="navbar-brand m-0 p-0 h1">Navbar</span>
+    <nav class="navbar navbar-light bg-primary text-center m-0 p-0">
+        <div class="navbar-brand m-0">
+            <img src="/assets/logo.png" class="align-self-start" width="40" height="40">
+            <span class=" h5 my-2 py-2 ml-2">PisicAdmin</span>
+        </div>
+        <hr>
+        <div *ngIf="(user$ | async) as user; else login" class="navbar-text mr-3 p-0 username">
+            <a  href="#" class="my-0 mr-2" (click)="logout()">
+                <i class="fa fa-lg fa-user-circle m-0 p-0"></i>    
+                {{user.nome}}
+            </a>
+            <a href="#" [routerLink]="['arearestrita']" class="my-0 mr-3">
+                <i class="fa fa-cogs"></i>
+            </a>
+        </div>
+
+        <ng-template #login>
+                <span class="navbar-text">
+                  <a [routerLink]="['login']">Efetue Login</a>
+                </span>
+        </ng-template>
     </nav>
 </header>
