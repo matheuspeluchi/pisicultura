@@ -1,14 +1,15 @@
-nav {
-    height: 40px;
+.menuSecundario nav {
+    height: 40px !important;
     z-index: 0;
     color: white !important;
+    padding-left: 0 !important;
 }
 
 .username a{
     color: white;
 }
 
-.navbar-brand {
+.menuSecundario .navbar-brand {
     color: white;
     width: 250px;
     background-color: #0278c2;
@@ -17,3 +18,11 @@ nav {
     
 }
 
+#userHeaderMenu {
+    align-items: flex-end !important;
+    margin-left: auto;
+}
+
+ul .dropdown-menu{
+    font-size: 12px;
+}

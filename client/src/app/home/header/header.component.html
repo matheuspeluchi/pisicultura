@@ -1,24 +1,28 @@
-<header class="fixed-top">
-    <nav class="navbar navbar-light bg-primary text-center m-0 p-0">
-        <div class="navbar-brand m-0">
+<div class="menuSecundario m-0 p-0">
+    <nav class="navbar navbar-expand-sm bg-primary navbar-dark fixed-top ">
+        <!-- Brand -->
+        <a class="navbar-brand text-center" href="#">
             <img src="/assets/logo.png" class="align-self-start" width="40" height="40">
             <span class=" h5 my-2 py-2 ml-2">PisicAdmin</span>
-        </div>
-        <hr>
-        <div *ngIf="(user$ | async) as user; else login" class="navbar-text mr-3 p-0 username">
-            <a  href="#" class="my-0 mr-2" (click)="logout()">
-                <i class="fa fa-lg fa-user-circle m-0 p-0"></i>    
-                {{user.nome}}
-            </a>
-            <a href="#" [routerLink]="['arearestrita']" class="my-0 mr-3">
-                <i class="fa fa-cogs"></i>
-            </a>
-        </div>
-
-        <ng-template #login>
-                <span class="navbar-text">
-                  <a [routerLink]="['login']">Efetue Login</a>
-                </span>
-        </ng-template>
+        </a>
+        
+        <!-- Links -->
+        <ul class="navbar-nav" id="userHeaderMenu" *ngIf="(user$ | async) as user;">
+            <!-- Dropdown -->
+            <li class="nav-item dropdown active">
+                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                    <i class="fa fa-lg fa-user-circle m-0 p-0"></i>   
+                    {{user.nome}}
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" (click)="logout()" href="#">Sair</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a href="#" [routerLink]="['arearestrita']" class="nav-link active">
+                        <i class="fa fa-cogs"></i>
+                </a>
+            </li>
+        </ul>
     </nav>
-</header>
+</div>

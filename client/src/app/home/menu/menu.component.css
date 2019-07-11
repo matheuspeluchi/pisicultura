@@ -1,7 +1,8 @@
 
-nav {
-    padding-top: 40px;
+.menuPrincial nav {
     z-index: 1;    
+    float: left;
+    margin-top: 40px;
 }
 
 .menu-title {

@@ -1,116 +1,118 @@
-<nav id="sidebar" class="bg-dark">
-    <div class="sidebar-header m-1 p-1">
-        <div *ngIf="(user$ | async) as user; else login">
-            <div class="row">
-                <div class="col-sm-4">
-                    <i class="fa fa-3x fa-user-circle m-0 p-0"></i>    
-                </div>
-                <div class="col-sm-8">
-                    <div class="row">
-                        <a  href="#" class="my-0 mr-2">{{user.nome}}</a>
+<div class="menuPrincial">
+    <nav id="sidebar" class="bg-dark">
+        <div class="sidebar-header m-1 p-1">
+            <div *ngIf="(user$ | async) as user; else login">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <i class="fa fa-3x fa-user-circle m-0 p-0"></i>    
                     </div>
-                    <div class="row">
-                        Online
-                    </div>                
+                    <div class="col-sm-8">
+                        <div class="row">
+                            <a  href="#" class="my-0 mr-2">{{user.nome}}</a>
+                        </div>
+                        <div class="row">
+                            Online
+                        </div>                
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <hr class="my-0">
-    <div class="menu-title">
-        <span class="ml-3">MENU DE NAVEGAÇÂO</span>
-    </div>
-    <hr class="my-0">
+        <hr class="my-0">
+        <div class="menu-title">
+            <span class="ml-3">MENU DE NAVEGAÇÂO</span>
+        </div>
+        <hr class="my-0">
 
-    <ul class="list-unstyled components m-0 p-1">      
-        
-        <li class="active">
-            <a href="#cadastros" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-                <i class="fa fa-book mr-2"></i>
-                Cadastros
-            </a>
-            <ul class="collapse list-unstyled" id="cadastros">
-                <li>
-                    <a href="#" class="before">
-                        <i class="fa fa-genderless" aria-hidden="true"></i>
-                        Unidades
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fa fa-genderless" aria-hidden="true"></i>
-                        Produtos
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fa fa-genderless" aria-hidden="true"></i>
-                        Espécies
-                    </a>
-                </li>
-            </ul>
-        </li>
-        <hr class="my-0">
-        <li>
-            <a href="#ulAnalise" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-                <i class="fa fa-bar-chart mr-1" aria-hidden="true"></i>
-                Análises
-            </a>
-            <ul class="collapse list-unstyled" id="ulAnalise">
-                <li>
-                    <a href="#" class="before">
-                        <i class="fa fa-genderless" aria-hidden="true"></i>
-                        Água
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fa fa-genderless" aria-hidden="true"></i>
-                        Amônia
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fa fa-genderless" aria-hidden="true"></i>
-                        Oxienio
-                    </a>
-                </li>
-            </ul>
-        </li>
-        <hr class="my-0">
-        <li>
-            <a href="#ulRelatorios" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-                <i class="fa fa-file-excel-o mr-1" aria-hidden="true"></i>
-                Relatórios
-            </a>
-            <ul class="collapse list-unstyled" id="ulRelatorios">
-                <li>
-                    <a href="#">
-                        <i class="fa fa-genderless" aria-hidden="true"></i>
-                        Page 1</a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fa fa-genderless" aria-hidden="true"></i>
-                        Page 2                        
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fa fa-genderless" aria-hidden="true"></i>
-                        Page 3</a>
-                </li>
-            </ul>
-        </li>
-        <hr class="my-0">
-        <li>
-            <a href="#">Portfolio</a>
-        </li>
-        <hr class="my-0">
-        <li>
-            <a href="#">Contact</a>
-        </li>
-        <hr class="my-0">
-    </ul>
-</nav>
+        <ul class="list-unstyled components m-0 p-1">      
+            
+            <li class="active">
+                <a href="#cadastros" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                    <i class="fa fa-book mr-2"></i>
+                    Cadastros
+                </a>
+                <ul class="collapse list-unstyled" id="cadastros">
+                    <li>
+                        <a href="#" class="before">
+                            <i class="fa fa-genderless" aria-hidden="true"></i>
+                            Unidades
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-genderless" aria-hidden="true"></i>
+                            Produtos
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-genderless" aria-hidden="true"></i>
+                            Espécies
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <hr class="my-0">
+            <li>
+                <a href="#ulAnalise" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                    <i class="fa fa-bar-chart mr-1" aria-hidden="true"></i>
+                    Análises
+                </a>
+                <ul class="collapse list-unstyled" id="ulAnalise">
+                    <li>
+                        <a href="#" class="before">
+                            <i class="fa fa-genderless" aria-hidden="true"></i>
+                            Água
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-genderless" aria-hidden="true"></i>
+                            Amônia
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-genderless" aria-hidden="true"></i>
+                            Oxienio
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <hr class="my-0">
+            <li>
+                <a href="#ulRelatorios" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                    <i class="fa fa-file-excel-o mr-1" aria-hidden="true"></i>
+                    Relatórios
+                </a>
+                <ul class="collapse list-unstyled" id="ulRelatorios">
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-genderless" aria-hidden="true"></i>
+                            Page 1</a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-genderless" aria-hidden="true"></i>
+                            Page 2                        
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-genderless" aria-hidden="true"></i>
+                            Page 3</a>
+                    </li>
+                </ul>
+            </li>
+            <hr class="my-0">
+            <li>
+                <a href="#">Portfolio</a>
+            </li>
+            <hr class="my-0">
+            <li>
+                <a href="#">Contact</a>
+            </li>
+            <hr class="my-0">
+        </ul>
+    </nav>
+</div>
