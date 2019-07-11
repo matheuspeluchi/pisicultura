@@ -1,0 +1,13 @@
+<div class="fixed top mb-3" id="acoes-barras">
+  <div class="float-left">
+    <button 
+      [ngClass]="{'btn-sm btn-ligth m-1': btn1.hidden == false, 'btn-sm btn-ligth m-1 d-none': btn1.hidden}"
+      *ngIf="!btn1.hidden" >      
+      {{btn2.label}}
+    </button>
+  </div>
+  <div class="float-right">
+    <button class="btn-sm btn-ligth m-1" *ngIf="btn1.hidden == false" (click)="b1Click($event)" >{{btn1.label}}</button>
+  </div>
+  
+</div>

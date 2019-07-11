@@ -3,7 +3,7 @@
         <div class="sidebar-header m-1 p-1">
             <div *ngIf="(user$ | async) as user; else login">
                 <div class="row">
-                    <div class="col-sm-4">
+                    <div class="col-sm-2 ml-3 px-0">
                         <i class="fa fa-3x fa-user-circle m-0 p-0"></i>    
                     </div>
                     <div class="col-sm-8">
@@ -28,7 +28,7 @@
             
             <li class="active">
                 <a href="#cadastros" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-                    <i class="fa fa-book mr-2"></i>
+                    <i class="fa fa-book mr-2 "></i>
                     Cadastros
                 </a>
                 <ul class="collapse list-unstyled" id="cadastros">

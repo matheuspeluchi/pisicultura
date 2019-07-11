@@ -11,19 +11,20 @@ import { GrupoListModule } from './grupos/grupo-list/grupo-list.module';
 import { GrupoViewModule } from './grupos/grupo-view/grupo-view.module';
 import { AreaRestritaRoutingModule } from './area-restrita-routing.module';
 import { MsgFormModule } from '../shared/components/msg-form/msg-form.module';
+import { AcoesBarrasModule } from '../shared/components/acoes-barras/acoes-barras.module';
 
 @NgModule({
   declarations: [AreaRestritaComponent, IndexComponent],
   imports: [
     CommonModule,
     HttpClientModule,
-    //ReactiveFormsModule,,
     MsgFormModule,
     ClienteModule,
     GrupoListModule,
     GrupoViewModule,
+    AcoesBarrasModule,
     AreaRestritaRoutingModule,
-    RouterModule  
+    RouterModule  ,
     ],
   exports:[]
 })

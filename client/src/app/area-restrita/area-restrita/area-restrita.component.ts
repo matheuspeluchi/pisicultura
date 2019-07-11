@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, Input } from '@angular/core';
+import { EventEmitter } from 'events';
 
 
 @Component({
@@ -8,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AreaRestritaComponent implements OnInit {
 
+  btn1 = {label: 'Teste123', hidden: false};
+  btn2 = {label: '123', hidden: false};
+  @Input() clickEvent: Event;
+
 
   constructor( ) { }
 
   ngOnInit() { }
 
+
+  testeClick(clickEvent) {
+    console.log(clickEvent);
+  }
 }
