@@ -21,7 +21,7 @@ const routes: Routes = [
             },
             {
                 path:'cliente',
-                component: ClienteListComponent,
+                component: ClienteComponent,
                 resolve: {
                     clientes: ClienteListResolver
                 }

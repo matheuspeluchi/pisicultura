@@ -1,13 +1,78 @@
 <div class="fixed top mb-3" id="acoes-barras">
-  <div class="float-left">
+
+  <!-- BOTOES A ESQUERDA-->
+  <div class="float-left ml-3">
     <button 
-      [ngClass]="{'btn-sm btn-ligth m-1': btn1.hidden == false, 'btn-sm btn-ligth m-1 d-none': btn1.hidden}"
-      *ngIf="!btn1.hidden" >      
+      [ngClass]="{
+        'btn btn-secondary m-1': btn1.hidden == false, 
+        'd-none': btn1.hidden
+      }">       
+      {{btn1.label}}
+    </button>
+
+    <button 
+      [ngClass]="{
+        'btn btn-secondary m-1': btn2.hidden == false, 
+        'd-none': btn2.hidden
+      }"
+      *ngIf="!btn2.hidden" >      
       {{btn2.label}}
     </button>
+
+    <button 
+      [ngClass]="{
+        'btn btn-secondary m-1': btn3.hidden == false, 
+        'd-none': btn3.hidden
+      }"
+      *ngIf="!btn3.hidden" >      
+      {{btn3.label}}
+    </button>
+
+    <button 
+      [ngClass]="{
+        'btn btn-secondary m-1': btn4.hidden == false, 
+        'd-none': btn4.hidden
+      }"
+      *ngIf="!btn4.hidden" >      
+      {{btn4.label}}
+    </button>
   </div>
-  <div class="float-right">
-    <button class="btn-sm btn-ligth m-1" *ngIf="btn1.hidden == false" (click)="b1Click($event)" >{{btn1.label}}</button>
+  <!-- BOTOES A DIREITA-->
+  <div class="float-right mr-3">
+    <button 
+      [ngClass]="{
+        'btn btn-secondary m-1': btn5.hidden == false, 
+        'd-none': btn5.hidden
+      }"
+      *ngIf="!btn5.hidden" >      
+      {{btn5.label}}
+    </button>
+
+    <button 
+      [ngClass]="{
+        'btn btn-secondary m-1': btn6.hidden == false, 
+        'd-none': btn6.hidden
+      }"
+      *ngIf="!btn6.hidden" >      
+      {{btn6.label}}
+    </button>
+
+    <button 
+      [ngClass]="{
+        'btn btn-secondary m-1': btn7.hidden == false, 
+        'd-none': btn7.hidden
+      }"
+      *ngIf="!btn7.hidden" >      
+      {{btn7.label}}
+    </button>
+
+    <button 
+      [ngClass]="{
+        'btn btn-secondary m-1': btn8.hidden == false, 
+        'd-none': btn8.hidden
+      }">      
+      {{btn8.label}}
+    </button>
   </div>
   
 </div>

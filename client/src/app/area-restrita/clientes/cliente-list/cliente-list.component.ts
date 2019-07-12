@@ -10,6 +10,8 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ClienteListComponent implements OnInit {
 
+
+  btn8 = {label:'Novo', hidden:false}
   clientes: Cliente[];
   columnDefs = [
     {headerName: 'Razão Social', field: 'rsocial', sortable: true, resizable: true},
@@ -29,6 +31,10 @@ export class ClienteListComponent implements OnInit {
   ngOnInit() {
     this.clientes = this.activatedRoute.snapshot.data['clientes']
     
+  }
+
+  novo(){
+    console.log('Clicou');
   }
   
 }

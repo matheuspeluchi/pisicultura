@@ -9,17 +9,10 @@ import { EventEmitter } from 'events';
 })
 export class AreaRestritaComponent implements OnInit {
 
-  btn1 = {label: 'Teste123', hidden: false};
-  btn2 = {label: '123', hidden: false};
-  @Input() clickEvent: Event;
-
+  
 
   constructor( ) { }
 
   ngOnInit() { }
 
-
-  testeClick(clickEvent) {
-    console.log(clickEvent);
-  }
 }
