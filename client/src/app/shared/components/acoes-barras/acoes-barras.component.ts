@@ -31,36 +31,36 @@ export class AcoesBarrasComponent implements OnInit {
   ngOnInit() {
   }
 
-  b1Click() {
+  bt1Click() {
     this.b1ClickOutput.emit();
   }
 
-  b2Click() {
-    this.b1ClickOutput.emit();
+  bt2Click() {
+    this.b2ClickOutput.emit();
   }
 
-  b3Click() {
-    this.b1ClickOutput.emit();
+  bt3Click() {
+    this.b3ClickOutput.emit();
   }
 
-  b4Click() {
-    this.b1ClickOutput.emit();
+  bt4Click() {
+    this.b4ClickOutput.emit();
   }
 
-  b5Click() {
-    this.b1ClickOutput.emit();
+  bt5Click() {
+    this.b5ClickOutput.emit();
   }
 
-  b6Click() {
-    this.b1ClickOutput.emit();
+  bt6Click() {
+    this.b6ClickOutput.emit();
   }
 
-  b7Click() {
-    this.b1ClickOutput.emit();
+  bt7Click() {
+    this.b7ClickOutput.emit();
   }
 
-  b8Click() {
-    this.b1ClickOutput.emit();
+  bt8Click() {
+    this.b8ClickOutput.emit();
   }
 
 }

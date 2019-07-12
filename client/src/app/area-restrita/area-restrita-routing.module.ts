@@ -14,27 +14,27 @@ const routes: Routes = [
     {
         path: '',
         component: AreaRestritaComponent,
-        children:[
+        children: [
             {
-                path:'',
+                path: '',
                 component: IndexComponent,
             },
             {
-                path:'cliente',
+                path: 'cliente',
                 component: ClienteComponent,
                 resolve: {
                     clientes: ClienteListResolver
                 }
             },
             {
-                path:'cliente/novo',
-                component:ClienteComponent
+                path: 'cliente/novo',
+                component: ClienteComponent
             },
             {
                 path: 'grupo/:id',
                 component: GrupoViewComponent,
             },
-            {                    
+            {
                 path: 'grupos',
                 component: GrupoListComponent,
                 resolve: {
@@ -48,6 +48,6 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
-  
+
 })
 export class AreaRestritaRoutingModule { }

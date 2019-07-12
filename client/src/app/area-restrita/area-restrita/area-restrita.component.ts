@@ -9,7 +9,6 @@ import { EventEmitter } from 'events';
 })
 export class AreaRestritaComponent implements OnInit {
 
-  
 
   constructor( ) { }
 
