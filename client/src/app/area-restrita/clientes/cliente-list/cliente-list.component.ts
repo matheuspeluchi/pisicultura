@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Cliente } from '../cliente';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-cliente-list',
@@ -11,7 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 export class ClienteListComponent implements OnInit {
 
 
-  btn8 = {label:'Novo', hidden:false}
+  btn8 = {label: 'Novo', hidden: false};
   clientes: Cliente[];
   columnDefs = [
     {headerName: 'Razão Social', field: 'rsocial', sortable: true, resizable: true},
@@ -25,16 +25,20 @@ export class ClienteListComponent implements OnInit {
     {headerName: 'Telefone', field: 'telefone', sortable: true, resizable: true}
   ];
 
-  
-  constructor( private activatedRoute: ActivatedRoute ) { }
-  
+
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private router: Router
+    ) { }
+
   ngOnInit() {
-    this.clientes = this.activatedRoute.snapshot.data['clientes']
-    
+    this.clientes = this.activatedRoute.snapshot.data.clientes;
+
   }
 
-  novo(){
-    console.log('Clicou');
+  novo(cliente) {
+    console.log(cliente);
+    this.router.navigate(['/arearestrita/cliente/novo']);
   }
-  
+
 }

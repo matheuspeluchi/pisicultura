@@ -14,6 +14,6 @@ router.use('/pessoa', pessoaRouter);
 router.use('/tipos', tiposRouter);
 router.use('/grupos', gruposRouter);
 router.use('/cidade', cidadeRouter);
-router.use('/empresa', empresaRouter);
+router.use('/cliente', empresaRouter);
 
 module.exports = router;

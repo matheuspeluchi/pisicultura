@@ -4,4 +4,8 @@
 </app-acoes-barras>
 
 
-<app-lista [headers]= "columnDefs" [lista]= "clientes"></app-lista>
+<app-lista 
+    [headers]= "columnDefs"
+    [lista]= "clientes"
+    (rowData)= "novo($event)">
+</app-lista>

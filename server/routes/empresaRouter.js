@@ -14,7 +14,7 @@ router.put('/',(req,res) => {
     empresa = new Empresa(req.body);
     empresa.save()
         .then(data => res.status(200).send(data._id))
-        .catch(err => res.status(500).send(err))
+        .catch(err => {console.log(err),res.status(500).send(err)})
 
 })
 

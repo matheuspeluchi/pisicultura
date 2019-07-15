@@ -5,6 +5,8 @@
         [rowData]="lista"
         [columnDefs]="headers"
         (gridReady)="onGridReady($event)"
+        rowSelection = 'single'
+        (selectionChanged) = "rowClick($event)"
         animatedrows
         >
     </ag-grid-angular>

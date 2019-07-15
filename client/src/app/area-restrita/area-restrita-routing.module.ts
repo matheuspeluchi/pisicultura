@@ -9,6 +9,7 @@ import { GrupoViewComponent } from './grupos/grupo-view/grupo-view.component';
 import { ClienteListResolver } from './clientes/cliente-list/cliente-list.resolver';
 import { ClienteListComponent } from './clientes/cliente-list/cliente-list.component';
 import { ClienteComponent } from './clientes/cliente/cliente.component';
+import { ClienteFormComponent } from './clientes/cliente-form/cliente-form.component';
 
 const routes: Routes = [
     {
@@ -28,7 +29,7 @@ const routes: Routes = [
             },
             {
                 path: 'cliente/novo',
-                component: ClienteComponent
+                component: ClienteFormComponent
             },
             {
                 path: 'grupo/:id',
