@@ -10,6 +10,7 @@ import { ClienteListResolver } from './clientes/cliente-list/cliente-list.resolv
 import { ClienteListComponent } from './clientes/cliente-list/cliente-list.component';
 import { ClienteComponent } from './clientes/cliente/cliente.component';
 import { ClienteFormComponent } from './clientes/cliente-form/cliente-form.component';
+import { ClienteFormResolve } from './clientes/cliente-form/clienteFormResolve';
 
 const routes: Routes = [
     {
@@ -29,7 +30,10 @@ const routes: Routes = [
             },
             {
                 path: 'cliente/novo',
-                component: ClienteFormComponent
+                component: ClienteFormComponent,
+                resolve: {
+                    cidades: ClienteFormResolve
+                }
             },
             {
                 path: 'grupo/:id',

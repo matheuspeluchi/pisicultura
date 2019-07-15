@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { Cliente } from '../cliente';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ClienteService } from '../cliente.service';
 
 @Component({
   selector: 'app-cliente-list',
@@ -28,7 +29,8 @@ export class ClienteListComponent implements OnInit {
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private clienteService: ClienteService
     ) { }
 
   ngOnInit() {
@@ -36,8 +38,8 @@ export class ClienteListComponent implements OnInit {
 
   }
 
-  novo(cliente) {
-    console.log(cliente);
+  novo(cliente: Cliente) {
+    this.clienteService.updateDataSource(cliente);
     this.router.navigate(['/arearestrita/cliente/novo']);
   }
 

@@ -4,8 +4,10 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 import { Cidade } from 'src/app/shared/components/cidades/cidade';
 import { CidadeService } from 'src/app/shared/components/cidades/cidade.service';
 import { ClienteService } from '../cliente.service';
+
+import { Router, ActivatedRoute } from '@angular/router';
 import { Cliente } from '../cliente';
-import { Router } from '@angular/router';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-cliente-form',
@@ -14,43 +16,37 @@ import { Router } from '@angular/router';
 })
 export class ClienteFormComponent implements OnInit {
 
-  clienteForm: FormGroup;
+  
   cidades: Cidade [];
   btnSalvar = {label: 'Salvar', hidden: false};
+  cliente: Cliente = new Cliente();
 
   constructor(
-    private formBuilder: FormBuilder,
     private cidadeService: CidadeService,
     private clienteService: ClienteService,
-    private router: Router
+    private router: Router,
+    private activatedRoute: ActivatedRoute
   ) { }
 
   ngOnInit() {
-    this.clienteForm = this.formBuilder.group({
-      rsocial: [''],
-      fantasia: [''],
-      cnpj: [''],
-      ie: [''],
-      endereco: [''],
-      numero: [''],
-      bairro: [''],
-      cidade: [''],
-
-    });
-
-    this.cidadeService.getCidades()
-      .subscribe(
-        res => this.cidades = res,
-        err => console.log(err)
-      );
+    this.cidades = this.activatedRoute.snapshot.data.cidades;
+    this.clienteService.dataSource.subscribe(res => {this.cliente = res,console.log(res)})
   }
 
   salvar() {
-    const cliente = this.clienteForm.value as Cliente;
-    this.clienteService.save(cliente).subscribe(
-      res => this.router.navigated[('/arearestrita/cliente')],
-      err => console.log(err.error.errors)
-    );
+
+    if (this.cliente._id){
+      this.clienteService.update(this.cliente).subscribe(
+        () => this.router.navigated[('/arearestrita/cliente')],
+        err => console.log(err.error.errors)
+      );
+    }else{
+      this.clienteService.save(this.cliente).subscribe(
+        () => this.router.navigated[('/arearestrita/cliente')],
+        err => console.log(err.error.errors)
+      )
+    }
+    
   }
 
 }
