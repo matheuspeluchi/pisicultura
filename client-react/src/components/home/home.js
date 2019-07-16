@@ -4,7 +4,8 @@ import HeaderMenu from '../header/Header';
 import MenuPrincipal from '../menu/menu';
 import FooterHome from '../footer/footer';
 import './home.css';
-import ClienteForm from '../area-restrita/cliente/cliente-form/ClienteForm';
+import ClienteLista from '../area-restrita/cliente/client-list/ClientList';
+
 
 class HomeTemplate extends Component {
 
@@ -16,7 +17,7 @@ class HomeTemplate extends Component {
                     
                     <div id="content">
                       
-                      <ClienteForm />
+                      <ClienteLista />
                       
                     </div>
                     <FooterHome />

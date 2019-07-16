@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 
 import './clienteForm.css'
+import BarraAcoes from '../../../shared/barra-acoes/barra-acoes';
 
 class ClienteForm extends Component {
     
@@ -55,6 +56,8 @@ class ClienteForm extends Component {
         const {state} = this;
 
         return <div>
+                    <BarraAcoes />
+
                     <form className="pt-3" onSubmit={this.salvar}>
                         <div className="form-group row">
                             <label className="col-sm-1 col-form-label">Razão Social:</label>

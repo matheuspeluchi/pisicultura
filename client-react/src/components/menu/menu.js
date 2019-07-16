@@ -10,7 +10,7 @@ class MenuPrincipal extends Component {
                         <div>
                             <div className="row">
                                 <div className="col-sm-2 ml-3 px-0">
-                                    <i className="fa fa-3x fa-user-circle m-0 p-0"></i>    
+                                    <i className="fa fa-3x fa-user-circle mr-0 p-0"></i>    
                                 </div>
                                 <div className="col-sm-8">
                                     <div className="row">
@@ -40,19 +40,19 @@ class MenuPrincipal extends Component {
                             <ul className="collapse list-unstyled" id="cadastros">
                                 <li>
                                     <a href="#" className="before">
-                                        <i className="fa fa-genderless" aria-hidden="true"></i>
+                                        <i className="fa fa-genderless mr-3 mr-3" aria-hidden="true"></i>
                                         Unidades
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#">
-                                        <i className="fa fa-genderless" aria-hidden="true"></i>
+                                        <i className="fa fa-genderless mr-3" aria-hidden="true"></i>
                                         Produtos
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#">
-                                        <i className="fa fa-genderless" aria-hidden="true"></i>
+                                        <i className="fa fa-genderless mr-3" aria-hidden="true"></i>
                                         Espécies
                                     </a>
                                 </li>
@@ -67,19 +67,19 @@ class MenuPrincipal extends Component {
                             <ul className="collapse list-unstyled" id="ulAnalise">
                                 <li>
                                     <a href="#" className="before">
-                                        <i className="fa fa-genderless" aria-hidden="true"></i>
+                                        <i className="fa fa-genderless mr-3" aria-hidden="true"></i>
                                         Água
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#">
-                                        <i className="fa fa-genderless" aria-hidden="true"></i>
+                                        <i className="fa fa-genderless mr-3" aria-hidden="true"></i>
                                         Amônia
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#">
-                                        <i className="fa fa-genderless" aria-hidden="true"></i>
+                                        <i className="fa fa-genderless mr-3" aria-hidden="true"></i>
                                         Oxienio
                                     </a>
                                 </li>
@@ -94,18 +94,18 @@ class MenuPrincipal extends Component {
                             <ul className="collapse list-unstyled" id="ulRelatorios">
                                 <li>
                                     <a href="#">
-                                        <i className="fa fa-genderless" aria-hidden="true"></i>
+                                        <i className="fa fa-genderless mr-3" aria-hidden="true"></i>
                                         Page 1</a>
                                 </li>
                                 <li>
                                     <a href="#">
-                                        <i className="fa fa-genderless" aria-hidden="true"></i>
+                                        <i className="fa fa-genderless mr-3" aria-hidden="true"></i>
                                         Page 2                        
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#">
-                                        <i className="fa fa-genderless" aria-hidden="true"></i>
+                                        <i className="fa fa-genderless mr-3" aria-hidden="true"></i>
                                         Page 3</a>
                                 </li>
                             </ul>

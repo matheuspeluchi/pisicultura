@@ -6,7 +6,9 @@
     "ag-grid-community": "^21.0.1",
     "ag-grid-react": "^21.0.1",
     "react": "^16.8.6",
+    "react-data-grid": "^6.1.0",
     "react-dom": "^16.8.6",
+    "react-dom-factories": "^1.0.2",
     "react-scripts": "3.0.1"
   },
   "scripts": {
