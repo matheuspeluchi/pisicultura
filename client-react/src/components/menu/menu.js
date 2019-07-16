@@ -26,7 +26,7 @@ class MenuPrincipal extends Component {
 
                     <hr className="my-0" />
                     <div className="menu-title">
-                        <span className="ml-3">MENU DE NAVEGAÇÂO</span>
+                        <small className="ml-3">MENU DE NAVEGAÇÂO</small>
                     </div>
                     <hr className="my-0" />
 

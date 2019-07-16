@@ -12,16 +12,17 @@ const config = {
 //Conexão com o banco de dados;
 
 mongoose.connect('mongodb://localhost:27017/desenvolvimento',config,(err, client) => {
+    let port = '3001'
     if (err) return console.log(err);
     
-    app.listen(3000,function(){
-        console.log('Servidor inicado na porta 3000')
+    app.listen(port,function(){
+        console.log('Servidor inicado na porta ' + port)
     })
 });
 
 //Define Cabeçalhos de resposta e configuração do CORS;
 app.use(function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", "http://localhost:4200");
+    res.header("Access-Control-Allow-Origin", "http://localhost:3000");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
     res.header("Access-Control-Expose-Headers","Authorization");
     res.header("Access-Control-Allow-Methods", "POST, GET, PUT, DELETE, OPTIONS");
