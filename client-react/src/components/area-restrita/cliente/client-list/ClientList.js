@@ -35,9 +35,6 @@ class ClienteLista extends Component {
             });
         })
     }
-    componentWillUnmount() {
-        this._isMounted = false;
-      }
     
     render(){
         const {state} = this;

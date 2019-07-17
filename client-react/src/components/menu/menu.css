@@ -14,9 +14,13 @@
 }
 
 a, a:hover, a:focus {
-    color: inherit;
+    color: white !important;
     text-decoration: none;
     transition: all 0.3s;
+}
+
+a:hover {
+    color: darkblue !important;
 }
 
 #sidebar {

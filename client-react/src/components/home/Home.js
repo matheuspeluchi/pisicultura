@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-
+import { Switch, Route} from 'react-router-dom';
 import HeaderMenu from '../header/Header';
-import MenuPrincipal from '../menu/menu';
-import FooterHome from '../footer/footer';
+import MenuPrincipal from '../menu/Menu';
+import FooterHome from '../footer/Footer';
 import './home.css';
-import ClienteLista from '../area-restrita/cliente/client-list/ClientList';
+import Routes from '../../routes/routes';
+
 
 
 class HomeTemplate extends Component {
@@ -16,9 +17,7 @@ class HomeTemplate extends Component {
                     <MenuPrincipal />
                     
                     <div id="content">
-                      
-                      <ClienteLista />
-                      
+                        <Routes />
                     </div>
                     <FooterHome />
                     

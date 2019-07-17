@@ -1,6 +1,7 @@
-import React,{Component} from 'react';
-import './header.css';
-import logo from '../../assets/logo.png';
+import React,{Component} from 'react'
+import './header.css'
+import logo from '../../assets/logo.png'
+import { Link } from 'react-router-dom'
 
 
 class HeaderMenu extends Component{
@@ -30,7 +31,7 @@ class HeaderMenu extends Component{
                     
                         <li className="nav-item dropdown active">
                             <a className="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-                                <i className="fa fa-lg fa-user-circle m-0 p-0"></i>   
+                                <i className="fa fa-lg fa-user-circle mr-2 p-0"></i>   
                                 {props.userName}
                             </a>
                             <div className="dropdown-menu">
@@ -38,9 +39,9 @@ class HeaderMenu extends Component{
                             </div>
                         </li>
                         <li className="nav-item">
-                            <a href="#" className="nav-link active">
+                            <Link to="/arearestrita" className="nav-link active">
                                 <i className="fa fa-cogs"></i>
-                            </a>
+                            </Link>
                         </li>
                     </ul>
                 </nav>
