@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Switch, Route} from 'react-router-dom';
 import HeaderMenu from '../header/Header';
 import MenuPrincipal from '../menu/Menu';
 import FooterHome from '../footer/Footer';

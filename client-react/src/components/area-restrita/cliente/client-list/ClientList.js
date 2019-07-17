@@ -1,6 +1,8 @@
 import React, {Component} from 'react'
 import Lista from '../../../shared/lista/Lista';
 import {ClienteService} from '../../../../services/ClienteService'
+import BarraAcoes from '../../../shared/barra-acoes/BarraAcoes'
+import { Channel } from '../../../../services/EventService'
 
 class ClienteLista extends Component {
     static defaultProps = {
@@ -25,21 +27,36 @@ class ClienteLista extends Component {
                 
             ]            
         }
+        this.selectClient = this.selectClient.bind(this);
+    }
+
+    selectClient = (cliente) =>{
+        console.log('teste')
+        console.log(cliente)
     }
 
     componentDidMount(){
-      ClienteService.list()
-        .then( res =>{
-            this.setState({                    
-                lista: res
-            });
-        })
+        ClienteService.list()
+            .then( res => this.setState({lista: res}))
+
+        Channel.on('selectedData', this.selectClient)  
+    }
+
+    componentWillUnmount(){
+        Channel.removeListener('selectedData', this.selectClient)
     }
     
     render(){
         const {state} = this;
         
-            return <Lista columns={state.columnDefs} rows={state.lista} />
+            return <>
+                        <BarraAcoes>
+                            <div className="float-right m-1">
+                                <button className="btn btn-sm btn-primary m-1">Novo</button>
+                            </div>
+                        </BarraAcoes>
+                        <Lista columns={state.columnDefs} rows={state.lista} />
+                    </>
      
             
     }

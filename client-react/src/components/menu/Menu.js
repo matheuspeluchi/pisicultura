@@ -4,7 +4,7 @@ import './menu.css';
 class MenuPrincipal extends Component {
 
     render(){
-    return  <div className="menuPrincial">
+    return  <div className="menuPrincipal">
                 <nav id="sidebar" className="bg-dark">
                     <div className="sidebar-header m-1 p-1">
                         <div>

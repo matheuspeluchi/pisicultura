@@ -26,9 +26,7 @@ class ClienteForm extends Component {
         }
         this.handleChange = this.handleChange.bind(this);
         this.salvar = this.salvar.bind(this);
-        this.urlApi = 'http://localhost:3001/cliente';
-        this.getClients();
-
+     
     }
 
     handleChange(event){
@@ -39,13 +37,6 @@ class ClienteForm extends Component {
         this.setState({
             [id]: value
         })
-    }
-
-    getClients(){
-        fetch(this.urlApi)
-            .then(res => res.json())
-            .then(res => console.log(res))
-            
     }
 
     salvar (event){

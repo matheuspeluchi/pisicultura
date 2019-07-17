@@ -16,22 +16,9 @@ class BarraAcoes extends Component{
     render(){      
 
         return  <div className="fixed top mb-3" id="acoes-barras">
-
-                    <div className="float-left">
-                        <button className="btn btn-sm btn-secondary m-1">Btn1</button>
-                        <button className="btn btn-sm btn-secondary m-1">Btn</button>
-                        <button className="btn btn-sm btn-secondary m-1">Btn</button>
-                        <button className="btn btn-sm btn-secondary m-1">Btn</button>
-                    </div>
-
-                    <div className="float-right">
-                        <button className="btn btn-sm btn-secondary m-1">Btn</button>
-                        <button className="btn btn-sm btn-secondary m-1">Btn</button>
-                        <button className="btn btn-sm btn-secondary m-1">Btn</button>
-                        <button className="btn btn-sm btn-secondary m-1">Btn</button>
-                    </div>
-                    
+                    {this.props.children}
                 </div>
+                
     }
 }
 

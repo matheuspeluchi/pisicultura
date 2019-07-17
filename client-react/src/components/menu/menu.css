@@ -1,7 +1,7 @@
 
 
 
-.menuPrincial nav {
+.menuPrincipal nav {
     z-index: 1;    
     float: left;
     margin-top: 40px;
@@ -13,14 +13,14 @@
     line-height: 30px;
 }
 
-a, a:hover, a:focus {
+.menuPrincipal a, a:hover, a:focus {
     color: white !important;
     text-decoration: none;
     transition: all 0.3s;
 }
 
 a:hover {
-    color: darkblue !important;
+    color:black !important;
 }
 
 #sidebar {

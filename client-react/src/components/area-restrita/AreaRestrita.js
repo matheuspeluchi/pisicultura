@@ -34,7 +34,7 @@ class AreaRestrita extends Component {
 
                 <a className="m-1">
                     <div className="card">
-                        <div class="card-header">
+                        <div className="card-header">
                             <h6 className="card-subtitle mb-2 text-muted text-center">Grupos</h6>
                         </div>
                         <img className="card-img-top rounded mx-auto d-block" src={ImgGrupo}  style={ImgStyle} alt="Imagem de capa do card" />
