@@ -2,7 +2,6 @@ import React, { Component} from 'react'
 import { AgGridReact } from 'ag-grid-react';
 import 'ag-grid-community/dist/styles/ag-grid.css';
 import 'ag-grid-community/dist/styles/ag-theme-blue.css';
-import './barra-acoes.css'
 import { Channel } from '../../../services/EventService'
 
 

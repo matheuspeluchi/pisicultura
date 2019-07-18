@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
 
+import { Channel } from '../../../../services/EventService';
 import './clienteForm.css'
-import BarraAcoes from '../../../shared/barra-acoes/barra-acoes';
+import BarraAcoes from '../../../shared/barra-acoes/BarraAcoes'
+import {ClienteService} from '../../../../services/ClienteService'
 
 class ClienteForm extends Component {
     
@@ -15,6 +17,7 @@ class ClienteForm extends Component {
         super(props);
 
         this.state = {
+            
             rsocial: '',
             fantasia: '',
             cnpj: '',
@@ -23,90 +26,110 @@ class ClienteForm extends Component {
             numero: '',
             bairro: '',
             cidade: '',
+        
         }
         this.handleChange = this.handleChange.bind(this);
         this.salvar = this.salvar.bind(this);
+    
      
     }
+
+    componentDidMount(){
+        if (this.props.match.params.clienteId){
+            ClienteService.get(this.props.match.params.clienteId) 
+                .then(res =>{                    
+                    this.setState({
+                        ...res.data
+                    })
+                })
+        }
+    }
+
+
 
     handleChange(event){
         const target = event.target,
                 value = target.value,
-                id = target.id;
+                name = target.name;
 
         this.setState({
-            [id]: value
+            [name]: value
         })
     }
 
-    salvar (event){
-        event.preventDefault();
+    salvar (data){
+        ClienteService.post(data._id,data)
+            .then(res=>{
+                this.props.history.push(`/arearestrita/cliente`)
+            })
     }
 
     render() {
-        const {state} = this;
+        const {state,props} = this;
 
         return <div>
-                    <BarraAcoes />
+                    <BarraAcoes>
+                        <div className="float-right m-1">
+                            <button className="btn btn-sm btn-primary m-1" onClick={this.salvar.bind(this,state)}>Salvar</button>
+                        </div>
+                    </BarraAcoes>
 
                     <form className="pt-3" onSubmit={this.salvar}>
                         <div className="form-group row">
                             <label className="col-sm-1 col-form-label">Razão Social:</label>
                             <div className="col-sm-4">
-                                <input type="text" className="form-control" onChange={this.handleChange} value={state.rsocial} id="rsocial" placeholder="Razão Social"/>
+                                <input type="text" className="form-control" onChange={this.handleChange} value={state.rsocial} name="rsocial" placeholder="Razão Social"/>
                             </div>
                         </div>
 
                         <div className="form-group row">
                             <label className="col-sm-1 col-form-label">Fantasia:</label>
                             <div className="col-sm-4">
-                                <input type="text" className="form-control" onChange={this.handleChange} value={state.fantasia} id="fantasia" placeholder="Fantasia" />
+                                <input type="text" className="form-control" onChange={this.handleChange} value={state.fantasia} name="fantasia" placeholder="Fantasia" />
                             </div>
                         </div>
 
                         <div className="form-group row">
                             <label className="col-sm-1 col-form-label">CNPJ:</label>
                             <div className="col-sm-2">
-                                <input type="text" className="form-control" onChange={this.handleChange} value={state.cnpj} id="cnpj" placeholder="CNPJ" />
+                                <input type="text" className="form-control" onChange={this.handleChange} value={state.cnpj} name="cnpj" placeholder="CNPJ" />
                             </div>     
                         </div>
                         <div className="form-group row">
                             <label className="col-sm-1 col-form-label">IE:</label>
                             <div className="col-sm-2">
-                                <input type="text" className="form-control" onChange={this.handleChange} value={state.ie} id="ie" placeholder="Insc. Estadual" />
+                                <input type="text" className="form-control" onChange={this.handleChange} value={state.ie} name="ie" placeholder="Insc. Estadual" />
                             </div>
                         </div>
 
                         <div className="form-group row">
                             <label className="col-sm-1 col-form-label">Endereço:</label>
                             <div className="col-sm-4">
-                                <input type="text" className="form-control" onChange={this.handleChange} value={state.endereco} id="endereco" placeholder="Endereço" />
+                                <input type="text" className="form-control" onChange={this.handleChange} value={state.endereco} name="endereco" placeholder="Endereço" />
                             </div>
                             <label className="col-form-label">Nº:</label>
                             <div className="col-sm-2">
-                                <input type="text" className="form-control" onChange={this.handleChange} value={state.numero}  id="numero" placeholder="Número" />
+                                <input type="text" className="form-control" onChange={this.handleChange} value={state.numero}  name="numero" placeholder="Número" />
                             </div>
                         </div>
 
                         <div className="form-group row">
                             <label className="col-sm-1 col-form-label">Bairro:</label>
                             <div className="col-sm-2">
-                                <input type="text" className="form-control" onChange={this.handleChange} value={state.bairro} id="bairro" placeholder="Bairro" />
+                                <input type="text" className="form-control" onChange={this.handleChange} value={state.bairro} name="bairro" placeholder="Bairro" />
                             </div>
                         </div>
 
                         <div className="form-group row">
                             <label className="col-sm-1 col-form-label">Cidade:</label>
                             <div className="col-sm-2">
-                                <select name="cidade" id="cidade"  className="form-control" onChange={this.handleChange}>
+                                <select name="cidade" name="cidade"  className="form-control" onChange={this.handleChange}>
                                     <option value=''></option>
                                     <option value='Dourados'>Dourados</option>
                                     <option value='Maracaju'>Maracaju</option>
                                 </select>
                             </div>
                         </div>
-
-                        <button type="submit">Salvar</button>
                     </form>
                </div>
 

@@ -20,14 +20,17 @@ router.put('/',(req,res) => {
 
 
 router.get('/:id',(req,res) => {
-    Empresa.findById(req.body.id)
+    Empresa.findById(req.params.id)
         .then(data => res.status(200).send(data))
         .catch(err => res.status(500).send(err))
 })
 
 router.post('/:id',(req,res) => {
-    Empresa.findOneAndUpdate(_id = req.body.id,req.body)
-        .then(data => res.status(200).send(data))
+    console.log('///////////////////')
+    console.log(req.body)
+    console.log('///////////////////')
+    Empresa.findOneAndUpdate({_id: req.params.id},req.body)
+        .then(data =>{ res.status(200).send(data),console.log(data)})
         .catch(err => res.status(500).send(err))
 })
 

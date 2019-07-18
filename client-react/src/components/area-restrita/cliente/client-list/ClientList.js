@@ -1,4 +1,7 @@
 import React, {Component} from 'react'
+import {Link} from 'react-router-dom'
+
+
 import Lista from '../../../shared/lista/Lista';
 import {ClienteService} from '../../../../services/ClienteService'
 import BarraAcoes from '../../../shared/barra-acoes/BarraAcoes'
@@ -14,6 +17,7 @@ class ClienteLista extends Component {
         super(props)
         this.urlApi = 'http://localhost:3001/cliente';
         this.state = {
+            clienteId: null,
             lista: [],
             columnDefs: [
                 {headerName:'Razão Social', field:'rsocial', filter: true, sortable: true},
@@ -31,8 +35,8 @@ class ClienteLista extends Component {
     }
 
     selectClient = (cliente) =>{
-        console.log('teste')
         console.log(cliente)
+        this.props.history.push(`/arearestrita/cliente/novo/${cliente._id}`)
     }
 
     componentDidMount(){
@@ -47,17 +51,18 @@ class ClienteLista extends Component {
     }
     
     render(){
-        const {state} = this;
+        const {state,props} = this;
         
-            return <>
+            return (
+                    <>
                         <BarraAcoes>
                             <div className="float-right m-1">
-                                <button className="btn btn-sm btn-primary m-1">Novo</button>
+                                <Link to={`${props.match.url}/novo`} className="btn btn-sm btn-primary m-1">Novo</Link>
                             </div>
                         </BarraAcoes>
                         <Lista columns={state.columnDefs} rows={state.lista} />
                     </>
-     
+            )
             
     }
         

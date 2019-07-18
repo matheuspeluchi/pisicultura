@@ -1,12 +1,11 @@
-
+import axios from 'axios'
 const API = 'http://localhost:3001/cliente/';
 
 
 export const ClienteService = {
 
     get(id){
-        return fetch(API + id)
-                .then(res => res.json())
+        return axios.get(`${API}${id}`)
     },
 
     list(){
@@ -14,25 +13,18 @@ export const ClienteService = {
                 .then(res => res.json())
     },
 
-    post(id,data){
-        return fetch(`${API}${id}`,{
-            method:'POST',
-            body: data
-        })
-                .then(res => res.json())
+    post(id,cliente){
+        return axios.post(`${API}${id}`,cliente)
+                
     },
 
 
     put(data){
-        return fetch(API,{
-            method:'PUT',
-            body: data
-        })
-                .then(res => res.json())
+        return axios.put(API,data)
     },
 
     delete(id){
-        return fetch(API + id,{method:'DELETE'})
-        .then(res => res.json())
+        return axios.delete(API + id)
+        
     }
 }
