@@ -20,7 +20,7 @@ body{
   }
   
   section{
-    display: flex;
+    display: fixed;
     min-height: calc(100vh - 70px);
     
   }
@@ -35,7 +35,8 @@ body{
     height: auto;
     width: 99%;
     padding-left: 250px;
-    position: fixed;
+
+    
   }
   
   
