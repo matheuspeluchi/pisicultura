@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
+<<<<<<< HEAD
 import HeaderMenu from './menu/header/Header';
 import MenuPrincipal from '../menu/Menu';
+=======
+import HeaderMenu from './header/Header';
+import MenuPrincipal from './menu/Menu';
+>>>>>>> refs/remotes/origin/master
 import FooterHome from './footer/Footer';
 import './home.css';
 import Routes from '../../routes/routes';
@@ -10,18 +15,24 @@ import Routes from '../../routes/routes';
 class HomeTemplate extends Component {
 
     render (){
-        return <div className="wrapper">
+        return (
+            <div className="layout">
+                <header>
                     <HeaderMenu />
-                    
-                    <MenuPrincipal />
-                    
-                    <div id="content">
+                </header>
+                <section>
+                    <div id="menuPrincipal">
+                        <MenuPrincipal />
+                    </div>
+                    <div id="conteudoPrincipal">
                         <Routes />
                     </div>
-                    <FooterHome />
-                    
-                    
-                </div>
+                    <footer>
+                        <FooterHome />
+                    </footer>
+                </section>        
+            </div>
+        )
     }
 }
 

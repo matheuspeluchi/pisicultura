@@ -74,7 +74,7 @@ class ClienteForm extends Component {
                         </div>
                     </BarraAcoes>
 
-                    <form className="pt-3" onSubmit={this.salvar}>
+                    <div id="clienteForm">
                         <div className="form-group row">
                             <label className="col-sm-1 col-form-label">Razão Social:</label>
                             <div className="col-sm-4">
@@ -130,7 +130,166 @@ class ClienteForm extends Component {
                                 </select>
                             </div>
                         </div>
-                    </form>
+
+
+
+                        <div className="form-group row">
+                            <label className="col-sm-1 col-form-label">Cidade:</label>
+                            <div className="col-sm-2">
+                                <select name="cidade" name="cidade"  className="form-control" onChange={this.handleChange}>
+                                    <option value=''></option>
+                                    <option value='Dourados'>Dourados</option>
+                                    <option value='Maracaju'>Maracaju</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div className="form-group row">
+                            <label className="col-sm-1 col-form-label">Cidade:</label>
+                            <div className="col-sm-2">
+                                <select name="cidade" name="cidade"  className="form-control" onChange={this.handleChange}>
+                                    <option value=''></option>
+                                    <option value='Dourados'>Dourados</option>
+                                    <option value='Maracaju'>Maracaju</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div className="form-group row">
+                            <label className="col-sm-1 col-form-label">Cidade:</label>
+                            <div className="col-sm-2">
+                                <select name="cidade" name="cidade"  className="form-control" onChange={this.handleChange}>
+                                    <option value=''></option>
+                                    <option value='Dourados'>Dourados</option>
+                                    <option value='Maracaju'>Maracaju</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div className="form-group row">
+                            <label className="col-sm-1 col-form-label">Cidade:</label>
+                            <div className="col-sm-2">
+                                <select name="cidade" name="cidade"  className="form-control" onChange={this.handleChange}>
+                                    <option value=''></option>
+                                    <option value='Dourados'>Dourados</option>
+                                    <option value='Maracaju'>Maracaju</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div className="form-group row">
+                            <label className="col-sm-1 col-form-label">Cidade:</label>
+                            <div className="col-sm-2">
+                                <select name="cidade" name="cidade"  className="form-control" onChange={this.handleChange}>
+                                    <option value=''></option>
+                                    <option value='Dourados'>Dourados</option>
+                                    <option value='Maracaju'>Maracaju</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div className="form-group row">
+                            <label className="col-sm-1 col-form-label">Cidade:</label>
+                            <div className="col-sm-2">
+                                <select name="cidade" name="cidade"  className="form-control" onChange={this.handleChange}>
+                                    <option value=''></option>
+                                    <option value='Dourados'>Dourados</option>
+                                    <option value='Maracaju'>Maracaju</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div className="form-group row">
+                            <label className="col-sm-1 col-form-label">Cidade:</label>
+                            <div className="col-sm-2">
+                                <select name="cidade" name="cidade"  className="form-control" onChange={this.handleChange}>
+                                    <option value=''></option>
+                                    <option value='Dourados'>Dourados</option>
+                                    <option value='Maracaju'>Maracaju</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div className="form-group row">
+                            <label className="col-sm-1 col-form-label">Cidade:</label>
+                            <div className="col-sm-2">
+                                <select name="cidade" name="cidade"  className="form-control" onChange={this.handleChange}>
+                                    <option value=''></option>
+                                    <option value='Dourados'>Dourados</option>
+                                    <option value='Maracaju'>Maracaju</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div className="form-group row">
+                            <label className="col-sm-1 col-form-label">Cidade:</label>
+                            <div className="col-sm-2">
+                                <select name="cidade" name="cidade"  className="form-control" onChange={this.handleChange}>
+                                    <option value=''></option>
+                                    <option value='Dourados'>Dourados</option>
+                                    <option value='Maracaju'>Maracaju</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div className="form-group row">
+                            <label className="col-sm-1 col-form-label">Cidade:</label>
+                            <div className="col-sm-2">
+                                <select name="cidade" name="cidade"  className="form-control" onChange={this.handleChange}>
+                                    <option value=''></option>
+                                    <option value='Dourados'>Dourados</option>
+                                    <option value='Maracaju'>Maracaju</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div className="form-group row">
+                            <label className="col-sm-1 col-form-label">Cidade:</label>
+                            <div className="col-sm-2">
+                                <select name="cidade" name="cidade"  className="form-control" onChange={this.handleChange}>
+                                    <option value=''></option>
+                                    <option value='Dourados'>Dourados</option>
+                                    <option value='Maracaju'>Maracaju</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div className="form-group row">
+                            <label className="col-sm-1 col-form-label">Cidade:</label>
+                            <div className="col-sm-2">
+                                <select name="cidade" name="cidade"  className="form-control" onChange={this.handleChange}>
+                                    <option value=''></option>
+                                    <option value='Dourados'>Dourados</option>
+                                    <option value='Maracaju'>Maracaju</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div className="form-group row">
+                            <label className="col-sm-1 col-form-label">Cidade:</label>
+                            <div className="col-sm-2">
+                                <select name="cidade" name="cidade"  className="form-control" onChange={this.handleChange}>
+                                    <option value=''></option>
+                                    <option value='Dourados'>Dourados</option>
+                                    <option value='Maracaju'>Maracaju</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div className="form-group row">
+                            <label className="col-sm-1 col-form-label">Cidade:</label>
+                            <div className="col-sm-2">
+                                <select name="cidade" name="cidade"  className="form-control" onChange={this.handleChange}>
+                                    <option value=''></option>
+                                    <option value='Dourados'>Dourados</option>
+                                    <option value='Maracaju'>Maracaju</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div className="form-group row">
+                            <label className="col-sm-1 col-form-label">Cidade:</label>
+                            <div className="col-sm-2">
+                                <select name="cidade" name="cidade"  className="form-control" onChange={this.handleChange}>
+                                    <option value=''></option>
+                                    <option value='Dourados'>Dourados</option>
+                                    <option value='Maracaju'>Maracaju</option>
+                                </select>
+                            </div>
+                        </div>
+
+
+
+
+
+
+                    </div>
                </div>
 
     }

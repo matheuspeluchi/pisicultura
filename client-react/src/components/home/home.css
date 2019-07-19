@@ -1,10 +1,21 @@
-.wrapper {
-    display: flex;
-    height: 99vh;
-    margin-left: 2px;
-    margin-right: 2px;
-}
 
+body{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+  }
+  
+ .layout{
+    display: flex;
+    flex-direction: column;   
+  }
+  
+  header{
+    height: 40px;
+  }
+
+<<<<<<< HEAD
 #content {
     margin-top: 40px;
     margin-left: 250px !important;
@@ -13,16 +24,33 @@
     background-color: #ecf0f5;
     position: fixed;
     overflow: auto;
+=======
+  footer{
+      height: 30px;
+  }
+  
+  section{
+    display: fixed;
+    min-height: calc(100vh - 70px);
+>>>>>>> refs/remotes/origin/master
     
-}
+  }
+  
+  div #menuPrincipal{
+    flex-grow: 2;
+  }
+  
+  div #conteudoPrincipal{
+    flex-grow: 6;
+    /*order: -1;*/
+    height: auto;
+    width: 99%;
+    padding-left: 250px;
 
-
-#sidebar.active {
-    margin-left: -250px;
-    height: 100vh;
-}
-
-
+    
+  }
+  
+  
 @media (max-width: 768px) {
     #sidebar {
         margin-left: -250px;

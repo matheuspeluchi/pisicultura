@@ -6,7 +6,8 @@ const app = express()
 const mongoose = require('mongoose')
 const morgan = require('morgan')
 const config = {
-    useNewUrlParser: true
+    useNewUrlParser: true,
+    useCreateIndex: true,
 }
 
 //Conexão com o banco de dados;

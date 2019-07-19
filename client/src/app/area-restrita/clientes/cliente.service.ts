@@ -13,8 +13,8 @@ const httpOptions = {
     'Content-Type':  'application/json',
     Authorization: sessionStorage.getItem('Authorization')
   }),
-  observe: 'body',
-  responseType: 'json'
+  observe: 'response' as 'body',
+  responseType: 'json' as 'json'
 };
 
 @Injectable({
