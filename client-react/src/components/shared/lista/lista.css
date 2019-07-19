@@ -1,0 +1,7 @@
+.lista{
+    width: calc(100% - 250px);
+    height: 80%;
+    padding-bottom: 30px;
+    top:90px;
+    position: absolute;
+}

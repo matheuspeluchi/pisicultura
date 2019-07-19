@@ -1,0 +1,8 @@
+.conteudo{
+    height: 500px ;
+    padding-left: 250px;
+    padding-top: 40px;
+    padding-bottom: 30px; 
+    width: calc (100% - 250px);
+    right: 0;
+}

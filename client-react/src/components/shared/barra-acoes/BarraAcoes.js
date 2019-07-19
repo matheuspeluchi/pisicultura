@@ -10,7 +10,7 @@ class BarraAcoes extends Component{
 
     render(){      
 
-        return  <div className="fixed top mb-3" id="acoes-barras">
+        return  <div className="fixed top mb-3" id="acoes-barras" >
                     {this.props.children}
                 </div>
                 

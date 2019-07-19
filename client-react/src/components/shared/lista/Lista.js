@@ -3,6 +3,7 @@ import { AgGridReact } from 'ag-grid-react';
 import 'ag-grid-community/dist/styles/ag-grid.css';
 import 'ag-grid-community/dist/styles/ag-theme-blue.css';
 import { Channel } from '../../../services/EventService'
+import './lista.css'
 
 
 class Lista extends Component {
@@ -33,7 +34,7 @@ class Lista extends Component {
 
     render (){
         const {props } = this;
-        return  <div className="ag-theme-blue" style={{ height: '80%', width:'100%'}} >                    
+        return  <div className="ag-theme-blue lista px-4">                    
                     <AgGridReact
                         rowSelection = 'single'                  
                         columnDefs={props.columns}

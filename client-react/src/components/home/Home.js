@@ -5,28 +5,25 @@ import HeaderMenu from './header/Header';
 import MenuPrincipal from './menu/Menu';
 import FooterHome from './footer/Footer';
 import './home.css';
+import Container from './container/container';
 
 
 
 class HomeTemplate extends Component {
-
+    constructor(props){
+        super(props);
+    }
     render (){
+        const {props} = this;
         return (
-            <div className="layout">
-                <header>
-                    <HeaderMenu />
-                </header>
-                <section>
-                    <div id="menuPrincipal">
-                        <MenuPrincipal />
-                    </div>
-                    <div id="conteudoPrincipal">
-                        <Routes />
-                    </div>
-                    <footer>
-                        <FooterHome />
-                    </footer>
-                </section>        
+            <div>
+                <HeaderMenu />
+                <MenuPrincipal />   
+                <Container>
+                    <Routes></Routes>
+                </Container>
+                <FooterHome />
+
             </div>
         )
     }

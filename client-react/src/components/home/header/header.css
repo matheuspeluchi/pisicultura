@@ -1,6 +1,6 @@
 .menuSecundario nav {
     height: 40px !important;
-    z-index: 0;
+    z-index: 1050;
     color: white !important;
     padding-left: 0 !important;
 }
