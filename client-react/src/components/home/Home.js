@@ -1,14 +1,10 @@
 import React, { Component } from 'react';
-<<<<<<< HEAD
-import HeaderMenu from './menu/header/Header';
-import MenuPrincipal from '../menu/Menu';
-=======
+import Routes from '../../routes/routes';
+
 import HeaderMenu from './header/Header';
 import MenuPrincipal from './menu/Menu';
->>>>>>> refs/remotes/origin/master
 import FooterHome from './footer/Footer';
 import './home.css';
-import Routes from '../../routes/routes';
 
 
 

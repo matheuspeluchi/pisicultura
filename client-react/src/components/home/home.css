@@ -15,25 +15,24 @@ body{
     height: 40px;
   }
 
-<<<<<<< HEAD
+
 #content {
     margin-top: 40px;
     margin-left: 250px !important;
-    width: calc(100%);
+    width: calc(100% -200px);
     height: calc(100%-100px);
     background-color: #ecf0f5;
     position: fixed;
     overflow: auto;
-=======
-  footer{
-      height: 30px;
+}
+
+footer {
+    height: 30px;
   }
   
   section{
     display: fixed;
-    min-height: calc(100vh - 70px);
->>>>>>> refs/remotes/origin/master
-    
+    min-height: calc(100vh - 70px);    
   }
   
   div #menuPrincipal{
