@@ -11,7 +11,8 @@
     width: calc(100%);
     height: calc(100%-100px);
     background-color: #ecf0f5;
-    position: static;
+    position: fixed;
+    overflow: auto;
     
 }
 

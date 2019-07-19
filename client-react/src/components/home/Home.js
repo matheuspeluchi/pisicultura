@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import HeaderMenu from '../header/Header';
+import HeaderMenu from './menu/header/Header';
 import MenuPrincipal from '../menu/Menu';
-import FooterHome from '../footer/Footer';
+import FooterHome from './footer/Footer';
 import './home.css';
 import Routes from '../../routes/routes';
 
