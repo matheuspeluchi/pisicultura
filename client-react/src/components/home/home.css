@@ -1,4 +1,18 @@
 
+html,body {
+    height: 100vh;
+    font-size: 12px;
+}
+.conteudo {
+    height: 100%;                        /* para falta de suporte */  
+    padding: 40px 0 30px 250px;
+    width: 100%;
+    z-index: 1050;
+}
+
+.headerTemplate {
+    height: 40px;
+}
   
   
 @media (max-width: 768px) {

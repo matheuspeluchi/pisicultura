@@ -5,9 +5,6 @@ import HeaderMenu from './header/Header';
 import MenuPrincipal from './menu/Menu';
 import FooterHome from './footer/Footer';
 import './home.css';
-import Container from './container/container';
-
-
 
 class HomeTemplate extends Component {
     constructor(props){
@@ -17,12 +14,18 @@ class HomeTemplate extends Component {
         const {props} = this;
         return (
             <div>
-                <HeaderMenu />
-                <MenuPrincipal />   
-                <Container>
+                <div className="headerTemplate">
+                    <HeaderMenu />
+                </div>
+                <div className="sidebarTemplate">
+                    <MenuPrincipal />   
+                </div>
+                <div className="conteudoTemplate">
                     <Routes></Routes>
-                </Container>
-                <FooterHome />
+                </div>
+                <div className="footerTemplate">
+                    <FooterHome />
+                </div>
 
             </div>
         )

@@ -54,14 +54,14 @@ class ClienteLista extends Component {
         const {state,props} = this;
         
             return (
-                    <>
+                    <div>
                         <BarraAcoes>
                             <div className="float-right m-1">
                                 <Link to={`${props.match.url}/novo`} className="btn btn-sm btn-primary m-1">Novo</Link>
                             </div>
                         </BarraAcoes>
                         <Lista columns={state.columnDefs} rows={state.lista} />
-                    </>
+                    </div>
             )
             
     }

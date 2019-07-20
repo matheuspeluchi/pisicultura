@@ -34,7 +34,8 @@ class Lista extends Component {
 
     render (){
         const {props } = this;
-        return  <div className="ag-theme-blue lista px-4">                    
+        return (
+                <div className="ag-theme-blue lista px-4">                    
                     <AgGridReact
                         rowSelection = 'single'                  
                         columnDefs={props.columns}
@@ -43,6 +44,7 @@ class Lista extends Component {
                         onRowClicked={this.rowClick.bind(this)}>
                     </AgGridReact>
                 </div>
+        ) 
     }
 }
 

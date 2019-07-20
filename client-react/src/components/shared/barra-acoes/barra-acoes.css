@@ -1,9 +1,0 @@
-#acoes-barras{
-    top:40px;
-    height: 45px;
-    border-bottom: 1px solid lightgrey;
-    position: fixed;
-    width: calc(100% - 250px);
-    right:0;
-    
-}
