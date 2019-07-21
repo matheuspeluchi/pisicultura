@@ -1,5 +1,4 @@
 import React,{Component} from 'react';
-import './menu.css';
 
 class MenuPrincipal extends Component {
 

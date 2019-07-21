@@ -1,7 +1,7 @@
 import React,{Component} from 'react'
-import './header.css'
-import logo from '../../../assets/logo.png'
 import { Link } from 'react-router-dom'
+
+import logo from '../../assets/logo.png'
 
 
 class HeaderMenu extends Component{
@@ -19,7 +19,7 @@ class HeaderMenu extends Component{
     render(){
         const {props} = this;
         return (
-            <nav className="navbar navbar-expand-sm bg-primary navbar-dark menu menuSecundario">
+            <nav className="navbar navbar-expand-sm navbar-dark menu p-0 menuSecundario">
                 
                 <a className="navbar-brand text-center py-1" href="#">
                     <img src={logo} className="align-self-start" width="40" height="40" />
@@ -31,7 +31,7 @@ class HeaderMenu extends Component{
                     <li className="nav-item dropdown active">
                         <a className="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
                             <i className="fa fa-lg fa-user-circle mr-2 p-0"></i>   
-                            {props.userName}
+                            {this.state.userName}
                         </a>
                         <div className="dropdown-menu">
                             <a className="dropdown-item" href="#">Sair</a>

@@ -1,9 +1,11 @@
 .menu {
     box-sizing: border-box;
+    height: 100%;
+    background-color: #3c8dbc;
 }
 
 .menuSecundario nav {
-    height: 100%;
+    height: 40px;
     z-index: 1050;
     color: white !important;
     padding-left: 0 !important;
@@ -16,7 +18,7 @@
 .menuSecundario .navbar-brand {
     color: white;
     width: 250px;
-    background-color: #0278c2;
+    background-color: #367fa9;
     height: 40px;
     font-size: 22px
     

@@ -9,7 +9,7 @@ class BarraAcoes extends Component{
 
     render(){      
 
-        return  <div className="fixed top mb-3" id="acoes-barras" >
+        return  <div className="barra-acoes bg-light">
                     {this.props.children}
                 </div>
                 

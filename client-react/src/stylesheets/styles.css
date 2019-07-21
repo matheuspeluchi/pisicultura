@@ -1,0 +1,30 @@
+.barra-acoes {
+    width: calc(100% - 250px);
+    height: 40px;
+    position: fixed;
+    right: 0;
+    padding-bottom: 40px;
+    z-index: 1050;
+    
+}
+
+.lista{
+    height: 400px;
+    width: 100%;
+    padding-top: 50px;
+}
+
+.conteudo {
+    padding-top: 80px;
+    margin-left: 5px;
+    width: calc(100% - 250px);
+}
+
+.control-form-label {
+    cursor: pointer;
+    color: #1e282c    ;
+    width: 120px;
+    align-content: right;
+    line-height: 30px;
+    font-weight: bold;
+}

@@ -67,3 +67,11 @@
     padding-left: 30px !important;
     
 }
+
+
+@media (max-width: 567px){
+ .menuPrincipal {
+     width: 30px;
+ }
+    
+}

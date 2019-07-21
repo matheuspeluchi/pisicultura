@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 import Routes from '../../routes/routes';
 
-import HeaderMenu from './header/Header';
-import MenuPrincipal from './menu/Menu';
-import FooterHome from './footer/Footer';
-import './home.css';
+import HeaderMenu from './Header';
+import MenuPrincipal from './Menu';
+import '../../stylesheets/header.css'
+import '../../stylesheets/home.css'
+import '../../stylesheets/menu.css'
+import '../../stylesheets/styles.css'
+
 
 class HomeTemplate extends Component {
     constructor(props){
@@ -14,19 +17,21 @@ class HomeTemplate extends Component {
         const {props} = this;
         return (
             <div className="layout">
-                <header className="fixed-top">
-                    <HeaderMenu/>
+                <header className="headerTemplate fixed-top">
+                    <HeaderMenu></HeaderMenu>
                 </header>
-                <section>
-                    <nav>
-                        <MenuPrincipal />
+                <section className="sectionTemplate">
+                    <nav className="navTemplate">
+                        <MenuPrincipal></MenuPrincipal>                    
                     </nav>
                     <article>
                          <Routes></Routes>
                     </article>
                 </section>
-                <footer>
-                    <FooterHome />
+                <footer className="footerTemplate bg-light ">
+                    <div className="footer-copyright text-center py-1">© 2019 Copyright:
+                        <a href="https://facebook.com/matheuspeluchi/"> Matheus Peluchi</a>
+                    </div>  
                 </footer>
                 </div>
         )
