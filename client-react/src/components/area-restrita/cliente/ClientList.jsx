@@ -2,10 +2,10 @@ import React, {Component} from 'react'
 import {Link} from 'react-router-dom'
 
 
-import Lista from '../../../shared/lista/Lista';
-import {ClienteService} from '../../../../services/ClienteService'
-import BarraAcoes from '../../../shared/barra-acoes/BarraAcoes'
-import { Channel } from '../../../../services/EventService'
+import Lista from '../../shared/lista/Lista.jsx';
+import {ClienteService} from '../../../services/ClienteService'
+import BarraAcoes from '../../shared/barra-acoes/BarraAcoes.jsx'
+import { Channel } from '../../../services/EventService'
 
 class ClienteLista extends Component {
     static defaultProps = {
@@ -36,7 +36,7 @@ class ClienteLista extends Component {
 
     selectClient = (cliente) =>{
         console.log(cliente)
-        this.props.history.push(`/arearestrita/cliente/novo/${cliente._id}`)
+        this.props.history.push(`/arearestrita/cliente/visualizar/${cliente._id}`)
     }
 
     componentDidMount(){
@@ -57,7 +57,9 @@ class ClienteLista extends Component {
                     <div    >
                         <BarraAcoes>
                             <div className="float-right">
-                                <button className="btn btn-sm btn-primary m-1">Novo</button>
+                                <Link to={`${props.match.url}/novo`} className="btn btn-sm btn-primary m-1">
+                                    Novo
+                                </Link>
                             </div>
                         </BarraAcoes>
                         

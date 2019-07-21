@@ -10,11 +10,10 @@ import '../../stylesheets/styles.css'
 
 
 class HomeTemplate extends Component {
-    constructor(props){
-        super(props);
-    }
+    
+
     render (){
-        const {props} = this;
+    
         return (
             <div className="layout">
                 <header className="headerTemplate fixed-top">

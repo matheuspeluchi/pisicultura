@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ImgCliente from '../../assets/images/company.png'
 import ImgGrupo from '../../assets/images/group-icon-blue.png'
-import { Link, Switch, Route } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 class AreaRestrita extends Component {
   constructor() {

@@ -17,7 +17,7 @@ class HeaderMenu extends Component{
     }
     
     render(){
-        const {props} = this;
+        
         return (
             <nav className="navbar navbar-expand-sm navbar-dark menu p-0 menuSecundario">
                 
