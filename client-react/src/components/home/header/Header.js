@@ -19,7 +19,7 @@ class HeaderMenu extends Component{
     render(){
         const {props} = this;
         return (
-            <nav className="navbar navbar-expand-sm bg-primary navbar-dark fixed-top menu menuSecundario">
+            <nav className="navbar navbar-expand-sm bg-primary navbar-dark menu menuSecundario">
                 
                 <a className="navbar-brand text-center py-1" href="#">
                     <img src={logo} className="align-self-start" width="40" height="40" />

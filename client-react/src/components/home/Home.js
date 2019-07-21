@@ -13,21 +13,22 @@ class HomeTemplate extends Component {
     render (){
         const {props} = this;
         return (
-            <div>
-                <div className="headerTemplate">
-                    <HeaderMenu />
-                </div>
-                <div className="sidebarTemplate">
-                    <MenuPrincipal />   
-                </div>
-                <div className="conteudoTemplate">
-                    <Routes></Routes>
-                </div>
-                <div className="footerTemplate">
+            <div className="layout">
+                <header className="fixed-top">
+                    <HeaderMenu/>
+                </header>
+                <section>
+                    <nav>
+                        <MenuPrincipal />
+                    </nav>
+                    <article>
+                         <Routes></Routes>
+                    </article>
+                </section>
+                <footer>
                     <FooterHome />
+                </footer>
                 </div>
-
-            </div>
         )
     }
 }

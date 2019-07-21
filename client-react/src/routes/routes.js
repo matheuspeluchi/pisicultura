@@ -13,14 +13,14 @@ class Routes extends React.Component {
                     
     render(){
         return (
-            <div >
-                <Switch>
-                    <Route path="/arearestrita/cliente/novo/:clienteId" component={ClienteForm}/>
-                    <Route path="/arearestrita/cliente/novo" component={ClienteForm}/>
-                    <Route path="/arearestrita/cliente" component={ClienteLista}/>
-                    <Route path="/arearestrita" component={AreaRestrita}/>
-                </Switch>
-            </div>
+            
+            <Switch>
+                <Route path="/arearestrita/cliente/novo/:clienteId" component={ClienteForm}/>
+                <Route path="/arearestrita/cliente/novo" component={ClienteForm}/>
+                <Route path="/arearestrita/cliente" component={ClienteLista}/>
+                <Route path="/arearestrita" component={AreaRestrita}/>
+            </Switch>
+            
         )
     }
 }
