@@ -9,7 +9,6 @@ body{
   .layout{
     display: flex;
     flex-direction: column;
-    color: white;
   }
   
   .headerTemplate{
@@ -46,17 +45,4 @@ body{
     
   }
 
-  input, select {
-    height: 30px !important;
-    font-size: 12px !important;
-  }
-  
-  label{
-    text-align: right;
-    padding-top: 3px !important;
-    height: 30px !important;
-    margin-top: 0 !important;
-  }
-  
-  
   

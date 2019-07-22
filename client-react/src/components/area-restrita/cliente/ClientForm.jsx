@@ -89,54 +89,54 @@ class ClienteForm extends Component {
             
                 <div className="conteudo">
                     <div className="form-group row">
-                        <label className="control-form-label">Razão Social:</label>
+                        <label className="col-sm-2 col-form-label control-form-label">Razão Social:</label>
                         <div className="col-sm-4">
-                            <input type="text" className="form-control" onChange={this.handleChange} value={state.cliente.rsocial} name="rsocial" placeholder="Razão Social"/>
+                            <input type="text" className="form-control form-control-sm" onChange={this.handleChange} value={state.cliente.rsocial} name="rsocial" placeholder="Razão Social"/>
                         </div>
                     </div>
 
                     <div className="form-group row">
-                        <label className="control-form-label">Fantasia:</label>
+                        <label className="col-sm-2 col-form-label control-form-label">Fantasia:</label>
                         <div className="col-sm-4">
-                            <input type="text" className="form-control" onChange={this.handleChange} value={state.cliente.fantasia} name="fantasia" placeholder="Fantasia" />
+                            <input type="text" className="form-control form-control-sm" onChange={this.handleChange} value={state.cliente.fantasia} name="fantasia" placeholder="Fantasia" />
                         </div>
                     </div>
 
                     <div className="form-group row">
-                        <label className="control-form-label">CNPJ:</label>
+                        <label className="col-sm-2 col-form-label control-form-label">CNPJ:</label>
                         <div className="col-sm-2">
-                            <input type="text" className="form-control" onChange={this.handleChange} value={state.cliente.cnpj} name="cnpj" placeholder="CNPJ" />
+                            <input type="text" className="form-control form-control-sm" onChange={this.handleChange} value={state.cliente.cnpj} name="cnpj" placeholder="CNPJ" />
                         </div>     
                     </div>
                     <div className="form-group row">
-                        <label className="control-form-label">IE:</label>
+                        <label className="col-sm-2 col-form-label control-form-label">IE:</label>
                         <div className="col-sm-2">
-                            <input type="text" className="form-control" onChange={this.handleChange} value={state.cliente.ie} name="ie" placeholder="Insc. Estadual" />
+                            <input type="text" className="form-control form-control-sm" onChange={this.handleChange} value={state.cliente.ie} name="ie" placeholder="Insc. Estadual" />
                         </div>
                     </div>
 
                     <div className="form-group row">
-                        <label className="control-form-label">Endereço:</label>
+                        <label className="col-sm-2 col-form-label control-form-label">Endereço:</label>
                         <div className="col-sm-4">
-                            <input type="text" className="form-control" onChange={this.handleChange} value={state.cliente.endereco} name="endereco" placeholder="Endereço" />
+                            <input type="text" className="form-control form-control-sm" onChange={this.handleChange} value={state.cliente.endereco} name="endereco" placeholder="Endereço" />
                         </div>
                         <label className="col-form-label">Nº:</label>
                         <div className="col-sm-2">
-                            <input type="text" className="form-control" onChange={this.handleChange} value={state.cliente.numero}  name="numero" placeholder="Número" />
+                            <input type="text" className="form-control form-control-sm" onChange={this.handleChange} value={state.cliente.numero}  name="numero" placeholder="Número" />
                         </div>
                     </div>
 
                     <div className="form-group row">
-                        <label className="control-form-label">Bairro:</label>
+                        <label className="col-sm-2 col-form-label control-form-label">Bairro:</label>
                         <div className="col-sm-2">
-                            <input type="text" className="form-control" onChange={this.handleChange} value={state.cliente.bairro} name="bairro" placeholder="Bairro" />
+                            <input type="text" className="form-control form-control-sm" onChange={this.handleChange} value={state.cliente.bairro} name="bairro" placeholder="Bairro" />
                         </div>
                     </div>
 
                     <div className="form-group row">
-                        <label className="control-form-label">Cidade:</label>
+                        <label className="col-sm-2 col-form-label control-form-label">Cidade:</label>
                         <div className="col-sm-4">
-                            <select name="cidade" className="form-control" value={state.cliente.cidade._id} onChange={this.handleChange}>
+                            <select name="cidade" className="form-control form-control-sm" value={state.cliente.cidade._id} onChange={this.handleChange}>
                                 {state.cidades.map(data=> <option key={data._id} value={data._id}>{data.nome} </option>)}
                             </select>
                         </div>

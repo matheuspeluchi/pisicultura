@@ -15,16 +15,12 @@
 }
 
 .conteudo {
-    padding-top: 80px;
-    margin-left: 5px;
-    width: calc(100% - 250px);
+    padding-left: 30px;
+    padding-top: 80px;    
+    width: 97%;
 }
 
 .control-form-label {
-    cursor: pointer;
-    color: #1e282c    ;
-    width: 120px;
-    align-content: right;
-    line-height: 30px;
+    cursor: pointer;    
     font-weight: bold;
 }

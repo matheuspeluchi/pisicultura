@@ -13,7 +13,7 @@ class HomeTemplate extends Component {
     
 
     render (){
-    
+        const {props} = this;
         return (
             <div className="layout">
                 <header className="headerTemplate fixed-top">
@@ -32,7 +32,8 @@ class HomeTemplate extends Component {
                         <a href="https://facebook.com/matheuspeluchi/"> Matheus Peluchi</a>
                     </div>  
                 </footer>
-                </div>
+                {props.children}
+            </div>
         )
     }
 }
