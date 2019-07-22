@@ -54,7 +54,7 @@ class ClienteLista extends Component {
         const {state,props} = this;
         
             return (
-                    <div    >
+                    <div>
                         <BarraAcoes>
                             <div className="float-right">
                                 <Link to={`${props.match.url}/novo`} className="btn btn-sm btn-primary m-1">

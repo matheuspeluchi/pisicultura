@@ -17,9 +17,11 @@ class Lista extends Component {
         
         this.state = {
             columns: this.props.columns,
-            rows: this.props.rows
+            rows: this.props.rows,
+            gridHeight: '300px'
         }
         
+        this.getWindowHeight = this.getWindowHeight.bind(this);
     }
 
     rowClick(){        
@@ -31,10 +33,23 @@ class Lista extends Component {
         this.gridColumnApi = params.columnApi;
     }
 
+    getWindowHeight(){        
+        return (document.body.clientHeight -80)
+    }
+
+    componentDidMount(){
+        console.log(`${this.getWindowHeight()}px retorno`)
+        this.setState({
+            gridHeight: `${this.getWindowHeight()}px`
+        })
+    }
+
     render (){
-        const {props } = this;
+        const {props, state } = this;
+        
         return (
-                <div className="ag-theme-blue lista px-2">                    
+            
+                <div className="ag-theme-blue lista px-2" style={{height: state.gridHeight}}>                    
                     <AgGridReact
                         rowSelection = 'single'                  
                         columnDefs={props.columns}
@@ -43,6 +58,7 @@ class Lista extends Component {
                         onRowClicked={this.rowClick.bind(this)}>
                     </AgGridReact>
                 </div>
+            
         ) 
     }
 }
