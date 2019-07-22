@@ -13,14 +13,15 @@ export const ClienteService = {
                 .then(res => res.json())
     },
 
-    post(id,cliente){
-        return axios.post(`${API}${id}`,cliente)
+    save(id,cliente){
+        if(id){
+            return  axios.post(`${API}${id}`,cliente)      
+        }else {
+            return axios.put(API,cliente)
+        }
+     
+            
                 
-    },
-
-
-    put(data){
-        return axios.put(API,data)
     },
 
     delete(id){

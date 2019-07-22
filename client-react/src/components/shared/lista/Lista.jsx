@@ -38,7 +38,6 @@ class Lista extends Component {
     }
 
     componentDidMount(){
-        console.log(`${this.getWindowHeight()}px retorno`)
         this.setState({
             gridHeight: `${this.getWindowHeight()}px`
         })

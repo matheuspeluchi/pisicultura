@@ -27,7 +27,7 @@ class HomeTemplate extends Component {
                          <Routes></Routes>
                     </article>
                 </section>
-                <footer className="footerTemplate bg-light ">
+                <footer className="footerTemplate bg-withe ">
                     <div className="footer-copyright text-center py-1">© 2019 Copyright:
                         <a href="https://facebook.com/matheuspeluchi/"> Matheus Peluchi</a>
                     </div>  

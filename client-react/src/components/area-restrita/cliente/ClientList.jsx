@@ -44,6 +44,7 @@ class ClienteLista extends Component {
             .then( res => this.setState({lista: res}))
 
         Channel.on('selectedData', this.selectClient)  
+        
     }
 
     componentWillUnmount(){

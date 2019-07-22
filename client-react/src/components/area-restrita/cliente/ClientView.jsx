@@ -51,35 +51,35 @@ class ClienteView extends Component {
                 </BarraAcoes>
                 <div className="conteudo">
                     <div className="form-group row">
-                        <label htmlFor="rsocial" className="col-sm-2 col-form-label control-form-label">Razão Social:</label>
+                        <label htmlFor="rsocial" className="col-form-label control-form-label">Razão Social:</label>
                         <div className="col-sm-10">
                             <input type="text" readonly class="form-control-plaintext" id="rsocial" value={state.cliente.rsocial} />
                         </div>
                     </div>
 
                     <div className="form-group row">
-                        <label htmlFor="fantasia" className="col-sm-2 col-form-label control-form-label">Fantasia:</label>
+                        <label htmlFor="fantasia" className="col-form-label control-form-label">Fantasia:</label>
                         <div className="col-sm-10">
                             <input type="text" readonly class="form-control-plaintext" id="fantasia" value={state.cliente.fantasia} />
                         </div>
                     </div>
 
                     <div className="form-group row">
-                        <label htmlFor="cnpj" className="col-sm-2 col-form-label control-form-label">CNPJ:</label>
+                        <label htmlFor="cnpj" className="col-form-label control-form-label">CNPJ:</label>
                         <div className="col-sm-10">
                             <input type="text" readonly class="form-control-plaintext" id="cnpj" value={state.cliente.cnpj} />
                         </div>
                     </div>
 
                     <div className="form-group row">
-                        <label htmlFor="ie" className="col-sm-2 col-form-label control-form-label">Insc. Estadual</label>
+                        <label htmlFor="ie" className="col-form-label control-form-label">Insc. Estadual</label>
                         <div className="col-sm-10">
                             <input type="text" readonly class="form-control-plaintext" id="ie" value={state.cliente.ie} />
                         </div>
                     </div>
 
                     <div className="form-group row">
-                        <label htmlFor="endereco" className="col-sm-2 col-form-label control-form-label">Endereço:</label>
+                        <label htmlFor="endereco" className="col-form-label control-form-label">Endereço:</label>
                         <div className="col-sm-8">
                             <input type="text" readonly class="form-control-plaintext" id="endereco" value={state.cliente.endereco} />
                         </div>
@@ -89,14 +89,14 @@ class ClienteView extends Component {
                     </div>
 
                     <div className="form-group row">
-                        <label htmlFor="bairro" className="col-sm-2 col-form-label control-form-label">Bairro:</label>
+                        <label htmlFor="bairro" className="col-form-label control-form-label">Bairro:</label>
                         <div className="col-sm-10">
                             <input type="text" readonly class="form-control-plaintext" id="bairro" value={state.cliente.bairro} />
                         </div>
                     </div>
 
                     <div className="form-group row">
-                        <label htmlFor="endereco" className="col-sm-2 col-form-label control-form-label">Cidade:</label>
+                        <label htmlFor="endereco" className="col-form-label control-form-label">Cidade:</label>
                         <div className="col-sm-10">
                             <input type="text" readonly class="form-control-plaintext" id="endereco" value={state.cliente.cidade.nome} />
                         </div>

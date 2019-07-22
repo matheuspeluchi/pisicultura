@@ -4,7 +4,7 @@ class BarraAcoes extends Component{
 
     render(){      
 
-        return  <div className="barra-acoes bg-light">
+        return  <div className="barra-acoes">
                     {this.props.children}
                 </div>
                 

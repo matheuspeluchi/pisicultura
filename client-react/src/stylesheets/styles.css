@@ -5,6 +5,8 @@
     right: 0;
     padding-bottom: 40px;
     z-index: 1050;
+    background-color: #E8E8E8;
+    border-bottom: 1px solid lightgray
     
 }
 
@@ -22,4 +24,9 @@
 .control-form-label {
     cursor: pointer;    
     font-weight: bold;
+    width: 8rem;
+    padding-right: 15px;
+    padding-left: 15px;
+    line-height: 1.5;
+    text-align: right;
 }
