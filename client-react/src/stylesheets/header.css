@@ -20,13 +20,16 @@
     width: 250px;
     background-color: #367fa9;
     height: 40px;
-    font-size: 22px
+    font-size: 22px;
     
 }
 
 #userHeaderMenu {
     align-items: flex-end !important;
-    margin-left: auto;
+    position: fixed;
+    right: 0;
+    padding-top: 4px;
+    
 }
 
 ul .dropdown-menu{

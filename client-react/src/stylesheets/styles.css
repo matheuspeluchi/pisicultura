@@ -30,3 +30,35 @@
     line-height: 1.5;
     text-align: right;
 }
+
+/* Boostrap Hacks */
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+    background-color: #dee2e6 !important;
+    color: black !important;
+}
+
+@media (max-width: 768px) {
+    .conteudo {
+        padding-top: 80px;    
+        width: 90%;
+        padding-left: 5px;
+        
+    }
+
+    .control-form-label {
+        text-align: left;    
+    }
+
+    .barra-acoes {
+        width: 100%;
+        height: 40px;
+        position: fixed;
+        right: 0;
+        padding-bottom: 40px;
+        z-index: 1050;
+        background-color: #E8E8E8;
+        border-bottom: 1px solid lightgray
+        
+    }
+
+}

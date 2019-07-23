@@ -6,10 +6,6 @@ body{
     font-size: 12px;
   }
   
-  .layout{
-    display: flex;
-    flex-direction: column;
-  }
   
   .headerTemplate{
     background-color: DeepSkyBlue;
@@ -34,7 +30,6 @@ body{
   }
   
   .navTemplate{
-    background-color: MediumSpringGreen;
     width: 250px;
   }
   
@@ -47,4 +42,33 @@ body{
     
   }
 
+
+  @media (max-width: 768px) {
+    #sidebar {
+        margin-left: -250px;
+    }
+    #sidebar.active {
+        margin-left: 0;
+    }
+    .header-logo {
+      width: 100%;
+      padding: 0;
+      margin: 0;
+    }
+    article{
+      width: 98%;
+      /*order: -1;*/
+      height: auto;
+      padding-top:40px;
+      padding-bottom:30px;
+    
+    }
+    .footerTemplate {
+      width: 100%;
+    }
+    .navTemplate {
+      display: none;
+    }
+  
+}
   

@@ -66,6 +66,7 @@ class ClienteLista extends Component {
                         
                         <Lista columns={state.columnDefs} rows={state.lista} />
                         
+                        
                     </div>
             )
             

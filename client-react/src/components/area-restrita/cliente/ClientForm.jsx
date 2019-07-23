@@ -87,149 +87,173 @@ class ClienteForm extends Component {
                 </BarraAcoes>
             
                 <div className="conteudo">
-                    <div className="form-group row">
-                        <label className="col-form-label control-form-label">Razão Social:</label>
-                        <div className="col-sm-4">
-                            <input type="text" 
-                                className="form-control form-control-sm" 
-                                onChange={this.handleChange} 
-                                value={state.cliente.rsocial} 
-                                name="rsocial" 
-                                placeholder="Razão Social"/>
-                        </div>
-                    </div>
+                    
+                    
+                    <ul className="nav nav-tabs" role="tablist">
+                        <li className="nav-item">
+                            <a className="nav-link active" href="#principal" role="tab" data-toggle="tab">Principal</a>
+                        </li>
+                        <li className="nav-item">
+                            <a className="nav-link" href="#endereco" role="tab" data-toggle="tab">Endereço</a>
+                        </li>
+                        <li className="nav-item">
+                            <a className="nav-link" href="#contato" role="tab" data-toggle="tab">Contato</a>
+                        </li>
+                        <li className="nav-item">
+                            <a className="nav-link" href="#banco" role="tab" data-toggle="tab">Dados Bancários</a>
+                        </li>
+                    </ul>
 
-                    <div className="form-group row">
-                        <label className="col-form-label control-form-label">Fantasia:</label>
-                        <div className="col-sm-4">
-                            <input type="text" 
-                                className="form-control form-control-sm" 
-                                onChange={this.handleChange} 
-                                value={state.cliente.fantasia} 
-                                name="fantasia" 
-                                placeholder="Fantasia" />
-                        </div>
-                    </div>
+                    <div className="tab-content">
+                        <div role="tabpanel" className="tab-pane fade show active" id="principal">
+                                <div className="form-group row">
+                                    <label className="col-form-label control-form-label">Razão Social:</label>
+                                    <div className="col-sm-4">
+                                        <input type="text" 
+                                            className="form-control form-control-sm" 
+                                            onChange={this.handleChange} 
+                                            value={state.cliente.rsocial} 
+                                            name="rsocial" 
+                                            placeholder="Razão Social"/>
+                                    </div>
+                                </div>
 
-                    <div className="form-group row">
-                        <label className="col-form-label control-form-label">CNPJ:</label>
-                        <div className="col-sm-2">
-                            <input type="text" 
-                                className="form-control form-control-sm" 
-                                onChange={this.handleChange} 
-                                value={state.cliente.cnpj} 
-                                name="cnpj" 
-                                placeholder="CNPJ" />
-                        </div>     
-                    </div>
+                                <div className="form-group row">
+                                    <label className="col-form-label control-form-label">Fantasia:</label>
+                                    <div className="col-sm-4">
+                                        <input type="text" 
+                                            className="form-control form-control-sm" 
+                                            onChange={this.handleChange} 
+                                            value={state.cliente.fantasia} 
+                                            name="fantasia" 
+                                            placeholder="Fantasia" />
+                                    </div>
+                                </div>
 
-                    <div className="form-group row">
-                        <label className="col-form-label control-form-label">IE:</label>
-                        <div className="col-sm-2">
-                            <input type="text" 
-                                className="form-control form-control-sm" 
-                                onChange={this.handleChange} 
-                                value={state.cliente.ie} 
-                                name="ie" 
-                                placeholder="Insc. Estadual" />
-                        </div>
-                    </div>
+                                <div className="form-group row">
+                                    <label className="col-form-label control-form-label">CNPJ:</label>
+                                    <div className="col-sm-2">
+                                        <input type="text" 
+                                            className="form-control form-control-sm" 
+                                            onChange={this.handleChange} 
+                                            value={state.cliente.cnpj} 
+                                            name="cnpj" 
+                                            placeholder="CNPJ" />
+                                    </div>     
+                                </div>
 
-                    <div className="form-group row">
-                        <label className="col-form-label control-form-label">Telefone:</label>
-                        <div className="col-sm-2">
-                            <input type="text" 
-                                className="form-control form-control-sm" 
-                                onChange={this.handleChange} 
-                                value={state.cliente.telefone} 
-                                name="telefone" 
-                                placeholder="Telefone" />
-                        </div>
-                    </div>
+                                <div className="form-group row">
+                                    <label className="col-form-label control-form-label">IE:</label>
+                                    <div className="col-sm-2">
+                                        <input type="text" 
+                                            className="form-control form-control-sm" 
+                                            onChange={this.handleChange} 
+                                            value={state.cliente.ie} 
+                                            name="ie" 
+                                            placeholder="Insc. Estadual" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div role="tabpanel" className="tab-pane fade show active" id="contato">
+                                <div className="form-group row">
+                                    <label className="col-form-label control-form-label">Telefone:</label>
+                                    <div className="col-sm-2">
+                                        <input type="text" 
+                                            className="form-control form-control-sm" 
+                                            onChange={this.handleChange} 
+                                            value={state.cliente.telefone} 
+                                            name="telefone" 
+                                            placeholder="Telefone" />
+                                    </div>
+                                </div>
 
-                    <div className="form-group row">
-                        <label className="col-form-label control-form-label">Celular:</label>
-                        <div className="col-sm-2">
-                            <input type="tel" className="form-control form-control-sm"
-                                required
-                                onChange={this.handleChange} 
-                                value={state.cliente.celular} 
-                                name="celular"
-                                placeholder="Celular"
-                                data-mask="(00) 0000-0000" />
-                        </div>
-                    </div>
+                                <div className="form-group row">
+                                    <label className="col-form-label control-form-label">Celular:</label>
+                                    <div className="col-sm-2">
+                                        <input type="tel" className="form-control form-control-sm"
+                                            required
+                                            onChange={this.handleChange} 
+                                            value={state.cliente.celular} 
+                                            name="celular"
+                                            placeholder="Celular"
+                                            data-mask="(00) 0000-0000" />
+                                    </div>
+                                </div>
 
-                    <div className="form-group row">
-                        <label className="col-form-label control-form-label">Contato:</label>
-                        <div className="col-sm-2">
-                            <input type="text" 
-                                className="form-control form-control-sm" 
-                                onChange={this.handleChange} 
-                                value={state.cliente.contato} 
-                                name="contato" 
-                                placeholder="Contato na empresa" />
-                        </div>
-                    </div>
+                                <div className="form-group row">
+                                    <label className="col-form-label control-form-label">Contato:</label>
+                                    <div className="col-sm-2">
+                                        <input type="text" 
+                                            className="form-control form-control-sm" 
+                                            onChange={this.handleChange} 
+                                            value={state.cliente.contato} 
+                                            name="contato" 
+                                            placeholder="Contato na empresa" />
+                                    </div>
+                                </div>
 
-                    <div className="form-group row">
-                        <label className="col-form-label control-form-label">E-mail:</label>
-                        <div className="col-sm-4">
-                            <input type="email" 
-                                className="form-control form-control-sm" 
-                                pattern=".+@globex.com"
-                                onChange={this.handleChange}
-                                value={state.cliente.email} 
-                                name="email" 
-                                placeholder="Email" />
-                        </div>
-                    </div>
+                                <div className="form-group row">
+                                    <label className="col-form-label control-form-label">E-mail:</label>
+                                    <div className="col-sm-4">
+                                        <input type="email" 
+                                            className="form-control form-control-sm" 
+                                            pattern=".+@globex.com"
+                                            onChange={this.handleChange}
+                                            value={state.cliente.email} 
+                                            name="email" 
+                                            placeholder="Email" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div role="tabpanel" className="tab-pane fade show active" id="endereco"></div>
+                                <div className="form-group row">
+                                    <label className="col-form-label control-form-label">Endereço:</label>
+                                    <div className="col-sm-4">
+                                        <input type="text" 
+                                            className="form-control form-control-sm" 
+                                            onChange={this.handleChange}
+                                            value={state.cliente.endereco}
+                                            name="endereco"
+                                            placeholder="Endereço" />
+                                    </div>
+                                    <label className="col-form-label">Nº:</label>
+                                    <div className="col-sm-2">
+                                        <input type="text" 
+                                            className="form-control form-control-sm" 
+                                            onChange={this.handleChange} 
+                                            value={state.cliente.enderecoNum}  
+                                            name="enderecoNum" 
+                                            placeholder="Número" />
+                                    </div>
+                                </div>
 
-                    <div className="form-group row">
-                        <label className="col-form-label control-form-label">Endereço:</label>
-                        <div className="col-sm-4">
-                            <input type="text" 
-                                className="form-control form-control-sm" 
-                                onChange={this.handleChange}
-                                value={state.cliente.endereco}
-                                name="endereco"
-                                placeholder="Endereço" />
-                        </div>
-                        <label className="col-form-label">Nº:</label>
-                        <div className="col-sm-2">
-                            <input type="text" 
-                                className="form-control form-control-sm" 
-                                onChange={this.handleChange} 
-                                value={state.cliente.enderecoNum}  
-                                name="enderecoNum" 
-                                placeholder="Número" />
-                        </div>
-                    </div>
+                                <div className="form-group row">
+                                    <label className="col-form-label control-form-label">Bairro:</label>
+                                    <div className="col-sm-2">
+                                        <input type="text"
+                                            className="form-control form-control-sm"
+                                            onChange={this.handleChange}
+                                            value={state.cliente.bairro}
+                                            name="bairro"
+                                            placeholder="Bairro" />
+                                    </div>
+                                </div>
 
-                    <div className="form-group row">
-                        <label className="col-form-label control-form-label">Bairro:</label>
-                        <div className="col-sm-2">
-                            <input type="text"
-                                className="form-control form-control-sm"
-                                onChange={this.handleChange}
-                                value={state.cliente.bairro}
-                                name="bairro"
-                                placeholder="Bairro" />
-                        </div>
+                                <div className="form-group row">
+                                    <label className="col-form-label control-form-label">Cidade:</label>
+                                    <div className="col-sm-4">
+                                        <select name="cidade"
+                                            className="form-control form-control-sm"
+                                            value={state.cliente.cidade._id}
+                                            onChange={this.handleChange}>
+                                            {state.cidades.map(data=> <option key={data._id} value={data._id}>{data.nome} </option>)}
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>                                
                     </div>
-
-                    <div className="form-group row">
-                        <label className="col-form-label control-form-label">Cidade:</label>
-                        <div className="col-sm-4">
-                            <select name="cidade"
-                                className="form-control form-control-sm"
-                                value={state.cliente.cidade._id}
-                                onChange={this.handleChange}>
-                                {state.cidades.map(data=> <option key={data._id} value={data._id}>{data.nome} </option>)}
-                            </select>
-                        </div>
-                    </div>
-
                 </div>
             </div>    
         )
