@@ -25,7 +25,7 @@ class ClienteLista extends Component {
                 {headerName:'CNPJ', field:'cnpj', filter: true, sortable: true},
                 {headerName:'I.E', field:'ie', filter: true, sortable: true},
                 {headerName:'Endereço', field:'endereco', filter: true, sortable: true},
-                {headerName:'Número', field:'numero', filter: true, sortable: true},
+                {headerName:'Número', field:'enderecoNum', filter: true, sortable: true},
                 {namheaderNamee:'Bairro', field:'bairro', filter: true, sortable: true},
                 {headerName:'Cidade', field:'cidade.nome', filter: true, sortable: true},
                 

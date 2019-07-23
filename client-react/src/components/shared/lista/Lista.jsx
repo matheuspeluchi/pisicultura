@@ -33,7 +33,7 @@ class Lista extends Component {
         this.gridColumnApi = params.columnApi;
     }
 
-    getWindowHeight(){        
+    getWindowHeight(){      
         return (document.body.clientHeight -80)
     }
 

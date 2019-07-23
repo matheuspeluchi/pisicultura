@@ -10,7 +10,15 @@ const empresaSchema = new mongoose.Schema({
     enderecoNum: Number,
     bairro: String,
     cidade:{type: mongoose.SchemaTypes.ObjectId, ref:'Cidade'},
-    telefone: String
+    telefone: String,
+    telefone1: String,
+    celular: String,
+    contato: String,
+    email: String,
+    bancoNome: String,
+    bancoAgencia: String,
+    bancoConta: String,
+    bancoTitular: String
 });
 
 module.exports = mongoose.model('Empresa',empresaSchema);

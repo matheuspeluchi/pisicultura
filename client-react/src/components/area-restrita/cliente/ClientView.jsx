@@ -53,52 +53,84 @@ class ClienteView extends Component {
                     <div className="form-group row">
                         <label htmlFor="rsocial" className="col-form-label control-form-label">Razão Social:</label>
                         <div className="col-sm-10">
-                            <input type="text" readonly class="form-control-plaintext" id="rsocial" value={state.cliente.rsocial} />
+                            <input type="text" 
+                                readonly 
+                                class="form-control-plaintext" 
+                                id="rsocial" 
+                                value={state.cliente.rsocial} />
                         </div>
                     </div>
 
                     <div className="form-group row">
                         <label htmlFor="fantasia" className="col-form-label control-form-label">Fantasia:</label>
                         <div className="col-sm-10">
-                            <input type="text" readonly class="form-control-plaintext" id="fantasia" value={state.cliente.fantasia} />
+                            <input type="text" 
+                                readonly 
+                                class="form-control-plaintext" 
+                                id="fantasia" 
+                                value={state.cliente.fantasia} />
                         </div>
                     </div>
 
                     <div className="form-group row">
                         <label htmlFor="cnpj" className="col-form-label control-form-label">CNPJ:</label>
                         <div className="col-sm-10">
-                            <input type="text" readonly class="form-control-plaintext" id="cnpj" value={state.cliente.cnpj} />
+                            <input type="text" 
+                                readonly 
+                                class="form-control-plaintext" 
+                                id="cnpj" 
+                                value={state.cliente.cnpj} />
                         </div>
                     </div>
 
                     <div className="form-group row">
                         <label htmlFor="ie" className="col-form-label control-form-label">Insc. Estadual</label>
                         <div className="col-sm-10">
-                            <input type="text" readonly class="form-control-plaintext" id="ie" value={state.cliente.ie} />
+                            <input type="text" 
+                                readonly 
+                                class="form-control-plaintext" 
+                                id="ie" 
+                                value={state.cliente.ie} />
                         </div>
                     </div>
 
                     <div className="form-group row">
                         <label htmlFor="endereco" className="col-form-label control-form-label">Endereço:</label>
                         <div className="col-sm-8">
-                            <input type="text" readonly class="form-control-plaintext" id="endereco" value={state.cliente.endereco} />
+                            <input type="text" 
+                                readonly 
+                                class="form-control-plaintext" 
+                                id="endereco" 
+                                value={state.cliente.endereco} />
                         </div>
                         <div className="col-sm-2">
-                            <input type="text" readonly class="form-control-plaintext" id="numero" value={state.cliente.numero} />
+                            <input type="text" 
+                                readonly 
+                                class="form-control-plaintext" 
+                                id="numero" 
+                                value={state.cliente.numero} />
                         </div>
                     </div>
 
                     <div className="form-group row">
                         <label htmlFor="bairro" className="col-form-label control-form-label">Bairro:</label>
                         <div className="col-sm-10">
-                            <input type="text" readonly class="form-control-plaintext" id="bairro" value={state.cliente.bairro} />
+                            <input type="text" 
+                                readonly 
+                                class="form-control-plaintext" 
+                                id="bairro" 
+                                value={state.cliente.bairro} />
                         </div>
                     </div>
 
                     <div className="form-group row">
                         <label htmlFor="endereco" className="col-form-label control-form-label">Cidade:</label>
                         <div className="col-sm-10">
-                            <input type="text" readonly class="form-control-plaintext" id="endereco" value={state.cliente.cidade.nome} />
+                            <input type="text" 
+                                readonly 
+                                class="form-control-plaintext" 
+                                id="endereco" 
+                                value={state.cliente.cidade.nome} />
                         </div>
                     </div>
                 </div>
