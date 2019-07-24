@@ -6,13 +6,10 @@
 
 .menuSecundario nav {
     height: 40px;
-    z-index: 1050;
+    z-index: 99990;
     color: white !important;
     padding-left: 0 !important;
-}
-
-.username a{
-    color: white;
+    font-size: 12px;
 }
 
 .menuSecundario .navbar-brand {
@@ -32,6 +29,31 @@
     
 }
 
-ul .dropdown-menu{
-    font-size: 12px;
+
+@media (max-width: 768px) {
+    .logo-mobile{
+
+    }
+
+    .menuSecundario .navbar-brand {
+        display: none;
+        color: white;
+        width: 250px;
+        background-color: #367fa9;
+        height: 40px;
+        font-size: 22px;
+        
+    }
 }
+
+
+@media (min-width: 576px){
+    .navbar-expand-sm .navbar-nav .nav-link {
+        padding-right: .5rem !important;
+        padding-left: .5rem !important;
+    }
+
+}
+
+
+

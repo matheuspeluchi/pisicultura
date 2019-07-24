@@ -44,9 +44,7 @@ body{
 
 
   @media (max-width: 768px) {
-    #sidebar {
-        margin-left: -250px;
-    }
+
     #sidebar.active {
         margin-left: 0;
     }
@@ -63,11 +61,11 @@ body{
       padding-bottom:30px;
     
     }
+    .navTemplate{
+      display: auto;
+    }
     .footerTemplate {
       width: 100%;
-    }
-    .navTemplate {
-      display: none;
     }
   
 }

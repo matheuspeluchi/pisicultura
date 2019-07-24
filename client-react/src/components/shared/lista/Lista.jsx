@@ -7,9 +7,10 @@ import { Channel } from '../../../services/EventService'
 
 class Lista extends Component {
 
-    static defaulProps ={
+    static defaultProps ={
         columns: [],
         rows:[],
+        autoHeight: true
     }
 
     constructor(props){
@@ -34,13 +35,15 @@ class Lista extends Component {
     }
 
     getWindowHeight(){      
-        return (document.body.clientHeight -80)
+        return (document.body.clientHeight -85)
     }
 
     componentDidMount(){
-        this.setState({
-            gridHeight: `${this.getWindowHeight()}px`
-        })
+        if(this.props.autoHeight){
+            this.setState({
+                gridHeight: `${this.getWindowHeight()}px`
+            })
+        }
     }
 
     render (){
@@ -48,7 +51,7 @@ class Lista extends Component {
         
         return (
             
-                <div className="ag-theme-blue lista px-2" style={{height: state.gridHeight}}>                    
+                <div className="ag-theme-blue lista p-2" style={{height: state.gridHeight}}>                    
                     <AgGridReact
                         rowSelection = 'single'                  
                         columnDefs={props.columns}
