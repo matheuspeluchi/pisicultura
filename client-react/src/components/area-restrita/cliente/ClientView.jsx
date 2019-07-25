@@ -42,14 +42,14 @@ class ClienteView extends Component {
         const { state } = this
         return (
             <div>
-                <BarraAcoes>
+                <BarraAcoes className="fixed-top">
                     <div className="float-right m-1">
                         <Link to={`/arearestrita/cliente/novo/${state.cliente._id}`}  className="btn btn-sm btn-primary">
                             Editar
                         </Link>
                     </div>
                 </BarraAcoes>
-                <div className="conteudo">
+                <div className="p-3">
 
                     <ul className="nav nav-tabs" role="tablist">
                         <li className="nav-item">

@@ -26,40 +26,35 @@ class HeaderMenu extends Component{
     render(){
         
         return (
-            <nav className="navbar navbar-expand-sm navbar-dark menu p-0 menuSecundario d-flex">
+
+            <div className="row-fluid menuSecundario menu">
+                <div className="float-left">
+                    <a className="navbar-brand text-center py-1 header-logo" href="#">
+                        <img src={logo} className="align-self-start" width="40" height="40" />
+                        <span className=" h5 my-2 py-2 ml-2">PisicAdmin</span>
+                     </a>
                 
+                    <button onClick={this.toggleMenu.bind(this)} className="btn btn-link pb-2 mb-2">
+                        <i className="fa fa-align-justify"></i>                                        
+                    </button>
+                </div>
+                <div className="float-right p-1">
+                    <button class="btn btn-sm btn-link dropdown-toggle active" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i className="fa fa-lg fa-user-circle mr-2 p-0"></i>   
+                        {this.state.userName}
+                    </button>
                     
-                        <a className="navbar-brand text-center py-1 header-logo" href="#">
-                            <div className="float-left pl-4">
-                                <img src={logo} className="align-self-start" width="40" height="40" />
-                                <span className=" h5 my-2 py-2 ml-2">PisicAdmin</span>
-                            </div>                            
-                        </a>
-                    
-                        <button type="button" id="sidebarCollapse" onClick={this.toggleMenu.bind(this)} className="btn btn-sm" style={{color:'white'}} >
-                            <span className="navbar-toggler-icon"></span>                                        
-                        </button>
-                    <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul className="navbar-nav" id="userHeaderMenu">
-                        
-                            <li className="nav-item dropdown active">
-                                <a className="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-                                    <i className="fa fa-lg fa-user-circle mr-2 p-0"></i>   
-                                    {this.state.userName}
-                                </a>
-                                <div className="dropdown-menu">
-                                    <a className="dropdown-item" href="#">Sair</a>
-                                </div>
-                            </li>
-                            <li className="nav-item">
-                                <Link to="/arearestrita" className="nav-link active">
-                                    <i className="fa fa-cogs"></i>
-                                </Link>
-                            </li>
-                        </ul>
+                    <div className="dropdown-menu">
+                        <a className="dropdown-item" href="#">Sair</a>
                     </div>
-                
-            </nav>
+
+
+                    <Link to="/arearestrita" className="btn btn-sm btn-link active">
+                        <i className="fa fa-cogs"></i>
+                    </Link>
+                </div>
+            </div>
+
         )
     }
 }

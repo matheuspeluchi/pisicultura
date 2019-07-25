@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {cpfMask} from '../../../include/cpfMask'
 
 import BarraAcoes from '../../shared/barra-acoes/BarraAcoes.jsx'
 import {ClienteService} from '../../../services/ClienteService'
@@ -60,12 +61,23 @@ class ClienteForm extends Component {
                 value = target.value,
                 name = target.name;
 
-        this.setState(prevState => ({
-           cliente:{
-               ...prevState.cliente,
-               [name]: value
-           }
-        }))
+        if (name === 'cpf') {
+            this.setState(prevState => ({
+               cliente:{
+                    ...prevState.cliente,
+                    [name]: value
+                    }
+                })
+            )
+        } else {
+            this.setState(prevState => ({
+                cliente:{
+                     ...prevState.cliente,
+                     [name]: cpfMask(value)
+                     }
+                 })
+             )
+        }
     }
 
     salvar (data){

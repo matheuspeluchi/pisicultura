@@ -70,8 +70,15 @@
 
 
 @media (max-width: 567px){
- .menuPrincipal {
-     width: 30px;
- }
-    
+
+    .navTemplate {
+        display: none;
+    }   
+}
+
+@media (max-width: 567px){
+
+    .navTemplate {
+        display: none;
+    }   
 }
