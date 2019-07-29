@@ -1,6 +1,6 @@
 
 import api from './API'
-import axios from 'axios'
+import jwt from 'jsonwebtoken'
 
 
 export const UserService = {
@@ -24,7 +24,19 @@ export const UserService = {
 
     isAuthenticated(){
         return (sessionStorage.getItem('Authorization') !== null)
-    }
+    },
 
+
+    isDeveloper(){
+        let decoded = jwt.decode(sessionStorage.getItem('Authorization'))
+        return decoded.grupo == 'developer' ? true :false;
+            
+    },
+
+    isAdmin(){
+        let decoded = jwt.decode(sessionStorage.getItem('Authorization'))
+        return decoded.grupo == 'admin' ? true : false;
+
+    }
     
 }

@@ -55,20 +55,23 @@ class HeaderMenu extends Component{
                     </button>
                 </div>
                 <div className="float-right p-1 ">
-                    <small>
-                        <button className="btn btn-sm btn-link dropdown-toggle active userNameHeader" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i className="fa fa-lg fa-user-circle mr-2 p-0"></i>   
-                            {this.state.userName}
-                        </button>
-                        
-                        <div className="dropdown-menu">
-                            <button className="dropdown-item userNameHeader" onClick={this.logout}>Sair</button>
-                        </div>
+                    
+                    <button className="btn btn-sm btn-link dropdown-toggle active userNameHeader" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i className="fa fa-lg fa-user-circle mr-2 p-0"></i>   
+                        {this.state.userName}
+                    </button>
+                    
+                    <div className="dropdown-menu">
+                        <button className="dropdown-item userNameHeader" onClick={this.logout}>Sair</button>
+                    </div>
 
-                    </small>
-                    <Link to="/arearestrita" className="btn btn-sm btn-link active">
-                        <i className="fa fa-cogs"></i>
-                    </Link>
+                    {
+                        UserService.isDeveloper()?
+                            <Link to="/arearestrita" className="btn btn-sm btn-link active">
+                                <i className="fa fa-cogs"></i>
+                            </Link>
+                        :''                    
+                    }
                 </div>
             </div>
 

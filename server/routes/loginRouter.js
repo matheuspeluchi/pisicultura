@@ -5,11 +5,11 @@ const router = express.Router();
 
 
 router.post('/', (req,res)=>{
-    console.log(req.body)
     let login = req.body.login;
     let senha = req.body.password
     Pessoa.find ({"email": login, "password":senha})
-        .then ((data) => { 
+        .populate('grupo')
+        .then (data => { 
             if (data.length != 1){
                 res.status(401).send('Erro ao localizar usuario com as credenciais informadas!');
             }else{

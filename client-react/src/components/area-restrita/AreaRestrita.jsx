@@ -31,15 +31,14 @@ class AreaRestrita extends Component {
                 </Link>
 
 
-
-                <a className="m-1">
+                <Link to="/arearestrita/cliente" className="m-1">
                     <div className="card">
                         <div className="card-header">
-                            <h6 className="card-subtitle mb-2 text-muted text-center">Grupos</h6>
+                            <h6 className="card-subtitle mb-2 text-muted text-center">Usuarios</h6>
                         </div>
                         <img className="card-img-top rounded mx-auto d-block" src={ImgGrupo}  style={ImgStyle} alt="Imagem de capa do card" />
-                    </div>
-                </a>
+                    </div>                
+                </Link>
 
             </div>
 
