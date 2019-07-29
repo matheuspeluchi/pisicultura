@@ -31,8 +31,8 @@ export class SinginComponent implements OnInit {
 
   login() {
     const login = this.loginForm.get('login').value;
-    const senha = this.loginForm.get('password').value;
-    this.authService.authenticate(login, senha)
+    const password = this.loginForm.get('password').value;
+    this.authService.authenticate(login, password)
       .subscribe(
         () => {
             console.log('Usuario logado!')

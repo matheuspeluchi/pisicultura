@@ -14,11 +14,11 @@ class Routes extends React.Component {
         return (
              <Suspense fallback={<div>Loading...</div>}>
                 <Switch>
-                    <Route path="/arearestrita/cliente/visualizar/:clienteId" component={ClienteView}/>
-                    <Route path="/arearestrita/cliente/novo/:clienteId" component={ClienteForm}/>
-                    <Route path="/arearestrita/cliente/novo" component={ClienteForm}/>
-                    <Route path="/arearestrita/cliente" component={ClienteLista}/>
-                    <Route path="/arearestrita" component={AreaRestrita}/>
+                    <Route exact path="/arearestrita/cliente/visualizar/:clienteId" component={ClienteView}/>
+                    <Route exact path="/arearestrita/cliente/novo/:clienteId" component={ClienteForm}/>
+                    <Route exact path="/arearestrita/cliente/novo" component={ClienteForm}/>
+                    <Route exact path="/arearestrita/cliente" component={ClienteLista}/>
+                    <Route exact path="/arearestrita" component={AreaRestrita}/>
                 </Switch>
             </Suspense>
             

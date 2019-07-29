@@ -9,7 +9,7 @@ const config = {
     useNewUrlParser: true,
     useCreateIndex: true,
 }
-
+//const cors = require('cors')
 //Conexão com o banco de dados;
 
 mongoose.connect('mongodb://localhost:27017/desenvolvimento',config,(err, client) => {
@@ -21,10 +21,14 @@ mongoose.connect('mongodb://localhost:27017/desenvolvimento',config,(err, client
     })
 });
 
+//app.use(cors())
+
 //Define Cabeçalhos de resposta e configuração do CORS;
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "http://localhost:3000");
+    res.header("Access-Control-Allow-Origin", "http://localhost:4200");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
+    res.header("Access-Control-Allow-Headers:Origin, Content-Type, application/json")
     res.header("Access-Control-Expose-Headers","Authorization");
     res.header("Access-Control-Allow-Methods", "POST, GET, PUT, DELETE, OPTIONS");
     res.header("Allow","GET, POST, PUT, DELETE, OPTIONS")

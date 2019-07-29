@@ -1,7 +1,10 @@
 import React,{Component} from 'react'
 import { Link } from 'react-router-dom'
-import logo from '../../assets/logo.png'
+import jwt from 'jsonwebtoken'
 import * as $ from 'jquery'
+
+import logo from '../../assets/logo.png'
+import {UserService} from '../../services/UserService'
 
 window.jquery = window.$ = $
 
@@ -13,14 +16,27 @@ class HeaderMenu extends Component{
     constructor(props){
         super(props);
         this.state = {
-            userName: 'Matheus Peluchi'
+            userName: ''
         }
+    }
+
+
+    componentDidMount() {
+        let decoded = jwt.decode(sessionStorage.getItem('Authorization'))
+        this.setState({
+            userName: decoded.nome
+        })
+        
     }
 
     toggleMenu(event){    
         event.preventDefault();
         $(".navTemplate").toggle('slow');
         
+    }
+
+    logout = () => {
+        UserService.logout()
     }
     
     render(){
@@ -39,13 +55,13 @@ class HeaderMenu extends Component{
                     </button>
                 </div>
                 <div className="float-right p-1">
-                    <button class="btn btn-sm btn-link dropdown-toggle active" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <button className="btn btn-sm btn-link dropdown-toggle active" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i className="fa fa-lg fa-user-circle mr-2 p-0"></i>   
                         {this.state.userName}
                     </button>
                     
                     <div className="dropdown-menu">
-                        <a className="dropdown-item" href="#">Sair</a>
+                        <button className="dropdown-item" onClick={this.logout}>Sair</button>
                     </div>
 
 

@@ -6,7 +6,7 @@ const router = express.Router();
 
 router.post('/', (req,res)=>{
     let login = req.body.login;
-    let senha = req.body.senha
+    let senha = req.body.password
     Pessoa.find ({"email": login, "password":senha})
         .then ((data) => { 
             if (data.length != 1){

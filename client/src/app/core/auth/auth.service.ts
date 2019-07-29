@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
 import { tap } from 'rxjs/operators';
 import { UserService } from '../user/user.service';
 
-const baseRestUrl = 'http://localhost:3000';
+const baseRestUrl = 'http://localhost:3001';
 @Injectable({
   providedIn: 'root'
 })
@@ -14,9 +14,9 @@ export class AuthService {
     private http: HttpClient,
     private userService: UserService
     ) { }
-
-  authenticate(login: string, senha: string) {
-     return this.http.post(baseRestUrl + '/login', {login, senha}, {observe: 'response'})
+    
+  authenticate(login: string, password: string) {
+     return this.http.post(baseRestUrl + '/login', {login, password}, {observe: 'response'})
      .pipe(tap(res => this.userService.setToken(res.headers.get('Authorization'))));
   }
 }

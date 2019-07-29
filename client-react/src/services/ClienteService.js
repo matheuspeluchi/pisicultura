@@ -1,23 +1,23 @@
 import axios from 'axios'
-const API = 'http://localhost:3001/cliente/';
+import api from './API'
 
 
 export const ClienteService = {
 
     get(id){
-        return axios.get(`${API}${id}`)
+        return api.get(`/cliente/${id}`)
     },
 
     list(){
-        return fetch(API)
-                .then(res => res.json())
+        return api.get('/cliente')
+                .then(res => res.data)
     },
 
     save(id,cliente){
         if(id){
-            return  axios.post(`${API}${id}`,cliente)      
+            return  api.post(`/cliente/${id}`,cliente)      
         }else {
-            return axios.put(API,cliente)
+            return api.put('/cliente',cliente)
         }
      
             
@@ -25,7 +25,7 @@ export const ClienteService = {
     },
 
     delete(id){
-        return axios.delete(API + id)
+        return api.delete('/cliente' + id)
         
     }
 }

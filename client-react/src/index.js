@@ -3,12 +3,17 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
 import './include/bootstrap'
-import {BrowserRouter} from 'react-router-dom';
+import {BrowserRouter, Switch, Route} from 'react-router-dom';
 import HomeTemplate from './components/home/Home';
+import Login from './components/login'
+
 
 ReactDOM.render(
     <BrowserRouter>
-        <HomeTemplate />
+        <Switch>
+            <Route path="/login" component={Login}/>
+            <Route path="/" component={HomeTemplate}/>
+        </Switch>
     </BrowserRouter>, 
     document.getElementById('root'));
 

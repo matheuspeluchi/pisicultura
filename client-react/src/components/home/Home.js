@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Redirect} from 'react-router-dom';
 import Routes from '../../routes/routes';
 
 import HeaderMenu from './Header';
@@ -7,13 +8,25 @@ import '../../stylesheets/header.css'
 import '../../stylesheets/home.css'
 import '../../stylesheets/menu.css'
 import '../../stylesheets/styles.css'
+import {UserService} from '../../services/UserService'
 
 
 class HomeTemplate extends Component {
-    
+
+    constructor(props){
+        super(props)
+    }
+
+
+    componentWillMount(){
+        if(!UserService.isAuthenticated()){
+            window.location = '/login'
+        }
+    }
+
 
     render (){
-        const {props} = this;
+    
         return (
             <div className="layout">
                 <header className="headerTemplate fixed-top">
@@ -24,7 +37,7 @@ class HomeTemplate extends Component {
                         <MenuPrincipal></MenuPrincipal>                    
                     </nav>
                     <article>
-                         <Routes></Routes>
+                        <Routes></Routes>
                     </article>
                 </section>
                 <footer className="footerTemplate bg-withe ">
@@ -32,7 +45,7 @@ class HomeTemplate extends Component {
                         <a href="https://facebook.com/matheuspeluchi/"> Matheus Peluchi</a>
                     </div>  
                 </footer>
-                {props.children}
+            
             </div>
         )
     }
