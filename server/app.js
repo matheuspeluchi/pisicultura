@@ -26,7 +26,6 @@ mongoose.connect('mongodb://localhost:27017/desenvolvimento',config,(err, client
 //Define Cabeçalhos de resposta e configuração do CORS;
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "http://localhost:3000");
-    res.header("Access-Control-Allow-Origin", "http://localhost:4200");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
     res.header("Access-Control-Allow-Headers:Origin, Content-Type, application/json")
     res.header("Access-Control-Expose-Headers","Authorization");
