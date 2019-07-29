@@ -8,10 +8,11 @@ export const UserService = {
     login(data){
       return  api.post('/login',data)
                 .then(res => {
-                    sessionStorage.setItem('Authorization',res.headers.authorization)
+                    console.log(res)
+                    sessionStorage.setItem('Authorization',res.data.token)
                     window.location= '/'
                 })
-                .catch(err => err)
+                .catch(err => console.log)
     },
 
 

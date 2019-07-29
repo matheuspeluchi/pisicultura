@@ -54,17 +54,18 @@ class HeaderMenu extends Component{
                         <i className="fa fa-align-justify"></i>                                        
                     </button>
                 </div>
-                <div className="float-right p-1">
-                    <button className="btn btn-sm btn-link dropdown-toggle active" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i className="fa fa-lg fa-user-circle mr-2 p-0"></i>   
-                        {this.state.userName}
-                    </button>
-                    
-                    <div className="dropdown-menu">
-                        <button className="dropdown-item" onClick={this.logout}>Sair</button>
-                    </div>
+                <div className="float-right p-1 ">
+                    <small>
+                        <button className="btn btn-sm btn-link dropdown-toggle active userNameHeader" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i className="fa fa-lg fa-user-circle mr-2 p-0"></i>   
+                            {this.state.userName}
+                        </button>
+                        
+                        <div className="dropdown-menu">
+                            <button className="dropdown-item userNameHeader" onClick={this.logout}>Sair</button>
+                        </div>
 
-
+                    </small>
                     <Link to="/arearestrita" className="btn btn-sm btn-link active">
                         <i className="fa fa-cogs"></i>
                     </Link>

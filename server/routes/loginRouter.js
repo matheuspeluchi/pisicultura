@@ -5,6 +5,7 @@ const router = express.Router();
 
 
 router.post('/', (req,res)=>{
+    console.log(req.body)
     let login = req.body.login;
     let senha = req.body.password
     Pessoa.find ({"email": login, "password":senha})
@@ -23,7 +24,7 @@ router.post('/', (req,res)=>{
                 let token = jwt.gerarJWT(payload);
                 res.status = 200;
                 res.setHeader('Authorization',token)
-                res.json({auth: true,id:data._id});
+                res.json({auth: true,id:data._id,token:token});
             }            
         }) 
         .catch ((err) => { 

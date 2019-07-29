@@ -9,9 +9,9 @@ const config = {
     useNewUrlParser: true,
     useCreateIndex: true,
 }
-//const cors = require('cors')
-//Conexão com o banco de dados;
+const cors = require('cors')
 
+//Conexão com o banco de dados;
 mongoose.connect('mongodb://localhost:27017/desenvolvimento',config,(err, client) => {
     let port = '3001'
     if (err) return console.log(err);
@@ -20,20 +20,19 @@ mongoose.connect('mongodb://localhost:27017/desenvolvimento',config,(err, client
         console.log('Servidor inicado na porta ' + port)
     })
 });
-
-//app.use(cors())
+app.use(cors())
+/*
 
 //Define Cabeçalhos de resposta e configuração do CORS;
-app.use(function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", "http://localhost:3000");
+app.use((req, res, next)=> {
+    res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
-    res.header("Access-Control-Allow-Headers:Origin, Content-Type, application/json")
-    res.header("Access-Control-Expose-Headers","Authorization");
+    //res.header("Access-Control-Expose-Headers","Authorization, Content-Type, Accept, Origin");
     res.header("Access-Control-Allow-Methods", "POST, GET, PUT, DELETE, OPTIONS");
     res.header("Allow","GET, POST, PUT, DELETE, OPTIONS")
     next();
   });
-
+*/
 //Logger
 
 if (app.get('env') == 'production') {
