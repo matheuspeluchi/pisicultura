@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import {Redirect} from 'react-router-dom';
 import Routes from '../../routes/routes';
+import CssBaseline from '@material-ui/core/CssBaseline';
 
 import HeaderMenu from './Header';
 import MenuPrincipal from './Menu';
@@ -28,25 +28,29 @@ class HomeTemplate extends Component {
     render (){
     
         return (
-            <div className="layout">
-                <header className="headerTemplate fixed-top">
-                    <HeaderMenu></HeaderMenu>
-                </header>
-                <section className="sectionTemplate">
-                    <nav className="navTemplate">
-                        <MenuPrincipal></MenuPrincipal>                    
-                    </nav>
-                    <article>
-                        <Routes></Routes>
-                    </article>
-                </section>
-                <footer className="footerTemplate bg-withe ">
-                    <div className="footer-copyright text-center py-1">© 2019 Copyright:
-                        <a href="https://facebook.com/matheuspeluchi/"> Matheus Peluchi</a>
-                    </div>  
-                </footer>
-            
-            </div>
+            <React.Fragment>
+                <CssBaseline />
+                <div className="layout">
+                    <header className="headerTemplate fixed-top">
+                        <HeaderMenu></HeaderMenu>
+                    </header>
+                    <section className="sectionTemplate">
+                        <nav className="navTemplate">
+                            <MenuPrincipal></MenuPrincipal>                    
+                        </nav>
+                        <article>
+                            <Routes></Routes>
+                        </article>
+                    </section>
+                    <footer className="footerTemplate bg-withe ">
+                        <div className="footer-copyright text-center py-1">© 2019 Copyright:
+                            <a href="https://facebook.com/matheuspeluchi/"> Matheus Peluchi</a>
+                        </div>  
+                    </footer>
+                
+                </div>
+            </React.Fragment>
+
         )
     }
 }

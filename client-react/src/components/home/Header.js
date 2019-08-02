@@ -2,6 +2,7 @@ import React,{Component} from 'react'
 import { Link } from 'react-router-dom'
 import jwt from 'jsonwebtoken'
 import * as $ from 'jquery'
+import {Channel} from '../../services/EventService'
 
 import logo from '../../assets/logo.png'
 import {UserService} from '../../services/UserService'
@@ -16,17 +17,23 @@ class HeaderMenu extends Component{
     constructor(props){
         super(props);
         this.state = {
-            userName: ''
+            userName: '',
+            user: null
         }
     }
 
-
     componentDidMount() {
         let decoded = jwt.decode(sessionStorage.getItem('Authorization'))
+        let user = sessionStorage.getItem('user')
+        console.log(user)
         this.setState({
-            userName: decoded.nome
+            userName: decoded.nome,
+            user: user
         })
-        
+        if(user != null){
+
+            sessionStorage.removeItem('user')
+        }
     }
 
     toggleMenu(event){    

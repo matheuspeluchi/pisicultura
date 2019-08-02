@@ -1,9 +1,11 @@
 import React, { Component } from 'react'
-
+import firebase, { auth, provider } from '../config/database'
 import '../stylesheets/login.css'
 import Logo from '../assets/login_logo.png'
 import {UserService} from '../services/UserService'
-//import GoogleLogin from 'react-google-login'
+import {Channel} from '../services/EventService'
+import { BrowserHistory } from 'react-router-dom'
+
 
 class Login extends Component{
 
@@ -13,6 +15,7 @@ class Login extends Component{
         this.state = {
             login:'',
             password:'',
+            user: null
             
         }
         this.login = this.login.bind(this)
@@ -23,6 +26,16 @@ class Login extends Component{
         UserService.login(this.state)
             .then(res =>res)
             .catch(err => err)
+    }
+
+    loginGoogle = event => {
+        event.preventDefault()
+        auth.signInWithPopup(provider)
+            .then(res =>{
+                sessionStorage.setItem('user',res)
+                window.location='/'
+            })
+            
     }
     handleChange = event => {
         let target = event.target,
@@ -81,7 +94,9 @@ class Login extends Component{
                             </button>
                             <br/>
                           
-
+                            <button className="btn btn-primary btn-block" onClick={this.loginGoogle.bind(this)}>
+                                Entre com sua conta Google
+                            </button>
                             
                         </form>
                         <br/>
