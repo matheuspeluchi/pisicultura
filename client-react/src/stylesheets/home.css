@@ -6,7 +6,19 @@ body{
     font-size: 12px;
   }
   
-  
+  .btn-google {
+    color: white;
+    background-color: #ea4335;
+  }
+  .form-signin .btn {
+    font-size: 80%;
+    border-radius: 5rem;
+    letter-spacing: .1rem;
+    font-weight: bold;
+    padding: 1rem;
+    transition: all 0.2s;
+  }
+      
   .headerTemplate{
     background-color: DeepSkyBlue;
     height: 40px;

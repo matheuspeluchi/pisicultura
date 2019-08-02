@@ -1,4 +1,6 @@
 import Events from 'events'
 
 
-export const Channel = new Events.EventEmitter();
+const EventEmitter = new Events.EventEmitter();
+
+export default EventEmitter;

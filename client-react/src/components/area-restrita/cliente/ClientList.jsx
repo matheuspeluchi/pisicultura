@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom'
 import Lista from '../../shared/lista/Lista.jsx';
 import {ClienteService} from '../../../services/ClienteService'
 import BarraAcoes from '../../shared/barra-acoes/BarraAcoes.jsx'
-import { Channel } from '../../../services/EventService'
+import EventEmitter from '../../../services/EventService'
 
 class ClienteLista extends Component {
     static defaultProps = {
@@ -43,12 +43,12 @@ class ClienteLista extends Component {
         ClienteService.list()
             .then( res => this.setState({lista: res}))
 
-        Channel.on('selectedData', this.selectClient)  
+        EventEmitter.on('selectedData', this.selectClient)  
         
     }
 
     componentWillUnmount(){
-        Channel.removeListener('selectedData', this.selectClient)
+        EventEmitter.removeListener('selectedData', this.selectClient)
     }
     
     render(){

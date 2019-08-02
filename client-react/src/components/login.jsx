@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
-import firebase, { auth, provider } from '../config/database'
+
+
+import { auth, provider } from '../config/database'
+
 import '../stylesheets/login.css'
 import Logo from '../assets/login_logo.png'
 import {UserService} from '../services/UserService'
-import {Channel} from '../services/EventService'
-import { BrowserHistory } from 'react-router-dom'
+import EventEmitter from '../services/EventService'
 
 
 class Login extends Component{
@@ -18,7 +20,7 @@ class Login extends Component{
             user: null
             
         }
-        this.login = this.login.bind(this)
+    
     }    
 
     login = event => {
@@ -30,10 +32,11 @@ class Login extends Component{
 
     loginGoogle = event => {
         event.preventDefault()
+        const {history} = this.props;
         auth.signInWithPopup(provider)
-            .then(res =>{
-                sessionStorage.setItem('user',res)
-                window.location='/'
+            .then(({user}) =>{                
+                EventEmitter.emit('LoginSuccess', user)             
+                history.push('/')
             })
             
     }
@@ -47,13 +50,10 @@ class Login extends Component{
         })
     }
 
-    responseGoogle = response => {
-        console.log(response);
-      }
-
 
     render(){
         const {state} = this;
+        
 
         return (
             <div>
@@ -111,4 +111,4 @@ class Login extends Component{
     }
 }
 
-export default Login;
+export default Login

@@ -2,7 +2,7 @@ import React,{Component} from 'react'
 import { Link } from 'react-router-dom'
 import jwt from 'jsonwebtoken'
 import * as $ from 'jquery'
-import {Channel} from '../../services/EventService'
+import EventEmitter from '../../services/EventService'
 
 import logo from '../../assets/logo.png'
 import {UserService} from '../../services/UserService'
@@ -12,7 +12,8 @@ window.jquery = window.$ = $
 class HeaderMenu extends Component{
 
     static defaultProps = {
-        userName: 'No User'
+        userName: 'No User',
+        user: null
     }
     constructor(props){
         super(props);
@@ -22,19 +23,8 @@ class HeaderMenu extends Component{
         }
     }
 
-    componentDidMount() {
-        let decoded = jwt.decode(sessionStorage.getItem('Authorization'))
-        let user = sessionStorage.getItem('user')
-        console.log(user)
-        this.setState({
-            userName: decoded.nome,
-            user: user
-        })
-        if(user != null){
+  
 
-            sessionStorage.removeItem('user')
-        }
-    }
 
     toggleMenu(event){    
         event.preventDefault();
@@ -46,8 +36,9 @@ class HeaderMenu extends Component{
         UserService.logout()
     }
     
-    render(){
-        
+   render(){
+        const {state,props} = this;
+        console.log(props.user)
         return (
 
             <div className="row-fluid menuSecundario menu">
@@ -65,7 +56,7 @@ class HeaderMenu extends Component{
                     
                     <button className="btn btn-sm btn-link dropdown-toggle active userNameHeader" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i className="fa fa-lg fa-user-circle mr-2 p-0"></i>   
-                        {this.state.userName}
+                        {state.user ? state.user.displayName : 'No User'}
                     </button>
                     
                     <div className="dropdown-menu">
@@ -73,7 +64,8 @@ class HeaderMenu extends Component{
                     </div>
 
                     {
-                        UserService.isDeveloper()?
+                        //UserService.isDeveloper()?
+                        true ?
                             <Link to="/arearestrita" className="btn btn-sm btn-link active">
                                 <i className="fa fa-cogs"></i>
                             </Link>

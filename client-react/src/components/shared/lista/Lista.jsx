@@ -2,7 +2,7 @@ import React, { Component} from 'react'
 import { AgGridReact } from 'ag-grid-react';
 import 'ag-grid-community/dist/styles/ag-grid.css';
 import 'ag-grid-community/dist/styles/ag-theme-blue.css';
-import { Channel } from '../../../services/EventService'
+import EventEmitter from '../../../services/EventService'
 
 
 class Lista extends Component {
@@ -26,7 +26,7 @@ class Lista extends Component {
     }
 
     rowClick(){        
-        Channel.emit('selectedData',this.gridApi.getSelectedRows()[0])
+        EventEmitter.emit('selectedData',this.gridApi.getSelectedRows()[0])
     }
 
     onGridReady = params => {

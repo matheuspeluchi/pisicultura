@@ -1,3 +1,5 @@
 import React from 'react'
 
-export const Contexto = React.createContext();
+export const Contexto = React.createContext({
+    user:null
+});
