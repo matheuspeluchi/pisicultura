@@ -6,6 +6,8 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
+import Menu from '@material-ui/core/Menu';
+import MenuItem from '@material-ui/core/MenuItem';
 import { auth, provider } from '../config/database'
 import { Component } from 'react';
 
@@ -22,14 +24,15 @@ class Home extends Component {
             displayName:'No user',
             photoURL: null
         }
-
     }
     constructor(props){
         
         super(props)
         
         this.state ={
-            user: null
+            user: null,
+            anchorEl: null,
+            setAnchorEl: null
         }
     }
 
@@ -41,10 +44,23 @@ class Home extends Component {
             })
     };
 
+    userMenuClick = event =>{
+        console.log(event.currentTarget)
+        this.setState({
+            setAnchoEl: event.currentTarget
+        })
+    }
+    userMenuClose = () => {
+        this.setState({
+            setAnchoEl: null
+        })
+    }
+
     
     logout = () => {
         this.setState({
-            user: null
+            user: null,
+
         })
     }
     
@@ -85,7 +101,21 @@ class Home extends Component {
                         <div className="row">
                             <Avatar alt="Remy Sharp" src={state.user.photoURL} style={classes.avatar} />
                             <Button color="inherit"
-                                onClick = {this.logout}>{state.user.displayName} (Logout)</Button>
+                                onClick = {this.userMenuClick}
+                                aria-controls="user-menu" 
+                                aria-haspopup="true"
+                            >
+                                {state.user.displayName}
+                            </Button>
+                            <Menu
+                                id="user-menu"
+                                anchorEl={state.anchorEl}
+                                keepMounted
+                                open={console.log(Boolean(state.anchorEl))}
+                                onClose={this.userMenuClose}
+                            >
+                                <MenuItem onClick={this.logout}>Logout</MenuItem>
+                            </Menu>
                         </div>
                         : 
                         <Button color="inherit"

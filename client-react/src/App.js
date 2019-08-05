@@ -2,7 +2,7 @@ import React from 'react';
 import {Switch, Route} from 'react-router-dom';
 
 
-import HomeTemplate from './components/Home';
+import Home2 from './components/Home';
 import Login from './components/login'
 
 import './App.css';
@@ -14,7 +14,7 @@ function App(props) {
           
             <Switch>
                 
-                <Route path="/" component={HomeTemplate}/>
+                <Route path="/" component={Home2}/>
             </Switch>
         
         </div> 
