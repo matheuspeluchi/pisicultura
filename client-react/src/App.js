@@ -1,25 +1,54 @@
-import React from 'react';
-import {Switch, Route} from 'react-router-dom';
+import React,{ Component } from 'react';
+import {Switch, Route} from 'react-router-dom'
+import { auth, provider } from './config/database'
+import Header from './components/Header'
+import Footer from './components/Footer'
+import Routes from './routes/Routes'
+import './stylesheets/styles.css'
+
+class App extends Component {
+
+  constructor(props){
+    
+    super(props)
+    
+    this.state = {
+      user: null
+    }
+  }
+
+  login = () => {
+    auth.signInWithPopup(provider)
+        .then(({user}) =>{         
+            console.log(user)       
+            this.setState(({ user }))
+        })
+  }
+
+  logout = () => {
+      this.setState({
+          user: null
+
+      })
+  }
 
 
-import Home2 from './components/Home';
-import Login from './components/login'
-
-import './App.css';
-
-function App(props) {
-
-  return (
-        <div>
-          
-            <Switch>
-                
-                <Route path="/" component={Home2}/>
-            </Switch>
-        
-        </div> 
-  );
+  render(){
+    
+    return (
+          <div>
+              <Header user={this.state.user} login={this.login} logout={this.logout}></Header>
+              <div className="conteudo">
+                <Switch>                
+                    <Routes></Routes>
+                </Switch>
+              </div>
+              <Footer></Footer>
+          </div> 
+    )
+  }
 }
+
 
 
 

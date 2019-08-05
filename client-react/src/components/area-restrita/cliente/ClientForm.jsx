@@ -4,6 +4,7 @@ import {cpfMask} from '../../../include/cpfMask'
 import BarraAcoes from '../../shared/barra-acoes/BarraAcoes.jsx'
 import {ClienteService} from '../../../services/ClienteService'
 import { CidadeService } from '../../../services/CidadeService'
+import firebase from '../../../config/database'
 
 class ClienteForm extends Component {
     
@@ -33,7 +34,7 @@ class ClienteForm extends Component {
         }
         this.handleChange = this.handleChange.bind(this);
         this.salvar = this.salvar.bind(this);
-    
+        
         
     }
 
@@ -60,29 +61,27 @@ class ClienteForm extends Component {
         const target = event.target,
                 value = target.value,
                 name = target.name;
-
-        if (name === 'cpf') {
-            this.setState(prevState => ({
-               cliente:{
-                    ...prevState.cliente,
-                    [name]: value
-                    }
-                })
-            )
-        } else {
-            this.setState(prevState => ({
-                cliente:{
-                     ...prevState.cliente,
-                     [name]: cpfMask(value)
-                     }
-                 })
-             )
-        }
+    
+        this.setState(prevState => ({
+            cliente:{
+                ...prevState.cliente,
+                [name]: value
+                }
+            })
+        )
     }
 
     salvar (data){
         ClienteService.save(data._id,data)
             .then(res=> this.props.history.push(`/arearestrita/cliente`))
+            .catch(err => console.log(err))
+    }
+
+    save = () => {
+        firebase.database()
+            .ref('cliente_sistema/')
+            .push(this.state.cliente)
+            .then(() => this.props.history.push('/arearestrita/cliente'))
             .catch(err => console.log(err))
     }
 
@@ -94,7 +93,7 @@ class ClienteForm extends Component {
             <div>
                 <BarraAcoes>
                     <div className="float-right m-1">
-                        <button className="btn btn-sm btn-primary" onClick={this.salvar.bind(this,state.cliente)}>Salvar</button>
+                        <button className="btn btn-sm btn-primary" onClick={this.save}>Salvar</button>
                     </div>
                 </BarraAcoes>
             

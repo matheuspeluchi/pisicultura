@@ -89,7 +89,7 @@ class HomeTemplate extends Component {
                             <div className="float-right p-1 ">
                                 {state.user?
                                     <Avatar alt="Remy Sharp" src={state.user.photoURL} className={classes.avatar} />
-                                    : ''
+                                    : null
                                 }
                                 <button className="btn btn-sm btn-link dropdown-toggle active userNameHeader" 
                                     type="button" 

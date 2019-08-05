@@ -18,7 +18,7 @@ class AreaRestrita extends Component {
     }
     return (
         <div>
-            <div className="row mx-1 mt-5">
+            <div className="row mx-1 mt-4">
                 
                 <Link to="/arearestrita/cliente" className="m-1">
                     <div className="card">

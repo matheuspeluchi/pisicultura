@@ -6,6 +6,7 @@ import Lista from '../../shared/lista/Lista.jsx';
 import {ClienteService} from '../../../services/ClienteService'
 import BarraAcoes from '../../shared/barra-acoes/BarraAcoes.jsx'
 import EventEmitter from '../../../services/EventService'
+import firebase from '../../../config'
 
 class ClienteLista extends Component {
     static defaultProps = {
