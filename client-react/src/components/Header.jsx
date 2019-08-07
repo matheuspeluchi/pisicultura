@@ -5,8 +5,8 @@ import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
-
 import logo from '../assets/login_logo.png'
+
 
 class Header extends Component {
 
@@ -59,7 +59,6 @@ class Header extends Component {
             stateMenu: false
         })
     }
-
     
 
     render(){
@@ -67,7 +66,7 @@ class Header extends Component {
         const classes = this.styles
         return (
              <nav className="navbar navbar-expand-lg navbar-light menu-principal">
-                <a className="navbar-brand"  href="#">
+                <a className="navbar-brand"  href="/#">
                     <img src={logo} alt="PisicAdmin" style={{height:40, width:100}} className="img-fluid img-thumbnai logo" />
                 </a>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
@@ -77,33 +76,33 @@ class Header extends Component {
                 <div className="collapse navbar-collapse mp-0" id="conteudoNavbarSuportado">
                     <ul className="navbar-nav mr-auto">
                     <li className="nav-item active">
-                        <a className="nav-link" href="#">Home <span className="sr-only">(página atual)</span></a>
+                        <a className="nav-link" href="/#">Home <span className="sr-only">(página atual)</span></a>
                     </li>
                     <li className="nav-item dropdown">
-                        <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a className="nav-link dropdown-toggle" href="/#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Cadastros
                         </a>
                         <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a className="dropdown-item" href="#">Unidades</a>
-                            <a className="dropdown-item" href="#">Espécies</a>
-                            <a className="dropdown-item" href="#">Produtos</a>
+                            <a className="dropdown-item" href="/#">Unidades</a>
+                            <a className="dropdown-item" href="/#">Espécies</a>
+                            <a className="dropdown-item" href="/#">Produtos</a>
                         <div className="dropdown-divider"></div>
-                            <a className="dropdown-item" href="#">Clientes</a>
+                            <a className="dropdown-item" href="/#">Clientes</a>
                         </div>
                     </li>
                     <li className="nav-item dropdown">
-                        <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a className="nav-link dropdown-toggle" href="/#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Operações
                         </a>
                         <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a className="dropdown-item" href="#">Nova Operação</a>
-                            <a className="dropdown-item" href="#">Visualizar Operações</a>
+                            <a className="dropdown-item" href="/#">Nova Operação</a>
+                            <a className="dropdown-item" href="/#">Visualizar Operações</a>
                         <div className="dropdown-divider"></div>
-                            <a className="dropdown-item" href="#">Algo mais aqui</a>
+                            <a className="dropdown-item" href="/#">Algo mais aqui</a>
                         </div>
                     </li>
                     <li className="nav-item">
-                        <Link to="/arearestrita" className="nav-link" href="#">Área Restrita</Link>
+                        <Link to="/arearestrita" className="nav-link" href="/#">Área Restrita</Link>
                     </li>
                     </ul>
                     {props.user?
@@ -134,8 +133,7 @@ class Header extends Component {
                                 size="small"
                             > 
                                 Login
-                            </Button>
-                                
+                            </Button>    
                     }
                 </div>
             </nav>

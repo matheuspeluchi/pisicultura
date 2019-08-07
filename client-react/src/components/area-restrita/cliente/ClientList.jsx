@@ -1,10 +1,9 @@
 import React, {Component} from 'react'
 import {Link} from 'react-router-dom'
 
-
 import Lista from '../../shared/lista/Lista.jsx';
-import {ClienteService} from '../../../services/ClienteService'
 import BarraAcoes from '../../shared/barra-acoes/BarraAcoes.jsx'
+import { ClienteService } from '../../../services/ClienteService.js';
 import EventEmitter from '../../../services/EventService'
 
 
@@ -16,7 +15,6 @@ class ClienteLista extends Component {
 
     constructor(props){
         super(props)
-        this.urlApi = 'http://localhost:3001/cliente';
         this.state = {
             clienteId: null,
             lista: [],
@@ -28,27 +26,50 @@ class ClienteLista extends Component {
                 {headerName:'Endereço', field:'endereco', filter: true, sortable: true},
                 {headerName:'Número', field:'enderecoNum', filter: true, sortable: true},
                 {namheaderNamee:'Bairro', field:'bairro', filter: true, sortable: true},
-                {headerName:'Cidade', field:'cidadeId', filter: true, sortable: true},
+                {headerName:'Cidade', field:'cidade', filter: true, sortable: true},
                 
             ]            
         }
     
     }
 
+    componentDidMount(){
+        ClienteService.list()
+            .then(lista => this.setState({lista}))
+            .catch(err => console.log(err))
+
+        EventEmitter.on('gridData',this.selecionarCliente) 
+    }
+
+
+    componentWillUnmount(){
+        EventEmitter.removeAllListeners()
+    }
+
+
+  
+    
+    
+    selecionarCliente = cliente =>{
+        this.props.history.push(`${this.props.match.url}/novo/${cliente._id}`)
+    }
+    
+
+
     render(){
-        const {state,props} = this;
+        const {state} = this;
         
             return (
                     <div>
                         <BarraAcoes>
                             <div className="float-right">
-                                <Link to={`arearestrita/cliente/novo`} className="btn btn-sm btn-primary m-1">
+                                <Link to={`${this.props.match.url}/novo`} className="btn btn-sm btn-primary m-1">
                                     Novo
                                 </Link>
                             </div>
                         </BarraAcoes>
                         
-                        <Lista columns={state.columnDefs} rows={props.lista} />
+                        <Lista columns={state.columnDefs} rows={state.lista} />
                         
                         
                     </div>

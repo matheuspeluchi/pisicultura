@@ -1,5 +1,5 @@
 import React,{ Component } from 'react';
-import {Switch, Route} from 'react-router-dom'
+import {Switch} from 'react-router-dom'
 import { auth, provider } from './config/database'
 import Header from './components/Header'
 import Footer from './components/Footer'

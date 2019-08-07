@@ -10,6 +10,7 @@ router.get('/',(req,res)=>{
 })
 
 router.put('/',(req,res) => {
+    delete req.body._id
     empresa = new Empresa(req.body);
     empresa.save()
         .then(data => res.status(200).send(data._id))
@@ -20,12 +21,11 @@ router.put('/',(req,res) => {
 
 router.get('/:id',(req,res) => {
     Empresa.findById(req.params.id)
-        .populate('cidade')
         .then(data => res.status(200).send(data))
         .catch(err => res.status(500).send(err))
 })
 
-router.post('/:id',(req,res) => {
+router.post('/:id',(req,res) => {    
     Empresa.findOneAndUpdate({_id: req.params.id},req.body)
         .then(data =>{ res.status(200).send(data),console.log(data)})
         .catch(err => res.status(500).send(err))

@@ -1,4 +1,4 @@
-import axios from 'axios'
+
 import api from './API'
 
 
@@ -13,9 +13,10 @@ export const ClienteService = {
                 .then(res => res.data)
     },
 
-    save(id,cliente){
-        if(id){
-            return  api.post(`/cliente/${id}`,cliente)      
+    save(cliente){
+        console.log(cliente)
+        if(cliente._id){
+            return  api.post(`/cliente/${cliente._id}`,cliente)      
         }else {
             return api.put('/cliente',cliente)
         }

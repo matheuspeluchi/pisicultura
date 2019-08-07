@@ -10,7 +10,7 @@ class Lista extends Component {
     static defaultProps ={
         columns: [],
         rows:[],
-        autoHeight: true
+        autoHeight: true,        
     }
 
     constructor(props){
@@ -25,8 +25,8 @@ class Lista extends Component {
         this.getWindowHeight = this.getWindowHeight.bind(this);
     }
 
-    rowClick(){        
-        EventEmitter.emit('selectedData',this.gridApi.getSelectedRows()[0])
+    rowClick=() => {        
+        EventEmitter.emit('gridData',this.gridApi.getSelectedRows()[0])
     }
 
     onGridReady = params => {
@@ -57,7 +57,7 @@ class Lista extends Component {
                         columnDefs={props.columns}
                         rowData={props.rows}
                         onGridReady={this.onGridReady}
-                        onRowClicked={this.rowClick.bind(this)}>
+                        onRowClicked={this.rowClick}>
                     </AgGridReact>
                 </div>
             

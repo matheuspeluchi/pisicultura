@@ -1,10 +1,9 @@
 import React, {Component} from 'react';
-import {cpfMask} from '../../../include/cpfMask'
 
 import BarraAcoes from '../../shared/barra-acoes/BarraAcoes.jsx'
 import {ClienteService} from '../../../services/ClienteService'
 import { CidadeService } from '../../../services/CidadeService'
-import firebase from '../../../config/database'
+import EventEmitter from '../../../services/EventService'
 
 class ClienteForm extends Component {
     
@@ -19,6 +18,7 @@ class ClienteForm extends Component {
 
         this.state = {
             cliente:{
+                _id:'',
                 rsocial: '',
                 fantasia: '',
                 cnpj: '',
@@ -38,6 +38,7 @@ class ClienteForm extends Component {
         
     }
 
+
     componentDidMount(){
         if (this.props.match.params.clienteId){
             ClienteService.get(this.props.match.params.clienteId) 
@@ -47,15 +48,22 @@ class ClienteForm extends Component {
                         isLoading: false
                     })
                 })
-        }
+            }
         
+   
+      //  EventEmitter.on('gridData',cliente => this.setCliente({cliente}))     
+
         CidadeService.getAll()
-            .then(res => {
+            .then(res => {                
                 this.setState({cidades: res.data})
             })
                 
     }
     
+    setCliente = cliente => {
+        console.log(cliente)
+        this.setState({cliente})
+    }
 
     handleChange(event){
         const target = event.target,
@@ -71,19 +79,12 @@ class ClienteForm extends Component {
         )
     }
 
-    salvar (data){
-        ClienteService.save(data._id,data)
+    salvar (){
+        ClienteService.save(this.state.cliente)
             .then(res=> this.props.history.push(`/arearestrita/cliente`))
             .catch(err => console.log(err))
     }
 
-    save = () => {
-        firebase.database()
-            .ref('cliente_sistema/')
-            .push(this.state.cliente)
-            .then(() => this.props.history.push('/arearestrita/cliente'))
-            .catch(err => console.log(err))
-    }
 
     render() {
         const {state} = this;
@@ -93,7 +94,7 @@ class ClienteForm extends Component {
             <div>
                 <BarraAcoes>
                     <div className="float-right m-1">
-                        <button className="btn btn-sm btn-primary" onClick={this.save}>Salvar</button>
+                        <button className="btn btn-sm btn-primary" onClick={this.salvar}>Salvar</button>
                     </div>
                 </BarraAcoes>
             
@@ -123,7 +124,7 @@ class ClienteForm extends Component {
                                     <input type="text" 
                                         className="form-control form-control-sm" 
                                         onChange={this.handleChange} 
-                                        value={state.cliente.rsocial} 
+                                        value={state.cliente.rsocial || ""} 
                                         name="rsocial" 
                                         placeholder="Razão Social"/>
                                 </div>
@@ -135,7 +136,7 @@ class ClienteForm extends Component {
                                     <input type="text" 
                                         className="form-control form-control-sm" 
                                         onChange={this.handleChange} 
-                                        value={state.cliente.fantasia} 
+                                        value={state.cliente.fantasia || ""} 
                                         name="fantasia" 
                                         placeholder="Fantasia" />
                                 </div>
@@ -147,7 +148,7 @@ class ClienteForm extends Component {
                                     <input type="text" 
                                         className="form-control form-control-sm" 
                                         onChange={this.handleChange} 
-                                        value={state.cliente.cnpj} 
+                                        value={state.cliente.cnpj || ""} 
                                         name="cnpj" 
                                         placeholder="CNPJ" />
                                 </div>     
@@ -159,7 +160,7 @@ class ClienteForm extends Component {
                                     <input type="text" 
                                         className="form-control form-control-sm" 
                                         onChange={this.handleChange} 
-                                        value={state.cliente.ie} 
+                                        value={state.cliente.ie || ""} 
                                         name="ie" 
                                         placeholder="Insc. Estadual" />
                                 </div>
@@ -172,7 +173,7 @@ class ClienteForm extends Component {
                                     <input type="text" 
                                         className="form-control form-control-sm" 
                                         onChange={this.handleChange} 
-                                        value={state.cliente.telefone} 
+                                        value={state.cliente.telefone || ""} 
                                         name="telefone" 
                                         placeholder="Telefone" />
                                 </div>
@@ -181,10 +182,10 @@ class ClienteForm extends Component {
                             <div className="form-group row">
                                 <label className="col-form-label control-form-label">Celular:</label>
                                 <div className="col-sm-2">
-                                    <input type="tel" className="form-control form-control-sm"
+                                    <input type="Tel" className="form-control form-control-sm"
                                         required
                                         onChange={this.handleChange} 
-                                        value={state.cliente.celular} 
+                                        value={state.cliente.celular || ""} 
                                         name="celular"
                                         placeholder="Celular"
                                         data-mask="(00) 0000-0000" />
@@ -197,7 +198,7 @@ class ClienteForm extends Component {
                                     <input type="text" 
                                         className="form-control form-control-sm" 
                                         onChange={this.handleChange} 
-                                        value={state.cliente.contato} 
+                                        value={state.cliente.contato || ""} 
                                         name="contato" 
                                         placeholder="Contato na empresa" />
                                 </div>
@@ -210,7 +211,7 @@ class ClienteForm extends Component {
                                         className="form-control form-control-sm" 
                                         pattern=".+@globex.com"
                                         onChange={this.handleChange}
-                                        value={state.cliente.email} 
+                                        value={state.cliente.email || ""} 
                                         name="email" 
                                         placeholder="Email" />
                                 </div>
@@ -226,7 +227,7 @@ class ClienteForm extends Component {
                                     <input type="text" 
                                         className="form-control form-control-sm" 
                                         onChange={this.handleChange}
-                                        value={state.cliente.endereco}
+                                        value={state.cliente.endereco || ""}
                                         name="endereco"
                                         placeholder="Endereço" />
                                 </div>
@@ -237,7 +238,7 @@ class ClienteForm extends Component {
                                     <input type="text" 
                                         className="form-control form-control-sm" 
                                         onChange={this.handleChange} 
-                                        value={state.cliente.enderecoNum}  
+                                        value={state.cliente.enderecoNum || ""}  
                                         name="enderecoNum" 
                                         placeholder="Número" />
                                 </div>
@@ -248,7 +249,7 @@ class ClienteForm extends Component {
                                     <input type="text"
                                         className="form-control form-control-sm"
                                         onChange={this.handleChange}
-                                        value={state.cliente.bairro}
+                                        value={state.cliente.bairro || ""}
                                         name="bairro"
                                         placeholder="Bairro" />
                                 </div>
@@ -259,17 +260,13 @@ class ClienteForm extends Component {
                                 <div className="col-sm-4">
                                     <select name="cidade"
                                         className="form-control form-control-sm"
-                                        value={state.cliente.cidade.id}
+                                        value={state.cliente.cidade? state.cliente.cidade : '' || ""}
                                         onChange={this.handleChange}>
-                                        {state.cidades.map(data=> <option key={data.id} value={data.id}>{data.nome} - {data.microrregiao.mesorregiao.UF.sigla} </option>)}
+                                        {state.cidades.map(data=> <option key={data.id} value={data.nome + ' - ' +data.microrregiao.mesorregiao.UF.sigla }>{data.nome} - {data.microrregiao.mesorregiao.UF.sigla} </option>)}
                                     </select>
                                 </div>
                             </div>
                         </div>
-
-
-
-                        
                     </div>
                         
                 </div>
