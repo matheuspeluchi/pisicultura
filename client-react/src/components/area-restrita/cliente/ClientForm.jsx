@@ -49,7 +49,7 @@ class ClienteForm extends Component {
                 })
         }
         
-        CidadeService.get()
+        CidadeService.getAll()
             .then(res => {
                 this.setState({cidades: res.data})
             })
@@ -259,9 +259,9 @@ class ClienteForm extends Component {
                                 <div className="col-sm-4">
                                     <select name="cidade"
                                         className="form-control form-control-sm"
-                                        value={state.cliente.cidade._id}
+                                        value={state.cliente.cidade.id}
                                         onChange={this.handleChange}>
-                                        {state.cidades.map(data=> <option key={data._id} value={data._id}>{data.nome} </option>)}
+                                        {state.cidades.map(data=> <option key={data.id} value={data.id}>{data.nome} - {data.microrregiao.mesorregiao.UF.sigla} </option>)}
                                     </select>
                                 </div>
                             </div>

@@ -9,7 +9,7 @@ const empresaSchema = new mongoose.Schema({
     endereco: {type: String, required:true, maxlength:255},
     enderecoNum: Number,
     bairro: String,
-    cidade:{type: mongoose.SchemaTypes.ObjectId, ref:'Cidade'},
+    cidadeId:{type: String},
     telefone: String,
     telefone1: String,
     celular: String,

@@ -6,7 +6,7 @@ import Lista from '../../shared/lista/Lista.jsx';
 import {ClienteService} from '../../../services/ClienteService'
 import BarraAcoes from '../../shared/barra-acoes/BarraAcoes.jsx'
 import EventEmitter from '../../../services/EventService'
-import firebase from '../../../config/database'
+
 
 class ClienteLista extends Component {
     static defaultProps = {
@@ -28,32 +28,13 @@ class ClienteLista extends Component {
                 {headerName:'Endereço', field:'endereco', filter: true, sortable: true},
                 {headerName:'Número', field:'enderecoNum', filter: true, sortable: true},
                 {namheaderNamee:'Bairro', field:'bairro', filter: true, sortable: true},
-                {headerName:'Cidade', field:'cidade.nome', filter: true, sortable: true},
+                {headerName:'Cidade', field:'cidadeId', filter: true, sortable: true},
                 
             ]            
         }
-        this.selectClient = this.selectClient.bind(this);
-    }
-
-    selectClient = (cliente) =>{
-        console.log(cliente)
-        this.props.history.push(`/arearestrita/cliente/visualizar/${cliente._id}`)
-    }
-
-    componentDidMount(){
-       
-        firebase.database()
-            .ref('/cliente_sistema')
-            .on('value',
-                 res =>{
-                    console.log([res.val()])
-                    this.setState({lista: res})
-                })  
-        
-    }
-
-
     
+    }
+
     render(){
         const {state,props} = this;
         
@@ -61,13 +42,13 @@ class ClienteLista extends Component {
                     <div>
                         <BarraAcoes>
                             <div className="float-right">
-                                <Link to={`${props.match.url}/novo`} className="btn btn-sm btn-primary m-1">
+                                <Link to={`arearestrita/cliente/novo`} className="btn btn-sm btn-primary m-1">
                                     Novo
                                 </Link>
                             </div>
                         </BarraAcoes>
                         
-                        <Lista columns={state.columnDefs} rows={state.lista} />
+                        <Lista columns={state.columnDefs} rows={props.lista} />
                         
                         
                     </div>
