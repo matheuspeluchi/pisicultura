@@ -106,8 +106,8 @@ class Header extends Component {
                         <Link to="/arearestrita" className="nav-link" href="#">Área Restrita</Link>
                     </li>
                     </ul>
-                    {props.user ?
-                            <div className="row">
+                    {props.user?
+                            <div className="row mr-1">
                                 <Avatar alt="Remy Sharp" size="small" src={props.user.photoURL} style={classes.avatar} />
                                 <Button color="inherit"
                                     onClick = {this.userMenuClick}

@@ -32,6 +32,13 @@ class App extends Component {
       })
   }
 
+  componentDidMount() {
+    auth.onAuthStateChanged((user) => {
+        if (user) {
+            this.setState({ user })
+        }
+    })
+}
 
   render(){
     

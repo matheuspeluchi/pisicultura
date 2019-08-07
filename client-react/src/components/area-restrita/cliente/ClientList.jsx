@@ -41,16 +41,18 @@ class ClienteLista extends Component {
     }
 
     componentDidMount(){
-        ClienteService.list()
-            .then( res => this.setState({lista: res}))
-
-        EventEmitter.on('selectedData', this.selectClient)  
+       
+        firebase.database()
+            .ref('/cliente_sistema')
+            .on('value',
+                 res =>{
+                    console.log([res.val()])
+                    this.setState({lista: res})
+                })  
         
     }
 
-    componentWillUnmount(){
-        EventEmitter.removeListener('selectedData', this.selectClient)
-    }
+
     
     render(){
         const {state,props} = this;
