@@ -18,7 +18,17 @@ const empresaSchema = new mongoose.Schema({
     bancoNome: String,
     bancoAgencia: String,
     bancoConta: String,
-    bancoTitular: String
+    bancoTitular: String,
+    //tipo:{type: mongoose.Schema.Types.ObjectId, ref: 'Tipos'}
+
 });
 
-module.exports = mongoose.model('Empresa',empresaSchema);
+empresaSchema.virtual('id').get(function(){
+    return this._id;
+});
+
+empresaSchema.set('toJSON', {
+    virtuals: true
+});
+
+module.exports = mongoose.model('Cliente-Sistema',empresaSchema);

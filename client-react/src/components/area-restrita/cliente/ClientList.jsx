@@ -3,8 +3,7 @@ import {Link} from 'react-router-dom'
 
 import Lista from '../../shared/lista/Lista.jsx';
 import BarraAcoes from '../../shared/barra-acoes/BarraAcoes.jsx'
-import { ClienteService } from '../../../services/ClienteService.js';
-import EventEmitter from '../../../services/EventService'
+import { ClienteService } from '../../../services/ClienteSistemaService.js';
 
 
 class ClienteLista extends Component {
@@ -28,7 +27,8 @@ class ClienteLista extends Component {
                 {namheaderNamee:'Bairro', field:'bairro', filter: true, sortable: true},
                 {headerName:'Cidade', field:'cidade', filter: true, sortable: true},
                 
-            ]            
+            ]   ,
+            cliente: null         
         }
     
     }
@@ -37,23 +37,12 @@ class ClienteLista extends Component {
         ClienteService.list()
             .then(lista => this.setState({lista}))
             .catch(err => console.log(err))
-
-        EventEmitter.on('gridData',this.selecionarCliente) 
     }
 
 
-    componentWillUnmount(){
-        EventEmitter.removeAllListeners()
-    }
-
-
-  
-    
-    
     selecionarCliente = cliente =>{
-        this.props.history.push(`${this.props.match.url}/novo/${cliente._id}`)
+        this.props.history.push(`${this.props.match.url}/novo/${cliente.id}`)
     }
-    
 
 
     render(){
@@ -69,7 +58,7 @@ class ClienteLista extends Component {
                             </div>
                         </BarraAcoes>
                         
-                        <Lista columns={state.columnDefs} rows={state.lista} />
+                        <Lista columns={state.columnDefs} rows={state.lista} onRowClick= {this.selecionarCliente}/>
                         
                         
                     </div>

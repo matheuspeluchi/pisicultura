@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom'
 
-import { ClienteService } from '../../../services/ClienteService';
+import { ClienteService } from '../../../services/ClienteSistemaService';
 import BarraAcoes from '../../shared/barra-acoes/BarraAcoes';
 
 

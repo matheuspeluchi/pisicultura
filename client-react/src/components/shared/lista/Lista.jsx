@@ -2,7 +2,7 @@ import React, { Component} from 'react'
 import { AgGridReact } from 'ag-grid-react';
 import 'ag-grid-community/dist/styles/ag-grid.css';
 import 'ag-grid-community/dist/styles/ag-theme-blue.css';
-import EventEmitter from '../../../services/EventService'
+
 
 
 class Lista extends Component {
@@ -10,7 +10,8 @@ class Lista extends Component {
     static defaultProps ={
         columns: [],
         rows:[],
-        autoHeight: true,        
+        autoHeight: true,      
+        onRowClick: () =>{}
     }
 
     constructor(props){
@@ -25,8 +26,9 @@ class Lista extends Component {
         this.getWindowHeight = this.getWindowHeight.bind(this);
     }
 
-    rowClick=() => {        
-        EventEmitter.emit('gridData',this.gridApi.getSelectedRows()[0])
+    rowClick=() => {     
+        this.props.onRowClick(this.gridApi.getSelectedRows()[0])   
+        
     }
 
     onGridReady = params => {

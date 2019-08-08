@@ -1,9 +1,8 @@
 import React, {Component} from 'react';
 
 import BarraAcoes from '../../shared/barra-acoes/BarraAcoes.jsx'
-import {ClienteService} from '../../../services/ClienteService'
+import {ClienteService} from '../../../services/ClienteSistemaService'
 import { CidadeService } from '../../../services/CidadeService'
-import EventEmitter from '../../../services/EventService'
 
 class ClienteForm extends Component {
     
@@ -18,7 +17,7 @@ class ClienteForm extends Component {
 
         this.state = {
             cliente:{
-                _id:'',
+                id:'',
                 rsocial: '',
                 fantasia: '',
                 cnpj: '',
@@ -26,7 +25,8 @@ class ClienteForm extends Component {
                 endereco: '',
                 enderecoNum: '',
                 bairro: '',
-                cidade: ''
+                cidade: '',
+                tipo:''
             },
             cidades:[],
         
@@ -42,16 +42,14 @@ class ClienteForm extends Component {
     componentDidMount(){
         if (this.props.match.params.clienteId){
             ClienteService.get(this.props.match.params.clienteId) 
-                .then(res =>{                                     
+                .then(res =>{         
+                    console.log(res.data)                            
                     this.setState({
                         cliente:res.data,
                         isLoading: false
                     })
                 })
             }
-        
-   
-      //  EventEmitter.on('gridData',cliente => this.setCliente({cliente}))     
 
         CidadeService.getAll()
             .then(res => {                
