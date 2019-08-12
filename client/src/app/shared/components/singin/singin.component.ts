@@ -2,7 +2,7 @@ import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
-import { AuthService } from '../../../core/auth/auth.service';
+import { AuthentService } from '../../../core/auth/auth.service';
 import { PlatformDetectorService } from 'src/app/core/platform-detector/platform-detector.service';
 
 @Component({
@@ -17,7 +17,7 @@ export class SinginComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private authService: AuthService,
+    private authService: AuthentService,
     private router: Router,
     private platformDetectionService: PlatformDetectorService
     ) { }
@@ -29,20 +29,32 @@ export class SinginComponent implements OnInit {
     });
   }
 
+  loginWithGoogle() {
+    this.authService.signInWithGoogle();
+  }
+
+  loginWithFacebook(){
+    this.authService.signInWithFB();
+  }
+
+  logout() {
+    this.authService.signOut();
+  }
+
   login() {
     const login = this.loginForm.get('login').value;
     const password = this.loginForm.get('password').value;
     this.authService.authenticate(login, password)
       .subscribe(
         () => {
-            console.log('Usuario logado!')
+            console.log('Usuario logado!');
             this.router.navigate(['']);
           },
         err => {
          // this.loginForm.reset();
           // tslint:disable-next-line:no-unused-expression
           this.platformDetectionService.isPlataformBrowser() && this.loginInput.nativeElement.focus();
-          console.log(err.error);
+          console.log(err);
         }
       );
   }

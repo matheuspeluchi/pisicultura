@@ -20,9 +20,8 @@ router.post('/', (req,res)=>{
                     grupo: data.grupo.nome
                    // empresa: data.empresaId
                 }
-                
                 let token = jwt.gerarJWT(payload);
-                res.status = 200;
+                res.status = 200;                
                 res.setHeader('Authorization',token)
                 res.json({auth: true,id:data._id,token:token});
             }            

@@ -11,6 +11,8 @@ import { PessoaModule } from './pessoas/pessoas.module';
 import { ErrorsModule } from './errors/errors.module';
 import { SinginModule } from './shared/components/singin/singin.module';
 import { CidadeModule } from './shared/components/cidades/cidade/cidade.module';
+import { getAuthServiceConfigs } from './core/auth/socialLoginConfig';
+import { SocialLoginModule, AuthServiceConfig } from 'angularx-social-login';
 
 
 
@@ -29,8 +31,14 @@ import { CidadeModule } from './shared/components/cidades/cidade/cidade.module';
     CidadeModule,
     SinginModule,
     AppRoutingModule,
+    SocialLoginModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: AuthServiceConfig,
+      useFactory: getAuthServiceConfigs
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -5,30 +5,20 @@
     <!-- Tabs Titles -->
 
     <!-- Icon -->
-    <div class="fadeIn first">
-      <img src="../../../assets/images/client-icon-blue.png" style="width: 64px; height: 64px;" id="icon" alt="User Icon" />
+    <div class="fadeIn first mb-5">
+      <img src="../../../assets/login_logo.png" style="width: 128px; height: 128px;" id="icon" alt="User Icon" />
     </div>
 
     <br>
 
-    <form [formGroup]="loginForm" (submit)="login()">
-        <div class="p-2">
-          <input class="form-control fadeIn second" placeholder="E-mail"  autofocus formControlName="login" #loginInput>
-          <app-msg-form texto="O campo login é obrigatório!" *ngIf="loginForm.get('login').errors?.required"></app-msg-form>
-        </div>
-        <div class="p-2">
-          <input type="password" class="form-control fadeIn third" placeholder="Senha" formControlName="password">
-          <app-msg-form texto="O campo senha é obrigatório!" *ngIf="loginForm.get('password').errors?.required"></app-msg-form>
-        </div>
 
-        <button [disabled]="loginForm.invalid" type="submit" class="btn btn-primary btn-block">
-            Entrar
-        </button>
-
-    </form>
-    <div id="formFooter">
-        <a class="underlineHover" href="#">Forgot Password?</a>
-    </div>
+    <button  (click)="loginWithGoogle()" class="btn btn-block btn-social btn-google text-center">
+      <span class="fa fa-google"></span> Entrar com o Google
+    </button>
+    <br>
+    <button  (click)="loginWithFacebook()" class="btn btn-block btn-social btn-facebook text-center">
+      <span class="fa fa-facebook"></span> Entrar com o Facebook
+    </button>
 
   </div>
 </div>
