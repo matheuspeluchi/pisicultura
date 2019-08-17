@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-const Chave = 'Authorization';
+const Chave = 'token';
 @Injectable({
   providedIn: 'root'
 })
@@ -20,7 +20,7 @@ export class TokenService {
     return sessionStorage.getItem(Chave);
   }
 
-  removeToken(){
+  removeToken() {
     sessionStorage.removeItem(Chave);
   }
 }

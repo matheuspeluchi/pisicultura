@@ -28,7 +28,7 @@ router.put('/',(req,res)=>{
             }
         })
     
-    let grupo = new Grupo(req.body);d
+    let grupo = new Grupo(req.body);
 
     grupo.save()
         .then(data=>res.status(200).send(data._id))

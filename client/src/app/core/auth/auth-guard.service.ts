@@ -3,10 +3,11 @@ import { ActivatedRouteSnapshot, RouterStateSnapshot, Router, CanActivate } from
 
 import { UserService } from '../user/user.service';
 
+
 @Injectable({
   providedIn: 'root'
 })
-export class  AuthGuardService implements CanActivate {
+export class AuthGuardService implements CanActivate {
   path: ActivatedRouteSnapshot[];
   route: ActivatedRouteSnapshot;
 

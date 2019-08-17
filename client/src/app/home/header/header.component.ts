@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, BehaviorSubject } from 'rxjs';
 import { Router } from '@angular/router';
 
 import { User } from 'src/app/core/user/user';
@@ -14,28 +14,24 @@ import { SocialUser } from 'angularx-social-login';
 })
 export class HeaderComponent implements OnInit {
 
-  user$: Observable<User>;
-  private user: SocialUser;
-  private loggedIn: boolean;
+  user$: Observable<SocialUser>;
+  user: SocialUser;
+  userSubject = new BehaviorSubject<SocialUser>(null);
+
 
   constructor(
-      private userService: UserService,
-      private router: Router,
-      private authService: AuthService
+      private userService: UserService
      ) {
-    this.user$ = userService.getUser();
-   }
+       this.userService.decodeAndNotify();
+       this.user$ = this.userService.getUser();
+     }
 
-  ngOnInit() {
-    this.authService.authState.subscribe((user) => {
-      this.user = user;
-      this.loggedIn = (user != null);
-    });
-  }
+
+  ngOnInit() {  }
+
 
   logout() {
     this.userService.logout();
-    this.router.navigate(['login']);
   }
 
 

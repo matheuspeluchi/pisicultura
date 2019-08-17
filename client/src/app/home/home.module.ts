@@ -8,6 +8,8 @@ import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { MenuComponent } from './menu/menu.component';
+import { AvatarModule } from 'ngx-avatar';
+
 
 @NgModule({
   declarations: [
@@ -21,7 +23,8 @@ import { MenuComponent } from './menu/menu.component';
     ReactiveFormsModule,
     MsgFormModule,
     RouterModule,
-    FormsModule
+    FormsModule,
+    AvatarModule
   ],
   exports: [
     HomeComponent,

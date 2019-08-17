@@ -3,4 +3,7 @@ export interface User {
   nome: string;
   empresaId: string;
   grupo: string;
+  socialId: string;
+  photoUrl: string;
+  email: string;
 }

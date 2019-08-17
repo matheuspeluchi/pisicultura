@@ -12,7 +12,9 @@ const config = {
 const cors = require('cors')
 
 //Conexão com o banco de dados;
-mongoose.connect('mongodb://localhost:27017/desenvolvimento',config,(err, client) => {
+
+//mongoose.connect('mongodb://localhost:27017/desenvolvimento',config,(err, client) => {
+mongoose.connect('mongodb+srv://matheusrocha:p7DK0izfTK0B5HgD@desenvolvmento-sh39i.mongodb.net/desenvolvimento?retryWrites=true&w=majority',config,(err, client) => {
     let port = '3001'
     if (err) return console.log(err);
     

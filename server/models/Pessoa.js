@@ -4,6 +4,7 @@ let pessoaSchema = new mongoose.Schema({
     nome: {type: String, uppercase: true},
     endereco: {type: String, uppercase: true},
     bairro: {type: String, uppercase: true},
+    socialId:{type: String},
     enderecoNum: Number ,
     cep: {type: String, maxlength: 10},
     celular:{type: String,maxlength: 15},

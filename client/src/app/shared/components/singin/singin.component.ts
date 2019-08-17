@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 
 import { AuthentService } from '../../../core/auth/auth.service';
 import { PlatformDetectorService } from 'src/app/core/platform-detector/platform-detector.service';
+import { UserService } from 'src/app/core/user/user.service';
 
 @Component({
   selector: 'app-singin',
@@ -17,9 +18,10 @@ export class SinginComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private authService: AuthentService,
+    private authentService: AuthentService,
+    private userService: UserService,
     private router: Router,
-    private platformDetectionService: PlatformDetectorService
+    private platformDetectionService: PlatformDetectorService,
     ) { }
 
   ngOnInit() {
@@ -30,21 +32,21 @@ export class SinginComponent implements OnInit {
   }
 
   loginWithGoogle() {
-    this.authService.signInWithGoogle();
+    this.authentService.signInWithGoogle();
   }
 
-  loginWithFacebook(){
-    this.authService.signInWithFB();
+  loginWithFacebook() {
+    this.authentService.signInWithFB();
   }
 
   logout() {
-    this.authService.signOut();
+    this.authentService.signOut();
   }
 
   login() {
     const login = this.loginForm.get('login').value;
     const password = this.loginForm.get('password').value;
-    this.authService.authenticate(login, password)
+    this.authentService.authenticate(login, password)
       .subscribe(
         () => {
             console.log('Usuario logado!');

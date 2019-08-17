@@ -14,9 +14,18 @@ router.get('/:id',(req,res)=>{
     Pessoa.findById(req.params.id)
         .populate('tipoPessoa')
         .populate('grupo')
-        .then( data => res.status(200).send(data))
+        .then( data => res.status(201).send(data))
         .catch( err => res.status(500).send(err));
        
+})
+
+router.get('/email/:email',(req,res)=>{
+    Pessoa.findOne({
+        email: req.params.email
+    })
+        .populate('grupo')
+        .then(data => res.status(201).json(data))
+        .catch(err => res.status(500).send(err))
 })
 
 

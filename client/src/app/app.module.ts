@@ -1,6 +1,5 @@
-import { CoreModule } from './core/core.module';
-import { HomeModule } from './home/home.module';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,6 +12,9 @@ import { SinginModule } from './shared/components/singin/singin.module';
 import { CidadeModule } from './shared/components/cidades/cidade/cidade.module';
 import { getAuthServiceConfigs } from './core/auth/socialLoginConfig';
 import { SocialLoginModule, AuthServiceConfig } from 'angularx-social-login';
+import { HomeModule } from './home/home.module';
+import { CoreModule } from './core/core.module';
+
 
 
 
@@ -20,7 +22,6 @@ import { SocialLoginModule, AuthServiceConfig } from 'angularx-social-login';
 @NgModule({
   declarations: [
     AppComponent,
-
   ],
   imports: [
     CoreModule,
@@ -31,7 +32,8 @@ import { SocialLoginModule, AuthServiceConfig } from 'angularx-social-login';
     CidadeModule,
     SinginModule,
     AppRoutingModule,
-    SocialLoginModule
+    SocialLoginModule,
+    BrowserAnimationsModule
   ],
   providers: [
     {

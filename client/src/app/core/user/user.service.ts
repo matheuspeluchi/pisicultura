@@ -2,22 +2,32 @@ import { TokenService } from './../token/token.service';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { User } from './user';
-import * as jwt_decode from 'jwt-decode';
+import { HttpClient } from '@angular/common/http';
+import {  Router } from '@angular/router';
+import { AuthService, SocialUser } from 'angularx-social-login';
+import { AuthentService } from '../auth/auth.service';
 
+
+const APIURL = 'http://localhost:3001/pessoa';
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
 
-  private userSubject = new BehaviorSubject<User>(null);
-  private userId: string;
-  private userGroup: string;
+  private userSubject = new BehaviorSubject<SocialUser>(null);
+  private user: SocialUser;
+  private loggedIn: boolean;
 
-  constructor(private tokenService: TokenService) {
+  constructor(
+    private tokenService: TokenService,
+    private http: HttpClient,
+    private authService: AuthService,
+    private router: Router
+    ) {
     // tslint:disable-next-line: no-unused-expression
     this.tokenService.hasToken() && this.decodeAndNotify();
   }
-  setToken(token: string){
+  setToken(token: string) {
     this.tokenService.setToken(token);
     this.decodeAndNotify();
   }
@@ -26,52 +36,36 @@ export class UserService {
     return this.userSubject.asObservable();
   }
 
-  logout(){
-    this.tokenService.removeToken();
-    this.userSubject.next(null);
+  registerUser(user: User) {
+    return this.http.put<User>(APIURL, user);
   }
 
-  private decodeAndNotify() {
-    const token = this.tokenService.getToken();
-    const user = jwt_decode(token) as User;
-    this.userId = user.id;
-    this.userGroup = user.grupo;
-    this.userSubject.next(user);
+  logout() {
+    this.loggedIn = false;
+    this.userSubject.next(null);
+    this.tokenService.removeToken();
+    this.router.navigate(['login']);
+
+  }
+
+  decodeAndNotify() {
+    this.authService.authState.subscribe((user) => {
+      this.user = user;
+      this.loggedIn = (user != null);
+      this.userSubject.next(user);
+    });
+  }
+
+  getUserData(email: string) {
+    return this.http.get<User>(APIURL + '/email/' + email);
   }
 
   islogged() {
-    return this.tokenService.hasToken();
+    return (!!this.tokenService.hasToken());
   }
 
   getUserLogin() {
-    return this.userId;
+    return this.user.email;
   }
 
-  getUserGroup() {
-    return this.userGroup;
-  }
-
-  isDeveloper() {
-    if (this.getUserGroup() === 'developer') {
-     return true;
-    } else {
-      return false;
-    }
-  }
-
-  isAdmin() {
-    if (this.getUserGroup() === 'admin') {
-      return true;
-    } else {
-      return false;
-    }
-  }
-
-  isComercial() {
-    if (this.getUserGroup() === 'comercial') {
-      return true;
-    } else {
-      return false;
-    }
-  }
 }

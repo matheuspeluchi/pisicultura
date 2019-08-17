@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { User } from 'src/app/core/user/user';
 import { UserService } from 'src/app/core/user/user.service';
 import { Router } from '@angular/router';
+import { SocialUser } from 'angularx-social-login';
 
 @Component({
   selector: 'app-menu',
@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class MenuComponent implements OnInit {
 
-  user$: Observable<User>;
+  user$: Observable<SocialUser>;
 
 
   constructor(

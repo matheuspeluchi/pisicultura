@@ -20,12 +20,12 @@ const routes: Routes = [
   {
     path: '',
     component: HomeComponent,
-    canActivate:[HomeGuardService],
-    children:[
+    canActivate: [ HomeGuardService],
+    children: [
       {
         path: 'arearestrita',
         loadChildren: () => import('./area-restrita/area-restrita.module').then(m => m.AreaRestritaModule),
-      
+
       }
     ]
   },

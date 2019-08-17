@@ -1,28 +1,38 @@
-<div class="menuSecundario m-0 p-0">
-    <nav class="navbar navbar-expand-sm bg-primary navbar-dark fixed-top ">
-        <!-- Brand -->
-        <a class="navbar-brand text-center" href="#">
-            <img src="/assets/logo.png" class="align-self-start" width="40" height="40">
-            <span class=" h5 my-2 py-2 ml-2">PisicAdmin</span>
+<nav class="navbar navbar-expand-sm navbar-light bg-primary" >
+  <a class="navbar-brand" href="#">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Cadastro
         </a>
-        
-        <!-- Links -->
-        <ul class="navbar-nav" id="userHeaderMenu" *ngIf="(user$ | async) as user;">
-            <!-- Dropdown -->
-            <li class="nav-item dropdown active">
-                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-                    <i class="fa fa-lg fa-user-circle m-0 p-0"></i>   
-                    {{user.nome}}
-                </a>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" (click)="logout()" href="#">Sair</a>
-                </div>
-            </li>
-            <li class="nav-item">
-                <a href="#" [routerLink]="['arearestrita']" class="nav-link active">
-                        <i class="fa fa-cogs"></i>
-                </a>
-            </li>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#" [routerLink]="['arearestrita']">Unidades</a>
+          <a class="dropdown-item" href="#">Espécies</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Produtos</a>
+        </div>
+      </li>
+    </ul>
+    <div class="dropdown userMenu" *ngIf="user$ | async as user">
+        <img src="{{user.photoUrl}}" alt="Avatar" class="avatar">
+        <button class="btn btn-link dropdown-toggle" type="button" data-toggle="dropdown">{{user.name}}
+        <span class="caret"></span></button>
+        <ul class="dropdown-menu">
+          <li><a href="#">Área Restrita</a></li>
+          <hr>
+          <li><a href="#" (click)="logout()">Sair</a></li>
         </ul>
-    </nav>
-</div>
+    </div>
+  </div>
+</nav>
