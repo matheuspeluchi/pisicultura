@@ -11,6 +11,7 @@ export const ClienteService = {
     list(){
         return api.get('/clientesistema')
                 .then(res => res.data)
+                .catch(err => err.data)
     },
 
     save(cliente){

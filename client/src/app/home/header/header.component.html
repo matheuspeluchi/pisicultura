@@ -1,5 +1,7 @@
-<nav class="navbar navbar-expand-sm navbar-light bg-primary" >
-  <a class="navbar-brand" href="#">Navbar</a>
+<nav class="navbar navbar-expand-sm navbar-dark bg-primary" >
+  <a class="navbar-brand" href="#">
+    <img src="../../../assets/login_logo.png" width="64px" height="32px">
+  </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -9,9 +11,17 @@
       <li class="nav-item active">
         <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li>
+      <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Análises
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#" [routerLink]="['arearestrita']">Amônia</a>
+            <a class="dropdown-item" href="#">Oxigneio</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Proteína</a>
+          </div>
+        </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Cadastro

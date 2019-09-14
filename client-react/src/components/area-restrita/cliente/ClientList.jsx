@@ -4,7 +4,17 @@ import {Link} from 'react-router-dom'
 import Lista from '../../shared/lista/Lista.jsx';
 import BarraAcoes from '../../shared/barra-acoes/BarraAcoes.jsx'
 import { ClienteService } from '../../../services/ClienteSistemaService.js';
+import { withStyles} from '@material-ui/styles';
+import Button from '@material-ui/core/Button';
 
+
+const styles = theme => ({
+    button: {
+        margin: 5,
+        marginLeft: 15
+      
+    },
+  });
 
 class ClienteLista extends Component {
     static defaultProps = {
@@ -44,17 +54,25 @@ class ClienteLista extends Component {
         this.props.history.push(`${this.props.match.url}/novo/${cliente.id}`)
     }
 
+    novoCliente = () => {
+        this.props.history.push(`${this.props.match.url}/novo`)
+    }
+
+    goBack= () => {
+        this.props.history.goBack();
+    }
 
     render(){
         const {state} = this;
+        const { classes } = this.props;
         
             return (
                     <div>
-                        <BarraAcoes>
+                        <BarraAcoes routerBack={this.goBack}>
                             <div className="float-right">
-                                <Link to={`${this.props.match.url}/novo`} className="btn btn-sm btn-primary m-1">
+                                <Button variant="contained" color="primary" className={classes.button}  onClick={this.novoCliente}>
                                     Novo
-                                </Link>
+                                </Button>
                             </div>
                         </BarraAcoes>
                         
@@ -69,4 +87,4 @@ class ClienteLista extends Component {
     
 }
 
-export default ClienteLista;
+export default withStyles(styles)(ClienteLista);

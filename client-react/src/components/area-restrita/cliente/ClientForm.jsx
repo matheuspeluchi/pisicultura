@@ -83,6 +83,9 @@ class ClienteForm extends Component {
             .catch(err => console.log(err))
     }
 
+    goBack= ()=>{
+        this.props.history.goBack();
+    }
 
     render() {
         const {state} = this;
@@ -90,7 +93,7 @@ class ClienteForm extends Component {
         return (
             
             <div>
-                <BarraAcoes>
+                <BarraAcoes routerBack={this.goBack}>
                     <div className="float-right m-1">
                         <button className="btn btn-sm btn-primary" onClick={this.salvar}>Salvar</button>
                     </div>
