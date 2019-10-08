@@ -7,9 +7,12 @@ import '../stylesheets/login.css'
 import Logo from '../assets/login_logo.png'
 import {UserService} from '../services/UserService'
 import EventEmitter from '../services/EventService'
+import { auth, provider } from '../config/database'
+
 
 
 class Login extends Component{
+
 
     constructor(props){
         super(props)
@@ -40,6 +43,8 @@ class Login extends Component{
             })
             
     }
+
+    
     handleChange = event => {
         let target = event.target,
             value = target.value,
@@ -94,7 +99,7 @@ class Login extends Component{
                             </button>
                             <br/>
                           
-                            <button className="btn btn-primary btn-block" onClick={this.loginGoogle.bind(this)}>
+                            <button className="btn btn-primary btn-block" onClick={this.loginGoogle}>
                                 Entre com sua conta Google
                             </button>
                             

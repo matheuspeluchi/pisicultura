@@ -39,7 +39,7 @@ class ClienteForm extends Component {
     }
 
 
-    componentDidMount(){
+    componentWillMount(){
         if (this.props.match.params.clienteId){
             ClienteService.get(this.props.match.params.clienteId) 
                 .then(res =>{         

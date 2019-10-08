@@ -6,6 +6,7 @@ import Button from '@material-ui/core/Button';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import logo from '../assets/login_logo.png'
+import { auth, provider } from '../config/database'
 
 
 class Header extends Component {
@@ -59,13 +60,39 @@ class Header extends Component {
             stateMenu: false
         })
     }
+
+    login = () => {
+        auth.signInWithPopup(provider)
+            .then(({user}) =>{         
+                console.log(user)       
+                this.setState(({ user }))
+            })
+      }
+    
+    logout = () => {
+        auth.signOut()
+        .then(()=>{
+        this.setState({
+            user: null
+            })
+        })
+    }
+
+    componentDidMount() {
+        auth.onAuthStateChanged(user => {
+            if (user) {
+                this.setState({ user })
+            }
+        })
+      }
+    
     
 
     render(){
         const {props, state} = this
         const classes = this.styles
         return (
-             <nav className="navbar navbar-expand-lg navbar-light menu-principal">
+             <nav className="navbar navbar-expand-sm navbar-light menu-principal">
                 <a className="navbar-brand"  href="/#">
                     <img src={logo} alt="PisicAdmin" style={{height:40, width:100}} className="img-fluid img-thumbnai logo" />
                 </a>
@@ -136,6 +163,7 @@ class Header extends Component {
                             </Button>    
                     }
                 </div>
+                
             </nav>
 
             

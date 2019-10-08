@@ -1,9 +1,8 @@
 import React,{ Component } from 'react';
-import {Switch} from 'react-router-dom'
+import {Switch, Route} from 'react-router-dom'
 import { auth, provider } from './config/database'
-import Header from './components/Header'
-import Footer from './components/Footer'
-import Routes from './routes/Routes'
+import Home from './components/Home';
+import Login from './components/login';
 import './stylesheets/styles.css'
 
 class App extends Component {
@@ -41,19 +40,16 @@ class App extends Component {
             this.setState({ user })
         }
     })
-}
+  }
 
   render(){
     
     return (
           <div>
-              <Header user={this.state.user} login={this.login} logout={this.logout}></Header>
-              <div className="conteudo">
-                <Switch>                
-                    <Routes></Routes>
-                </Switch>
-              </div>
-              <Footer></Footer>
+              <Switch>
+                  <Route exact path="/" component={Home}/>
+                  <Route exact path="/login" component={Login}/>
+              </Switch>     
           </div> 
     )
   }

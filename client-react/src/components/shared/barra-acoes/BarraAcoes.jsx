@@ -1,5 +1,4 @@
 import React, { Component} from 'react';
-import {BrowserRouter} from 'react-router-dom'
 import Button from '@material-ui/core/Button';
 import { withStyles} from '@material-ui/styles';
 
@@ -16,6 +15,10 @@ class BarraAcoes extends Component{
     
     constructor(props){
         super(props)
+    }
+
+    goBack = () =>{
+        this.props.history.goBack();
     }
 
     render(){      

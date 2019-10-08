@@ -8,7 +8,6 @@ import ClienteForm from '../components/area-restrita/cliente/ClientForm.jsx'
 const AreaRestrita = lazy(() => import('../components/area-restrita/AreaRestrita.jsx'));
 
 class Routes extends React.Component {
-
                     
     render(){
         return (
