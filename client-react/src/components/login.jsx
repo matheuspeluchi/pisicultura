@@ -7,7 +7,6 @@ import '../stylesheets/login.css'
 import Logo from '../assets/login_logo.png'
 import {UserService} from '../services/UserService'
 import EventEmitter from '../services/EventService'
-import { auth, provider } from '../config/database'
 
 
 
@@ -15,7 +14,7 @@ class Login extends Component{
 
 
     constructor(props){
-        super(props)
+        super(props);
 
         this.state = {
             login:'',
@@ -27,14 +26,14 @@ class Login extends Component{
     }    
 
     login = event => {
-        event.preventDefault()
+        event.preventDefault();
         UserService.login(this.state)
             .then(res =>res)
             .catch(err => err)
-    }
+    };
 
     loginGoogle = event => {
-        event.preventDefault()
+        event.preventDefault();
         const {history} = this.props;
         auth.signInWithPopup(provider)
             .then(({user}) =>{                
@@ -42,18 +41,18 @@ class Login extends Component{
                 history.push('/')
             })
             
-    }
+    };
 
     
     handleChange = event => {
         let target = event.target,
             value = target.value,
-            name = target.name
+            name = target.name;
 
         this.setState({
             [name]: value
         })
-    }
+    };
 
 
     render(){

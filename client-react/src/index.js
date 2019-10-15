@@ -6,13 +6,16 @@ import App from './App'
 
 import './index.css';
 import './include/bootstrap'
+import {Provider} from "react-redux";
+import {Store} from "./redux/store";
 
 
 ReactDOM.render(
-    
+    <Provider store={Store}>
         <BrowserRouter>
             <App/>
-        </BrowserRouter>,
+        </BrowserRouter>
+    </Provider>,
     
     document.getElementById('root'));
 

@@ -9,17 +9,17 @@ class Home extends React.Component{
 
     static defaultProps = {
         user: null
-    }
+    };
 
     constructor(props) {
-        super(props)
+        super(props);
         this.state = {
             user: null
         }
     }
 
     componentDidMount(){
-        EventEmitter.on("LoginSuccess",)
+      //  EventEmitter.on("LoginSuccess",)
 
     }
 

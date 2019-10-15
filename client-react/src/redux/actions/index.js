@@ -1,4 +1,6 @@
+import { LOGIN } from './actionTypes'
+
 export const userLogin = user => ({
-    type: 'LOGIN_SUCCESS',
+    type: LOGIN,
     newValue: user
-})
+});

@@ -12,14 +12,11 @@ const styles = theme => ({
     },
   });
 class BarraAcoes extends Component{
-    
-    constructor(props){
-        super(props)
-    }
+
 
     goBack = () =>{
         this.props.history.goBack();
-    }
+    };
 
     render(){      
         const { classes } = this.props;

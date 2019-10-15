@@ -1,15 +1,17 @@
 import React,{ Component } from 'react';
 import {Switch, Route} from 'react-router-dom'
 import { auth, provider } from './config/database'
+import { connect } from 'react-redux';
 import Home from './components/Home';
 import Login from './components/login';
 import './stylesheets/styles.css'
+import mapStateToProps from "react-redux/es/connect/mapStateToProps";
 
 class App extends Component {
 
   constructor(props){
     
-    super(props)
+    super(props);
     
     this.state = {
       user: null
@@ -19,10 +21,10 @@ class App extends Component {
   login = () => {
     auth.signInWithPopup(provider)
         .then(({user}) =>{         
-            console.log(user)       
+            console.log(user);
             this.setState(({ user }))
         })
-  }
+  };
 
   logout = () => {
     auth.signOut()
@@ -32,7 +34,7 @@ class App extends Component {
 
       })
     })
-  }
+  };
 
   componentDidMount() {
     auth.onAuthStateChanged((user) => {
@@ -43,19 +45,24 @@ class App extends Component {
   }
 
   render(){
-    
+    const { newValue } = this.props;
     return (
+
           <div>
               <Switch>
                   <Route exact path="/" component={Home}/>
                   <Route exact path="/login" component={Login}/>
-              </Switch>     
-          </div> 
+              </Switch>
+          </div>
     )
   }
 }
 
+const mapStateToProps = store => ({
+    newValue: store.newValue
+});
 
 
 
-export default App;
+
+export default connect(mapStateToProps) (App);

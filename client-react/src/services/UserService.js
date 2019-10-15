@@ -29,15 +29,15 @@ export const UserService = {
 
 
     isDeveloper(){
-        let decoded = jwt.decode(sessionStorage.getItem('Authorization'))
-        return decoded.grupo == 'developer' ? true :false;
+        let decoded = jwt.decode(sessionStorage.getItem('Authorization'));
+        return decoded.grupo === 'developer' ? true :false;
             
     },
 
     isAdmin(){
-        let decoded = jwt.decode(sessionStorage.getItem('Authorization'))
-        return decoded.grupo == 'admin' ? true : false;
+        let decoded = jwt.decode(sessionStorage.getItem('Authorization'));
+        return decoded.grupo === 'admin' ? true : false;
 
     }
     
-}
+};

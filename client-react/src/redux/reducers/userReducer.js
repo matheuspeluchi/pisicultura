@@ -1,9 +1,11 @@
+import { LOGIN } from '../actions/actionTypes';
+
 const initialState = {
     newValue: ''
   };
   export const userReducer = (state = initialState, action) => {
     switch (action.type) {
-      case 'LOGIN_SUCCESS':
+      case LOGIN:
         return {
           ...state,
           newValue: action.newValue
