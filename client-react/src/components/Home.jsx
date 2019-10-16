@@ -31,6 +31,7 @@ class Home extends React.Component{
             <div>
                 <Header user={props.user} login={this.login} logout={this.logout}></Header>
                 <div className="conteudo">
+
                     <Switch>                
                         <Routes></Routes>
                     </Switch>

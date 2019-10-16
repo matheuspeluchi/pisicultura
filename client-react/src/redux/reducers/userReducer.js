@@ -1,7 +1,7 @@
 import { LOGIN } from '../actions/actionTypes';
 
 const initialState = {
-    newValue: ''
+    newValue: 'Teste Redux'
   };
   export const userReducer = (state = initialState, action) => {
     switch (action.type) {

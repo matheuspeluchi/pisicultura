@@ -6,8 +6,10 @@ import { auth, provider } from '../config/database'
 import '../stylesheets/login.css'
 import Logo from '../assets/login_logo.png'
 import {UserService} from '../services/UserService'
-import EventEmitter from '../services/EventService'
-
+import { connect } from 'react-redux';
+import {userLogin} from  '../redux/actions'
+import { bindActionCreators } from 'redux';
+import mapStateToProps from "react-redux/es/connect/mapStateToProps";
 
 
 class Login extends Component{
@@ -37,7 +39,7 @@ class Login extends Component{
         const {history} = this.props;
         auth.signInWithPopup(provider)
             .then(({user}) =>{                
-                EventEmitter.emit('LoginSuccess', user)             
+                userLogin(user);
                 history.push('/')
             })
             
@@ -114,5 +116,6 @@ class Login extends Component{
         )
     }
 }
+const mapDispatchToProps = dispatch => bindActionCreators({userLogin},dispatch);
 
-export default Login
+export default connect(mapStateToProps, mapDispatchToProps)(Login);

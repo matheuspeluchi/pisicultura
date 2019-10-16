@@ -5,7 +5,6 @@ import { connect } from 'react-redux';
 import Home from './components/Home';
 import Login from './components/login';
 import './stylesheets/styles.css'
-import mapStateToProps from "react-redux/es/connect/mapStateToProps";
 
 class App extends Component {
 
