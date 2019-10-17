@@ -5,7 +5,8 @@ import Routes from '../routes/Routes'
 import {Switch} from 'react-router-dom'
 import { connect } from 'react-redux';
 import {userLogin} from  '../redux/actions'
-
+import { auth } from '../config/database'
+import { bindActionCreators } from 'redux';
 
 class Home extends React.Component{
 
@@ -16,32 +17,43 @@ class Home extends React.Component{
 
     constructor(props) {
         super(props);
-        this.state = {
-            user: null
-        }
     }
 
     componentDidMount(){
-
+        const {history,userLogin} = this.props;
+        auth.onAuthStateChanged(user => {
+            if (user) {
+                userLogin(user);
+            }
+        })
+        if (this.props.user == null){
+            Window.location = "/login"
+        }
     }
 
- 
+    logout = () => {
+        const {userLogin, history} = this.props;
+        auth.signOut()
+        .then(()=>{            
+            userLogin(null);
+            history.push('/login');
+        })
+    }
 
     render(){
         const {state,props} = this;
-        const {user} = this.props;
         return (
-
+        
             <div>
-                <Header user={user} login={this.login} logout={this.logout}></Header>
+                <Header user={props.user} login={this.login} logout={this.logout}></Header>
                 <div className="conteudo">
-                    {console.log(user)}
                     <Switch>                
                         <Routes></Routes>
                     </Switch>
                 </div>
                 <Footer></Footer>
             </div>           
+            
         )
     }
 }
@@ -49,6 +61,6 @@ class Home extends React.Component{
 const mapStateToProps = store => ({
     user: store.userState.newValue
 });
-
-export default connect(mapStateToProps)(Home);
+const mapDispatchToProps = dispatch => bindActionCreators({userLogin},dispatch);
+export default connect(mapStateToProps, mapDispatchToProps)(Home);
 

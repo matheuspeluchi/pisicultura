@@ -1,7 +1,6 @@
 import React,{ Component } from 'react';
 import {Switch, Route} from 'react-router-dom'
 import { auth, provider } from './config/database'
-import { connect } from 'react-redux';
 import Home from './components/Home';
 import Login from './components/login';
 import './stylesheets/styles.css'

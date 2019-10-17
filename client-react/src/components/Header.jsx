@@ -7,7 +7,9 @@ import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import logo from '../assets/login_logo.png'
 import { auth, provider } from '../config/database'
-
+import {userLogin} from  '../redux/actions'
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 
 class Header extends Component {
 
@@ -69,14 +71,7 @@ class Header extends Component {
             })
       }
     
-    logout = () => {
-        auth.signOut()
-        .then(()=>{
-        this.setState({
-            user: null
-            })
-        })
-    }
+
 
     componentDidMount() {
         auth.onAuthStateChanged(user => {
@@ -171,4 +166,9 @@ class Header extends Component {
     }
 }
 
-export default Header
+const mapStateToProps = store => ({
+    user: store.userState.newValue
+});
+const mapDispatchToProps = dispatch => bindActionCreators({userLogin},dispatch);
+
+export default connect(mapStateToProps, mapDispatchToProps)(Header);

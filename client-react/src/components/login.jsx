@@ -38,8 +38,9 @@ class Login extends Component{
         const {history} = this.props;
         auth.signInWithPopup(provider)
             .then(({user}) =>{
-                userLogin(user.userName);
-                //history.push('/');
+                const {userLogin} = this.props;
+                userLogin(user);
+                history.push('/');
                 console.log(this.props.user)
             })
             
@@ -59,7 +60,7 @@ class Login extends Component{
 
     render(){
         const {state,props} = this;
-
+    
         return (
             <div>
                 <div id="fb-root"></div>
@@ -99,14 +100,14 @@ class Login extends Component{
                             </button>
                             <br/>
                           
-                            <button className="btn btn-primary btn-block" onClick={this.loginGoogle}>
+                            <button className="btn btn-primary btn-block" onClick={this.loginGoogle.bind(this)}>
                                 Entre com sua conta Google
                             </button>
                             
                         </form>
                         <br/>
                         <div id="formFooter">
-                            {props.user}
+
                         </div>
 
                     </div>
