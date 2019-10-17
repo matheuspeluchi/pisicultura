@@ -3,9 +3,12 @@ import Header from './Header'
 import Footer from './Footer'
 import Routes from '../routes/Routes'
 import {Switch} from 'react-router-dom'
-import EventEmitter from '../services/EventService'
+import { connect } from 'react-redux';
+import {userLogin} from  '../redux/actions'
+
 
 class Home extends React.Component{
+
 
     static defaultProps = {
         user: null
@@ -19,7 +22,6 @@ class Home extends React.Component{
     }
 
     componentDidMount(){
-      //  EventEmitter.on("LoginSuccess",)
 
     }
 
@@ -27,11 +29,13 @@ class Home extends React.Component{
 
     render(){
         const {state,props} = this;
+        const {user} = this.props;
         return (
-            <div>
-                <Header user={props.user} login={this.login} logout={this.logout}></Header>
-                <div className="conteudo">
 
+            <div>
+                <Header user={user} login={this.login} logout={this.logout}></Header>
+                <div className="conteudo">
+                    {console.log(user)}
                     <Switch>                
                         <Routes></Routes>
                     </Switch>
@@ -42,5 +46,9 @@ class Home extends React.Component{
     }
 }
 
-export default Home;
+const mapStateToProps = store => ({
+    user: store.userState.newValue
+});
+
+export default connect(mapStateToProps)(Home);
 

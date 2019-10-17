@@ -36,15 +36,17 @@ class App extends Component {
   };
 
   componentDidMount() {
-    auth.onAuthStateChanged((user) => {
+   auth.onAuthStateChanged((user) => {
         if (user) {
             this.setState({ user })
         }
     })
+
+
   }
 
   render(){
-    const { newValue } = this.props;
+
     return (
 
           <div>
@@ -57,11 +59,7 @@ class App extends Component {
   }
 }
 
-const mapStateToProps = store => ({
-    newValue: store.newValue
-});
 
 
 
-
-export default connect(mapStateToProps) (App);
+export default App;

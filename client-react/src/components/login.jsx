@@ -9,7 +9,6 @@ import {UserService} from '../services/UserService'
 import { connect } from 'react-redux';
 import {userLogin} from  '../redux/actions'
 import { bindActionCreators } from 'redux';
-import mapStateToProps from "react-redux/es/connect/mapStateToProps";
 
 
 class Login extends Component{
@@ -38,9 +37,10 @@ class Login extends Component{
         event.preventDefault();
         const {history} = this.props;
         auth.signInWithPopup(provider)
-            .then(({user}) =>{                
-                userLogin(user);
-                history.push('/')
+            .then(({user}) =>{
+                userLogin(user.userName);
+                //history.push('/');
+                console.log(this.props.user)
             })
             
     };
@@ -58,13 +58,12 @@ class Login extends Component{
 
 
     render(){
-        const {state} = this;
-        
+        const {state,props} = this;
 
         return (
             <div>
                 <div id="fb-root"></div>
-                
+                {console.log(props.user)}
                 
                 <div className="wrapper fadeInDown">
                     <div id="formContent">
@@ -107,7 +106,7 @@ class Login extends Component{
                         </form>
                         <br/>
                         <div id="formFooter">
-                            
+                            {props.user}
                         </div>
 
                     </div>
@@ -116,6 +115,9 @@ class Login extends Component{
         )
     }
 }
+const mapStateToProps = store => ({
+    user: store.userState.newValue
+});
 const mapDispatchToProps = dispatch => bindActionCreators({userLogin},dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(Login);
