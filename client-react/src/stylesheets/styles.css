@@ -21,15 +21,16 @@ body {
 #conteudoNavbarSuportado{
     background-color: #3c8dbc !important;
     width: 100% !important;
+    max-height: 40px;
 }
 .menu-principal {
     height: 60px !important;
-    max-height: 60px;
+    max-height: 40px;
     color: white !important;
     z-index: 1200;
     width: 100%;
     background-color: #3c8dbc !important;
-    font-size: 16px !important;
+    font-size: 13px !important;
 }
 
 .menu-principal .nav-link {
@@ -67,6 +68,11 @@ body {
     color: grey !important;
 }
 
+.dropdown-item {
+    font-size: 13px;
+}
+
+/**************************/
 @media (max-width: 768px) {
     .conteudo {
         width: 100%;

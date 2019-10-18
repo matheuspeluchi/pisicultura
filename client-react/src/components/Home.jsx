@@ -1,4 +1,5 @@
 import React from 'react';
+import styled from 'styled-components';
 import Header from './Header'
 import Footer from './Footer'
 import Routes from '../routes/Routes'
@@ -8,27 +9,26 @@ import {userLogin} from  '../redux/actions'
 import { auth } from '../config/database'
 import { bindActionCreators } from 'redux';
 
+const Conteudo = styled.div`  
+        width: 100%;
+        padding-left: 5px;
+    `;
+
 class Home extends React.Component{
 
 
-    static defaultProps = {
-        user: null
-    };
-
-    constructor(props) {
-        super(props);
-    }
-
     componentDidMount(){
         const {history,userLogin} = this.props;
+
         auth.onAuthStateChanged(user => {
             if (user) {
                 userLogin(user);
+            }else{
+                history.push('/login');
+                console.log(this.props.user)
             }
-        })
-        if (this.props.user == null){
-            Window.location = "/login"
-        }
+        });
+
     }
 
     logout = () => {
@@ -38,22 +38,22 @@ class Home extends React.Component{
             userLogin(null);
             history.push('/login');
         })
-    }
+    };
 
     render(){
-        const {state,props} = this;
+        const {props} = this;
         return (
-        
+
             <div>
                 <Header user={props.user} login={this.login} logout={this.logout}></Header>
-                <div className="conteudo">
+                <Conteudo>
                     <Switch>                
                         <Routes></Routes>
                     </Switch>
-                </div>
+                </Conteudo>
                 <Footer></Footer>
             </div>           
-            
+
         )
     }
 }
