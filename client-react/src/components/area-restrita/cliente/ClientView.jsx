@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {Link} from 'react-router-dom'
 
 import { ClienteService } from '../../../services/ClienteSistemaService';
-import BarraAcoes from '../../shared/barra-acoes/BarraAcoes';
+import BarraAcoes from '../../shared/BarraAcoes';
 
 
 class ClienteView extends Component {

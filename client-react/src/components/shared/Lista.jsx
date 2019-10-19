@@ -1,9 +1,13 @@
 import React, { Component} from 'react'
+import styled from "styled-components";
 import { AgGridReact } from 'ag-grid-react';
 import 'ag-grid-community/dist/styles/ag-grid.css';
 import 'ag-grid-community/dist/styles/ag-theme-blue.css';
 
-
+const List = styled.div`
+    width: 100%;
+    background-color: #E8E8E8 !important;
+`;
 
 class Lista extends Component {
 
@@ -12,7 +16,7 @@ class Lista extends Component {
         rows:[],
         autoHeight: true,      
         onRowClick: () =>{}
-    }
+    };
 
     constructor(props){
         super(props);
@@ -21,7 +25,7 @@ class Lista extends Component {
             columns: this.props.columns,
             rows: this.props.rows,
             gridHeight: '300px'
-        }
+        };
         
         this.getWindowHeight = this.getWindowHeight.bind(this);
     }
@@ -29,12 +33,12 @@ class Lista extends Component {
     rowClick=() => {     
         this.props.onRowClick(this.gridApi.getSelectedRows()[0])   
         
-    }
+    };
 
     onGridReady = params => {
         this.gridApi = params.api;
         this.gridColumnApi = params.columnApi;
-    }
+    };
 
     getWindowHeight(){      
         return (document.body.clientHeight -85)
@@ -53,7 +57,7 @@ class Lista extends Component {
         
         return (
             
-                <div className="ag-theme-blue lista p-2" style={{height: state.gridHeight}}>                    
+                <List className="ag-theme-blue p-2" style={{height: state.gridHeight}}>
                     <AgGridReact
                         rowSelection = 'single'                  
                         columnDefs={props.columns}
@@ -61,7 +65,7 @@ class Lista extends Component {
                         onGridReady={this.onGridReady}
                         onRowClicked={this.rowClick}>
                     </AgGridReact>
-                </div>
+                </List>
             
         ) 
     }

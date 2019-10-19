@@ -1,29 +1,18 @@
 import React, {Component} from 'react'
-import {Link} from 'react-router-dom'
 
-import Lista from '../../shared/lista/Lista.jsx';
-import BarraAcoes from '../../shared/barra-acoes/BarraAcoes.jsx'
+import Lista from '../../shared/Lista.jsx';
+import BarraAcoes from '../../shared/BarraAcoes.jsx'
 import { ClienteService } from '../../../services/ClienteSistemaService.js';
-import { withStyles} from '@material-ui/styles';
-import Button from '@material-ui/core/Button';
 
-
-const styles = theme => ({
-    button: {
-        margin: 5,
-        marginLeft: 15
-      
-    },
-  });
 
 class ClienteLista extends Component {
     static defaultProps = {
         lista: [],
         columnDefs:[]
-    }
+    };
 
     constructor(props){
-        super(props)
+        super(props);
         this.state = {
             clienteId: null,
             lista: [],
@@ -52,15 +41,15 @@ class ClienteLista extends Component {
 
     selecionarCliente = cliente =>{
         this.props.history.push(`${this.props.match.url}/novo/${cliente.id}`)
-    }
+    };
 
     novoCliente = () => {
         this.props.history.push(`${this.props.match.url}/novo`)
-    }
+    };
 
     goBack= () => {
         this.props.history.goBack();
-    }
+    };
 
     render(){
         const {state} = this;
@@ -70,9 +59,9 @@ class ClienteLista extends Component {
                     <div>
                         <BarraAcoes routerBack={this.goBack}>
                             <div className="float-right">
-                                <Button variant="contained" color="primary" className={classes.button}  onClick={this.novoCliente}>
+                                <button className="btn btn-sm btn-primary mt-2"  onClick={this.novoCliente}>
                                     Novo
-                                </Button>
+                                </button>
                             </div>
                         </BarraAcoes>
                         
@@ -87,4 +76,4 @@ class ClienteLista extends Component {
     
 }
 
-export default withStyles(styles)(ClienteLista);
+export default ClienteLista;

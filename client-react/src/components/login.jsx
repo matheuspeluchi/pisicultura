@@ -40,8 +40,7 @@ class Login extends Component{
             .then(({user}) =>{
                 const {userLogin} = this.props;
                 userLogin(user);
-                history.push('/');
-                console.log(this.props.user)
+                history.push('/home');
             })
             
     };
@@ -59,12 +58,11 @@ class Login extends Component{
 
 
     render(){
-        const {state,props} = this;
+        const {state} = this;
     
         return (
             <div>
                 <div id="fb-root"></div>
-                {console.log(props.user)}
                 
                 <div className="wrapper fadeInDown">
                     <div id="formContent">

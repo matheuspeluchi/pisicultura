@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-import BarraAcoes from '../../shared/barra-acoes/BarraAcoes.jsx'
+import BarraAcoes from '../../shared/BarraAcoes.jsx'
 import {ClienteService} from '../../../services/ClienteSistemaService'
 import { CidadeService } from '../../../services/CidadeService'
 

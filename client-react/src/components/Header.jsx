@@ -13,6 +13,32 @@ const Avatar = styled.img `
     border-radius: 50%;
 `;
 
+const Logo = styled.img`
+    height: 40px;
+    width: 100px;
+    background-color: #3c8dbc
+`;
+
+const Nav = styled.nav `
+    height: 40px !important;
+    max-height: 40px;
+    color: white !important;
+    z-index: 1200;
+    background-color: #3c8dbc !important;
+    font-size: 13px !important;
+    .nav-link {
+        color: white !important;
+        font-weight: 500;
+      
+    }
+    .nav-item {
+        max-height: 40px;
+    }
+    #navbarSupportedContent{
+        max-height: 40px;
+    }
+`;
+
 class Header extends Component {
 
     static defaultProps = {
@@ -29,18 +55,20 @@ class Header extends Component {
         const {props} = this;
 
         return (
-             <nav className="navbar navbar-expand-lg py-0 navbar-dark menu-principal py-md-0">
-                <a className="navbar-brand"  href="/#">
-                    <img src={logo} alt="PisicAdmin" style={{height:40, width:100}} className="img-fluid img-thumbnai logo" />
-                </a>
-                <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
-                    <span className="navbar-toggler-icon"></span>
+             <Nav className="navbar navbar-expand-lg py-0 navbar-dark bg-primary py-md-0">
+                <Link to={"/home"} className="navbar-brand" >
+                    <Logo src={logo} alt="PisicAdmin" style={{height:30, width:100}} className="img-fluid bg-primary" />
+                </Link>
+                <button className="btn btn-sm navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Alterna navegação">
+                    <span className="btn btn-sm  navbar-toggler-icon mb-3"></span>
                 </button>
 
-                <div className="collapse navbar-collapse mp-0" id="conteudoNavbarSuportado">
-                    <ul className="navbar-nav mr-auto">
+                <div className="collapse navbar-collapse bg-primary" id="navbarSupportedContent">
+                    <ul className="navbar-nav mr-auto bg-primary">
                         <li className="nav-item active">
-                            <a className="nav-link" href="/#">Home <span className="sr-only">(página atual)</span></a>
+                            <Link to={"/home"} className="nav-link">
+                                Home
+                            </Link>
                         </li>
                         <li className="nav-item dropdown">
                             <a className="nav-link dropdown-toggle" href="/#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -65,21 +93,19 @@ class Header extends Component {
                                 <a className="dropdown-item" href="/#">Algo mais aqui</a>
                             </div>
                         </li>
-                        <li className="nav-item">
-                            <Link to="/arearestrita" className="nav-link" href="/#">Área Restrita</Link>
-                        </li>
                     </ul>
 
 
                     {props.user ?
-                        <ul className="navbar-nav ml-auto">
-                            <li className="nav-item dropdown">
+                        <ul className="navbar-nav ml-auto bg-primary">
+                            <li className="nav-item dropdown mt-0 pt-0">
                                 <a className="nav-link dropdown-toggle" href="/#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <Avatar className="avatar mr-2" src={props.user.photoURL} />
                                     {props.user.displayName}
                                 </a>
                                 <div className="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <a className="dropdown-item" href="/#" onClick={props.logout}>Sair</a>
+                                    <Link to="/home/arearestrita" className="dropdown-item" >Área Restrita</Link>
                                 </div>
                             </li>
                         </ul>
@@ -88,7 +114,7 @@ class Header extends Component {
 
                 </div>
                 
-            </nav>
+            </Nav>
 
             
         )
