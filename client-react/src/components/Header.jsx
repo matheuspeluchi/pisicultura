@@ -84,6 +84,15 @@ class Header extends Component {
                         </li>
                         <li className="nav-item dropdown">
                             <a className="nav-link dropdown-toggle" href="/#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Comercial
+                            </a>
+                            <div className="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a className="dropdown-item" href="/#">Orçamentos</a>
+                                <a className="dropdown-item" href="/#">Vendas</a>
+                            </div>
+                        </li>
+                        <li className="nav-item dropdown">
+                            <a className="nav-link dropdown-toggle" href="/#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Operações
                             </a>
                             <div className="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -97,7 +106,7 @@ class Header extends Component {
 
 
                     {props.user ?
-                        <ul className="navbar-nav ml-auto bg-primary">
+                        <ul className="navbar-nav ml-auto bg-primary mb-2">
                             <li className="nav-item dropdown mt-0 pt-0">
                                 <a className="nav-link dropdown-toggle" href="/#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <Avatar className="avatar mr-2" src={props.user.photoURL} />

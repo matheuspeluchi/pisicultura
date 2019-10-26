@@ -4,7 +4,6 @@ import {Switch, Route} from 'react-router-dom'
 
 import Home from './components/Home';
 import Login from './components/login';
-import './stylesheets/styles.css'
 import NotFound from "./components/shared/NotFound";
 
 class App extends Component {

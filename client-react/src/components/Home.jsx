@@ -26,6 +26,28 @@ const GlobalStyle = createGlobalStyle`
     body {
         font-size: 13px !important;
         background-color: #E8E8E8 !important;
+        
+        .control-form-label {
+            cursor: pointer;    
+            font-weight: bold;
+            width: 8rem;
+            padding-right: 15px;
+            padding-left: 15px;
+            line-height: 1.5;
+            text-align: right;
+        }
+        
+        .dropdown-item {
+            font-size: 13px;
+        }
+        
+      
+        @media (max-width: 768px) {
+            .control-form-label {
+                text-align: left;    
+            }        
+        }
+
     }
 `;
 
