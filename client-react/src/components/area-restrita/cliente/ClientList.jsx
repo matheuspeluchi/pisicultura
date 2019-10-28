@@ -53,23 +53,21 @@ class ClienteLista extends Component {
 
     render(){
         const {state} = this;
-        const { classes } = this.props;
         
-            return (
-                    <div>
-                        <BarraAcoes routerBack={this.goBack}>
-                            <div className="float-right">
-                                <button className="btn btn-sm btn-primary mt-2"  onClick={this.novoCliente}>
-                                    Novo
-                                </button>
-                            </div>
-                        </BarraAcoes>
-                        
-                        <Lista columns={state.columnDefs} rows={state.lista} onRowClick= {this.selecionarCliente}/>
-                        
-                        
-                    </div>
-            )
+        return (
+                <div>
+                    <BarraAcoes routerBack={this.goBack}>
+                        <div className="float-right">
+                            <button className="btn btn-sm btn-primary mt-2"  onClick={this.novoCliente}>
+                                Novo
+                            </button>
+                        </div>
+                    </BarraAcoes>
+
+                    <Lista columns={state.columnDefs} rows={state.lista} onRowClick= {this.selecionarCliente}/>
+
+                </div>
+        )
             
     }
         

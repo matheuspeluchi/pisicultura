@@ -4,13 +4,10 @@ import Header from './Header'
 import Footer from './Footer'
 import {Route, Switch} from 'react-router-dom'
 import { connect } from 'react-redux';
-import {userLogin} from  '../redux/actions'
-import { auth } from '../config/database'
+import {userLogin} from '../../redux/actions'
+import { auth } from '../../config/database'
 import { bindActionCreators } from 'redux';
-import ClienteView from "./area-restrita/cliente/ClientView";
-import ClienteForm from "./area-restrita/cliente/ClientForm";
-import ClienteLista from "./area-restrita/cliente/ClientList";
-import AreaRestrita from "./area-restrita/AreaRestrita";
+import AreaRestrita from "../area-restrita/AreaRestrita";
 
 const Conteudo = styled.div`  
         width: 100%;
@@ -26,6 +23,28 @@ const GlobalStyle = createGlobalStyle`
     body {
         font-size: 13px !important;
         background-color: #E8E8E8 !important;
+        
+        .control-form-label {
+            cursor: pointer;    
+            font-weight: bold;
+            width: 8rem;
+            padding-right: 15px;
+            padding-left: 15px;
+            line-height: 1.5;
+            text-align: right;
+        }
+        
+        .dropdown-item {
+            font-size: 13px;
+        }
+        
+      
+        @media (max-width: 768px) {
+            .control-form-label {
+                text-align: left;    
+            }        
+        }
+
     }
 `;
 
@@ -63,15 +82,10 @@ class Home extends React.Component{
                 <Header user={props.user} logout={this.logout}></Header>
                 <Conteudo>
                     <Switch>
-                        <Route exact={true} path={`${contexto}/arearestrita`} component={AreaRestrita}/>
-                        <Route exact={true} path={`${contexto}/arearestrita/cliente/visualizar/:clienteId`} component={ClienteView}/>
-                        <Route exact={true} path={`${contexto}/arearestrita/cliente/novo/:clienteId`} component={ClienteForm}/>
-                        <Route exact={true} path={`${contexto}/arearestrita/cliente/novo`}component={ClienteForm}/>
-                        <Route exact={true} path={`${contexto}/arearestrita/cliente`} component={ClienteLista}/>
+                        <Route path='/arearestrita' component={AreaRestrita}/>
                     </Switch>
                 </Conteudo>
                 <Footer></Footer>
-                {this.props.children}
             </div>           
 
         )

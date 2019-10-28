@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom'
 import styled from 'styled-components';
-import logo from '../assets/login_logo.png'
-import {userLogin} from  '../redux/actions'
+import logo from '../../assets/login_logo.png'
+import {userLogin} from '../../redux/actions'
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
@@ -56,7 +56,7 @@ class Header extends Component {
 
         return (
              <Nav className="navbar navbar-expand-lg py-0 navbar-dark bg-primary py-md-0">
-                <Link to={"/home"} className="navbar-brand" >
+                <Link to={"/"} className="navbar-brand" >
                     <Logo src={logo} alt="PisicAdmin" style={{height:30, width:100}} className="img-fluid bg-primary" />
                 </Link>
                 <button className="btn btn-sm navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Alterna navegação">
@@ -84,6 +84,15 @@ class Header extends Component {
                         </li>
                         <li className="nav-item dropdown">
                             <a className="nav-link dropdown-toggle" href="/#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Comercial
+                            </a>
+                            <div className="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a className="dropdown-item" href="/#">Orçamentos</a>
+                                <a className="dropdown-item" href="/#">Vendas</a>
+                            </div>
+                        </li>
+                        <li className="nav-item dropdown">
+                            <a className="nav-link dropdown-toggle" href="/#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Operações
                             </a>
                             <div className="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -97,7 +106,7 @@ class Header extends Component {
 
 
                     {props.user ?
-                        <ul className="navbar-nav ml-auto bg-primary">
+                        <ul className="navbar-nav ml-auto bg-primary mb-2">
                             <li className="nav-item dropdown mt-0 pt-0">
                                 <a className="nav-link dropdown-toggle" href="/#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <Avatar className="avatar mr-2" src={props.user.photoURL} />
@@ -105,7 +114,7 @@ class Header extends Component {
                                 </a>
                                 <div className="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <a className="dropdown-item" href="/#" onClick={props.logout}>Sair</a>
-                                    <Link to="/home/arearestrita" className="dropdown-item" >Área Restrita</Link>
+                                    <Link to="/arearestrita" className="dropdown-item" >Área Restrita</Link>
                                 </div>
                             </li>
                         </ul>

@@ -6,7 +6,7 @@ import ClienteLista from '../components/area-restrita/cliente/ClientList'
 import ClienteView from '../components/area-restrita/cliente/ClientView'
 import ClienteForm from '../components/area-restrita/cliente/ClientForm'
 import AreaRestrita from '../components/area-restrita/AreaRestrita'
-import Home from "../components/Home";
+import Home from "../components/home/Home";
 import Login from "../components/login";
 
 

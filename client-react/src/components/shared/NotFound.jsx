@@ -14,10 +14,6 @@ const ErrorActions = styled.div `
   margin-bottom:15px;
 `;
 
-const Btn = styled.a `
-  margin-right:10px;
-`;
-
 class NotFound extends Component{
 
     render() {

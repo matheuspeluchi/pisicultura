@@ -2,9 +2,8 @@ import React,{ Component } from 'react';
 import {Switch, Route} from 'react-router-dom'
 
 
-import Home from './components/Home';
+import Home from './components/home/Home';
 import Login from './components/login';
-import './stylesheets/styles.css'
 import NotFound from "./components/shared/NotFound";
 
 class App extends Component {
@@ -14,9 +13,9 @@ class App extends Component {
     return (
           <Switch>
 
-              <Route path="/home" component={Home}/>
+              <Route path="/" component={Home}/>
               <Route exact path="/login" component={Login}/>
-              <Route exact path='*' component={NotFound} />
+              <Route exact path='/*' component={NotFound} />
 
           </Switch>
 
