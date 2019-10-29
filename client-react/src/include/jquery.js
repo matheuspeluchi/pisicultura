@@ -1,3 +1,3 @@
 import * as $ from 'jquery'
 
-window.jquery = window.$ = $
+window.jquery = window.$ = $;

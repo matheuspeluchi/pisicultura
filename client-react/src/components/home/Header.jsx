@@ -23,8 +23,7 @@ const Nav = styled.nav `
     height: 40px !important;
     max-height: 40px;
     color: white !important;
-    z-index: 1200;
-    background-color: #3c8dbc !important;
+    z-index: 1200; 
     font-size: 13px !important;
     .nav-link {
         color: white !important;

@@ -9,7 +9,7 @@ class ClienteForm extends Component {
     
     static defaultProps = {
         onSubmit: ()=> {}
-    }
+    };
 
     constructor(props){
         
@@ -31,11 +31,8 @@ class ClienteForm extends Component {
             cidades:[],
         
         
-        }
-        this.handleChange = this.handleChange.bind(this);
-        this.salvar = this.salvar.bind(this);
-        
-        
+        };
+
     }
 
 
@@ -43,7 +40,7 @@ class ClienteForm extends Component {
         if (this.props.match.params.clienteId){
             ClienteService.get(this.props.match.params.clienteId) 
                 .then(res =>{         
-                    console.log(res.data)                            
+                    console.log(res.data);
                     this.setState({
                         cliente:res.data,
                         isLoading: false
@@ -59,11 +56,11 @@ class ClienteForm extends Component {
     }
     
     setCliente = cliente => {
-        console.log(cliente)
+        console.log(cliente);
         this.setState({cliente})
-    }
+    };
 
-    handleChange(event){
+    handleChange = event => {
         const target = event.target,
                 value = target.value,
                 name = target.name;
@@ -75,17 +72,17 @@ class ClienteForm extends Component {
                 }
             })
         )
-    }
+    };
 
-    salvar (){
+    salvar= () => {
         ClienteService.save(this.state.cliente)
             .then(res=> this.props.history.push(`/arearestrita/cliente`))
             .catch(err => console.log(err))
-    }
+    };
 
     goBack= ()=>{
         this.props.history.goBack();
-    }
+    };
 
     render() {
         const {state} = this;

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Suspense, lazy} from 'react';
 import styled, {createGlobalStyle} from 'styled-components';
 import Header from './Header'
 import Footer from './Footer'
@@ -7,7 +7,8 @@ import { connect } from 'react-redux';
 import {userLogin} from '../../redux/actions'
 import { auth } from '../../config/database'
 import { bindActionCreators } from 'redux';
-import AreaRestrita from "../area-restrita/AreaRestrita";
+import Loading from "../shared/loading";
+const AreaRestrita = lazy(() => import('../area-restrita/AreaRestrita'));
 
 const Conteudo = styled.div`  
         width: 100%;
@@ -81,9 +82,11 @@ class Home extends React.Component{
                 <GlobalStyle/>
                 <Header user={props.user} logout={this.logout}></Header>
                 <Conteudo>
-                    <Switch>
-                        <Route path='/arearestrita' component={AreaRestrita}/>
-                    </Switch>
+                    <Suspense fallback={<Loading/>}>
+                        <Switch>
+                            <Route path='/arearestrita' component={AreaRestrita}/>
+                        </Switch>
+                    </Suspense>
                 </Conteudo>
                 <Footer></Footer>
             </div>           
